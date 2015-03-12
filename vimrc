@@ -4,9 +4,16 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+set number            " Enable linenumers
+
+" Use pathogen
+execute pathogen#infect()
 
 " Favo colors
-colorscheme desert
+syntax enable
+set background=dark
+colorscheme solarized
+highlight clear SignColumn
 
 " Enable highlight search
 set hlsearch
