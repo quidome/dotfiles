@@ -1,3 +1,6 @@
+# Set fpath first
+fpath=($HOME/.zsh-completion $fpath)
+
 # Prompt
 autoload -Uz promptinit
 #promptinit
@@ -14,11 +17,11 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Completion
+zmodload -i zsh/complist
 autoload -Uz compinit
 compinit
 setopt completealiases
-fpath=(~/.zsh-completion $fpath)
-autoload -U ~/.zsh-completion/*.zsh(:t)
+# autoload -U $HOME/.zsh-completion/*.zsh(:t)
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
