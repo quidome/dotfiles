@@ -5,5 +5,5 @@ alias ll='ls -la'
 alias s=subl
 
 # Puppet
-alias cdhiera='cd /Users/qmeijer/development/bol.com/puppet_vagrant/hiera'
-alias cdmodules='cd /Users/qmeijer/development/bol.com/puppet_vagrant/modules'
+alias cdhiera="cd ${HOME}/development/bol.com/puppet_vagrant/hiera"
+alias cdmodules="cd ${HOME}/development/bol.com/puppet_vagrant/modules"
