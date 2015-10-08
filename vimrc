@@ -51,7 +51,10 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Favo colors
-colorscheme solarized
+try
+  colorscheme desert
+catch
+endtry
 highlight clear SignColumn
 
 if !exists('g:airline_symbols')
@@ -114,6 +117,7 @@ set wildmode=longest:full,full
 let g:UltiSnipsExpandTrigger       ="<c-tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+
 let g:airline#extensions#branch#empty_message = 'no scm'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ctrlp#color_template = 'normal'
@@ -127,12 +131,15 @@ let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
+
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_inside_quotes = 1
 let g:delimitMate_expand_space = 1
 let g:delimitMate_jump_expansion = 1
+
 let g:rainbow_active = 1
+
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
