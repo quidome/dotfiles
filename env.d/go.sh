@@ -1,8 +1,7 @@
 # for golang
 # mkdir $HOME/go
 # mkdir -p $GOPATH/src/github.com/user
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=${HOME}/go
+[[ $OSTYPE == darwin* ]] && export GOROOT=/usr/local/opt/go/libexec
 
-# Mongo on OSX installed in home directory
-[[ $OSTYPE == darwin* ]] && export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
