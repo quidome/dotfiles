@@ -19,9 +19,12 @@ map q :
 set t_Co=256
 
 " Vundle - plugin management
+" mkdir -p ~/.vim/bundle
 " git clone https://github.com/VundleVim/Vundle.vim.git
+" ~/.vim/bundle/Vundle.vim
 " vim +PluginInstall +qall
 " ~/.vim/bundle/Vundle.vim
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -36,11 +39,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'will133/vim-dirdiff'
 
-call vundle#end()            " required
+call vundle#end()            " required, end vundle
 
-
-" Use pathogen
-execute pathogen#infect()
 filetype plugin indent on
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
