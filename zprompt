@@ -1,6 +1,6 @@
 # load prompt functions
 setopt promptsubst
-unsetopt transient_rprompt # leave the pwd 
+unsetopt transient_rprompt # leave the pwd
 
 # get the colors
 source ~/.zcolors
