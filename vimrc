@@ -111,31 +111,31 @@ set wildchar=<TAB>      " Character to start command line completion
 set wildmenu            " Enhanced command line completion mode
 set wildmode=longest:full,full
 
-let g:delimitMate_expand_cr = 2
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_inside_quotes = 1
-let g:delimitMate_balance_matchpairs = 1
-let g:delimitMate_jump_expansion = 1
-let g:rainbow_active = 1
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#eclim#enabled = 1
-let g:airline#extensions#branch#enabled = 1
+let g:UltiSnipsExpandTrigger       ="<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:airline#extensions#branch#empty_message = 'no scm'
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#tagbar#flags = 'f'
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#hunks#enabled = 1
-let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ctrlp#color_template = 'normal'
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
-
-let g:UltiSnipsExpandTrigger       ="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:airline#extensions#eclim#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#flags = 'f'
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='simple'
+let g:delimitMate_balance_matchpairs = 1
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_inside_quotes = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_jump_expansion = 1
+let g:rainbow_active = 1
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
