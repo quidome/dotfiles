@@ -20,10 +20,8 @@ set t_Co=256
 
 " Vundle - plugin management
 " mkdir -p ~/.vim/bundle
-" git clone https://github.com/VundleVim/Vundle.vim.git
-" ~/.vim/bundle/Vundle.vim
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " vim +PluginInstall +qall
-" ~/.vim/bundle/Vundle.vim
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -67,9 +65,9 @@ nnoremap <Leader>f :Unite -start-insert file_rec/async<CR>
 
 " fix common typos
 " use W to write as root
-:command WQ wq
-:command Wq wq
-:command Q q
+command WQ wq
+command Wq wq
+command Q q
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 syntax enable
@@ -129,7 +127,7 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#virtualenv#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme='simple'
 
 let g:delimitMate_balance_matchpairs = 1
