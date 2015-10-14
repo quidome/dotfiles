@@ -107,6 +107,7 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 set timeoutlen=500
+set undodir=~/.vim/undodir
 set undofile
 set wildchar=<TAB>      " Character to start command line completion
 set wildmenu            " Enhanced command line completion mode
