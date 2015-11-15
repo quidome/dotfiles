@@ -19,8 +19,8 @@ map q :
 set t_Co=256
 
 " Vundle - plugin management
-" mkdir -p ~/.vim/bundle
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" mkdir -p $HOME/.vim/bundle
+" git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 " vim +PluginInstall +qall
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
