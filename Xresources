@@ -1,0 +1,52 @@
+! ------------------------------------------------------------- !
+! file:     ~/.Xresources
+! author:   serdotlinecho
+! vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:fdm=marker:ft=xdefaults:
+! ------------------------------------------------------------- !
+
+! ----- urxvt {{{
+URxvt*termName:         rxvt
+URxvt*loginShell:       false
+URxvt*urgentOnBell:     true
+URxvt*visualBell:       false
+URxvt.geometry:         88x24
+URxvt*scrollBar_right:  false
+URxvt*scrollBar:        false
+URxvt.cursorUnderline:  false
+URxvt.cursorBlink:      false
+URxvt*saveLines:        512
+URxvt*borderless:       false
+URxvt*iso14755:         false
+URxvt.depth:            32
+!URxvt.background:       rgba:2600/2600/2600/dddd
+
+! }}}
+! ----- color, fonts and cursor {{{
+#include "/home/quidome/.colors/invisibone"
+! For solarized colorscheme
+! URxvt.intensityStyles:  false
+Rxvt*font:              -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+URxvt*BoldFont:         -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+Xft.rgba:               rgb
+Xcursor.theme:          AnArchCursor-22
+
+! }}}
+! ----- extensions {{{
+!URxvt.perl-ext-common:          default,clipboard,url-select,keyboard-select,unichr
+!URxvt.keysym.M-c:               perl:clipboard:copy
+!URxvt.keysym.M-v:               perl:clipboard:paste
+!URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
+!URxvt.keysym.M-u:               perl:url-select:select_next
+!URxvt.url-select.launcher:      firefox
+!URxvt.url-select.underline:     true
+!URxvt.keysym.M-h:               perl:keyboard-select:activate
+!URxvt.keysym.M-s:               perl:keyboard-select:search
+
+! }}}
+! ----- xautolock screen locker {{{
+Xautolock.time:        10
+Xautolock.corners:     -+00
+Xautolock.cornerdelay: 10
+Xautolock.locker:      i3lock -c 232323
+
+! }}}
