@@ -1,0 +1,52 @@
+#################################################
+# file: ~/.xprofile
+# author: serdotlinecho
+# vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=sh:
+#################################################
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+    for f in /etc/X11/xinit/xinitrc.d/*; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
+if [[ $DESKTOP_SESSION = *"i3" ]] ; then
+    xset +fp /usr/share/fonts/local
+    xset fp rehash
+    xset -b
+
+    # load up Xresources
+    [[ -f $HOME/.Xresources && -r ~/.Xresources ]] && xrdb -merge $HOME/.Xresources
+
+    # start pulseaudio
+    # requires: pulseaudio pulseaudio-alsa
+    pulseaudio --start
+
+    # load a background image
+    # requires: feh
+    [[ -f ~/.fehbg && -r ~/.fehbg ]] && { sh ~/.fehbg & }
+
+    # set askpass
+    # requires: x11-ssh-askpass
+    #export SSH_ASKPASS=ssh-askpass
+
+    # set the cursor
+    xsetroot -cursor_name left_ptr &
+
+    # start a urxvt daemon
+    # requires: rxvt-unicode rxvt-unicode-terminfo
+    hash urxvtd 2>/dev/null && urxvtd -q -o -f &
+
+    # start compositing manager
+    hash xcompmgr 2>/dev/null && { xcompmgr -c & }
+
+    # start a screen locker
+    # requires: xautolock
+    xautolock &
+
+    # autocutsel, sync clipboards
+    # requires: autocutsel
+    autocutsel -fork &
+    autocutsel -selection PRIMARY -fork &
+fi
