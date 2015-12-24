@@ -23,6 +23,9 @@ if [[ $DESKTOP_SESSION = *"i3"* ]] ; then
     # requires: pulseaudio pulseaudio-alsa
     pulseaudio --start
 
+    # vbox stuff
+    /usr/bin/VBoxClient-all
+
     # load a background image
     # requires: feh
     [[ -f ~/.fehbg && -r ~/.fehbg ]] && { sh ~/.fehbg & }
