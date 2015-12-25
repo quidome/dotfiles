@@ -7,10 +7,3 @@ alias vap='/usr/bin/vagrant provision'
 alias vas='/usr/bin/vagrant status'
 alias vassh='/usr/bin/vagrant ssh'
 alias vau='/usr/bin/vagrant up'
-
-vahall () {
-	for vm in `vas | awk '/running/ {print \$1}'`
-	do
-		vah $vm
-	done
-}

@@ -147,6 +147,12 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+"Go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
 " DirDiff settings
 " http://www.vim.org/scripts/script.php?script_id=102
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
