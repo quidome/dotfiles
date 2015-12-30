@@ -7,3 +7,5 @@ alias vap='/usr/bin/vagrant provision'
 alias vas='/usr/bin/vagrant status'
 alias vassh='/usr/bin/vagrant ssh'
 alias vau='/usr/bin/vagrant up'
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox

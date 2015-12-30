@@ -93,6 +93,7 @@ set laststatus=2        " Always show status bar
 set linespace=1 " add some line space for easy reading
 set nocompatible      " We're running Vim, not Vi!
 set noshowmode
+set number
 set pastetoggle=<F10>
 set relativenumber
 set scrolloff=3 " don't scroll any closer to top/bottom
@@ -128,7 +129,7 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#virtualenv#enabled = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 
 let g:delimitMate_balance_matchpairs = 1
@@ -155,4 +156,4 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 
 " DirDiff settings
 " http://www.vim.org/scripts/script.php?script_id=102
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.DS_Store"

@@ -1,4 +1,4 @@
-eval "$(docker-machine env docker-machine)"
+eval "$(docker-machine env docker-vm)"
 
 function dm() {
     docker-machine ls
