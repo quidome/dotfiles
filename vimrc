@@ -91,6 +91,8 @@ set ignorecase
 set incsearch
 set laststatus=2        " Always show status bar
 set linespace=1 " add some line space for easy reading
+set list
+set listchars=tab:»·,trail:·
 set nocompatible      " We're running Vim, not Vi!
 set noshowmode
 set number
@@ -106,6 +108,7 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=2
+set shiftwidth=2
 set tabstop=2
 set timeoutlen=500
 set undodir=~/.vim/undodir
