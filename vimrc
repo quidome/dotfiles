@@ -14,8 +14,6 @@ nmap s <Plug>(easymotion-s2)
 " q no more
 map q :
 
-" Write as root
-
 set t_Co=256
 
 " Vundle - plugin management
