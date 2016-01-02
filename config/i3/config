@@ -206,8 +206,7 @@ bindsym $mod+Control+x exec systemctl suspend
 bar {
         position top
         workspace_buttons yes
-        font "-xos5-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
-        #font pango:8
+        font pango:Meslo LG S for Powerline 11px
         status_command i3status
         colors {
             background #232323
