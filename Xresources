@@ -25,8 +25,13 @@ URxvt.depth:            32
 #include "/home/quidome/.colors/invisibone"
 ! For solarized colorscheme
 ! URxvt.intensityStyles:  false
-Rxvt*font:              xft:Meslo LG S for Powerline:pixelsize=11
-URxvt*BoldFont:         xft:Meslo LG S for Powerline Bold:pixelsize=11
+!Rxvt*font:                  xft:Meslo LG S for Powerline:pixelsize=11
+!URxvt*BoldFont:             xft:Meslo LG S for Powerline Bold:pixelsize=11
+URxvt*font:                 xft:Menlo for Powerline:regular:size=11
+URxvt*imFont:               xft:Menlo for Powerline:regular:size=11
+URxvt*boldFont:             xft:Menlo for Powerline:bold:size=11
+URxvt*italicFont:           xft:Menlo for Powerline:italic:size=11
+URxvt*boldItalicFont:       xft:Menlo for Powerline:bold:italic:size=11
 Xft.rgba:               rgb
 Xcursor.theme:          AnArchCursor-22
 
