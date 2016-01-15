@@ -1,4 +1,9 @@
-eval "$(docker-machine env docker-vm)"
+DEFAULT_DOCKER_MACHINE='docker-vm'
+
+# set docker env if local box is running
+if [[ $(docker-machine status ${DEFAULT_DOCKER_MACHINE}) == Running ]] ; then
+  eval "$(docker-machine env ${DEFAULT_DOCKER_MACHINE})"
+fi
 
 function dm() {
     docker-machine ls
