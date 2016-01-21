@@ -1,5 +1,5 @@
 # Generic stuff
-alias ls='ls --color=auto'
+[[ $OSTYPE == darwin* ]] || alias ls='ls --color=auto'
 alias ll='ls -la'
 alias git_reset='git fetch origin && git reset --hard origin/develop'
 
