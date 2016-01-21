@@ -1,6 +1,6 @@
 # Vagrant aliases
 alias va=vagrant
-alias vacd='cd $HOME/development/bol.com/puppet_vagrant'
+alias vacd='cd ${DEV_DIR}/bol.com/puppet_vagrant'
 alias vad='/usr/bin/vagrant destroy'
 alias vah='/usr/bin/vagrant halt'
 alias vap='/usr/bin/vagrant provision'

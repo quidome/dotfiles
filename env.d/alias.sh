@@ -13,4 +13,4 @@ alias y=yaourt
 
 # command line md viewer
 # requires clone of github.com/axiros/terminal_markdown_viewer
-alias mdv=${HOME}/development/github.com/axiros/terminal_markdown_viewer/mdv.py
+alias mdv=${DEV_DIR}/github.com/axiros/terminal_markdown_viewer/mdv.py
