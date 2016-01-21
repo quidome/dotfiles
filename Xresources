@@ -19,33 +19,33 @@ URxvt*borderless:       false
 URxvt*iso14755:         false
 URxvt.depth:            32
 !URxvt.background:       rgba:2600/2600/2600/dddd
+URxvt.keysym.C-Up:      perl:font-size:increase
+URxvt.keysym.C-Down:    perl:font-size:decrease
 
 ! }}}
 ! ----- color, fonts and cursor {{{
 #include "/home/quidome/.colors/invisibone"
 ! For solarized colorscheme
 ! URxvt.intensityStyles:  false
-!Rxvt*font:                  xft:Meslo LG S for Powerline:pixelsize=11
-!URxvt*BoldFont:             xft:Meslo LG S for Powerline Bold:pixelsize=11
-URxvt*font:                 xft:Menlo for Powerline:regular:size=11
-URxvt*imFont:               xft:Menlo for Powerline:regular:size=11
-URxvt*boldFont:             xft:Menlo for Powerline:bold:size=11
-URxvt*italicFont:           xft:Menlo for Powerline:italic:size=11
-URxvt*boldItalicFont:       xft:Menlo for Powerline:bold:italic:size=11
-Xft.rgba:               rgb
-Xcursor.theme:          AnArchCursor-22
+URxvt*font:                 xft:Meslo LG S for Powerline:regular:pixelsize=11
+URxvt*imFont:               xft:Meslo LG S for Powerline:regular:pixelsize=11
+URxvt*boldFont:             xft:Meslo LG S for Powerline:bold:pixelsize=11
+URxvt*italicFont:           xft:Meslo LG S for Powerline:italic:pixelsize=11
+URxvt*boldItalicFont:       xft:Meslo LG S for Powerline:bold:italic:pixelsize=11
+Xft.rgba:                   rgb
+Xcursor.theme:              AnArchCursor-22
 
 ! }}}
 ! ----- extensions {{{
-!URxvt.perl-ext-common:          default,clipboard,url-select,keyboard-select,unichr
-!URxvt.keysym.M-c:               perl:clipboard:copy
-!URxvt.keysym.M-v:               perl:clipboard:paste
-!URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
-!URxvt.keysym.M-u:               perl:url-select:select_next
-!URxvt.url-select.launcher:      firefox
-!URxvt.url-select.underline:     true
-!URxvt.keysym.M-h:               perl:keyboard-select:activate
-!URxvt.keysym.M-s:               perl:keyboard-select:search
+URxvt.perl-ext-common:          default,clipboard,url-select,keyboard-select,unichr,font-size
+URxvt.keysym.M-c:               perl:clipboard:copy
+URxvt.keysym.M-v:               perl:clipboard:paste
+URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
+URxvt.keysym.M-u:               perl:url-select:select_next
+URxvt.url-select.launcher:      firefox
+URxvt.url-select.underline:     true
+URxvt.keysym.M-h:               perl:keyboard-select:activate
+URxvt.keysym.M-s:               perl:keyboard-select:search
 
 ! }}}
 ! ----- xautolock screen locker {{{

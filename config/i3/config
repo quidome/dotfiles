@@ -19,6 +19,8 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+#font pango:Meslo LG S for Powerline 10
+
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -164,7 +166,9 @@ bindsym $mod+r mode "resize"
 new_window pixel 1
 
 # font for window titles. ISO 10646 = Unicode
-font "-xos4-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
+#font "-xos4-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
+#font "pango:Monospace 10"
+font "pango:Meslo LG S for Powerline 9"
 
 # class                 border  backgr. text    indicator
 client.focused          #303030 #686868 #ffffff #2e9ef4
@@ -206,7 +210,8 @@ bindsym $mod+Control+x exec systemctl suspend
 bar {
         position top
         workspace_buttons yes
-        font pango:Meslo LG S for Powerline 11px
+        #font "-xos5-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
+        #font pango:8
         status_command i3status
         colors {
             background #232323
