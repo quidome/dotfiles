@@ -3,7 +3,7 @@
 if [ $(command -v vagrant) ] ; then
   VAGRANT_BINARY=$(command -v vagrant)
   alias va=vagrant
-  alias vacd='cd ${PUP_VAG}'
+  alias vacd='cd ${PUPPET_VAGRANT}'
   alias vad="${VAGRANT_BINARY} destroy"
   alias vah="${VAGRANT_BINARY} halt"
   alias vap="${VAGRANT_BINARY} provision"
