@@ -1,7 +1,8 @@
 function git_tracks() {
   local "REMOTE_BRANCH=$(git status|awk -F \' '/Your branch/ {print $2}')"
+  local "RETURN_CODE=$?"
   echo ${REMOTE_BRANCH}
-  return 0
+  return ${RETURN_CODE}
 }
 
 function git_reset() {
