@@ -78,11 +78,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Add .puppethosts to host completion
-zstyle -s ':completion:*:hosts' hosts _ssh_config
-[[ -r ~/.puppethosts ]] && _ssh_config+=($(cat ~/.puppethosts))
-zstyle ':completion:*:hosts' hosts $_ssh_config
-
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
@@ -100,3 +95,9 @@ if [ -d $HOME/.env.d ]; then
   unset i
 fi
 # 1:end
+
+# Add .puppethosts to host completion
+# do this after .env inclusion to load config vars first
+zstyle -s ':completion:*:hosts' hosts _ssh_config
+[[ -r ${PUPPET_HOSTS} ]] && _ssh_config+=($(cat ${PUPPET_HOSTS}))
+zstyle ':completion:*:hosts' hosts $_ssh_config

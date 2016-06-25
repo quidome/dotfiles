@@ -48,7 +48,7 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Favo colors
 try
-  colorscheme desert
+  colorscheme summerfruit256
 catch
 endtry
 highlight clear SignColumn
@@ -71,8 +71,9 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 syntax enable
 syntax on             " Enable syntax highlighting
 set autoindent
-set background=dark
+set background=light
 set backspace=indent,eol,start " Set for maximum backspace smartness"
+set clipboard=unnamed
 set cmdheight=1         " Less Hit Return messages
 set cursorline
 set display+=uhex " Show unprintables as <xx>
@@ -131,7 +132,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='simple'
+let g:airline_theme='sol'
 
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
