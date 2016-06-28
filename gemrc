@@ -1,1 +1,2 @@
-puppet: --no-ri --no-rdoc
+gem: --no-rdoc --no-ri
+puppet: --no-rdoc --no-ri
