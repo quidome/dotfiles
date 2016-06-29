@@ -6,7 +6,7 @@ alias ll='ls -la'
 alias s=subl
 
 # i2cssh profile
-alias i2cssh="i2cssh -p light"
+#alias i2cssh="i2cssh -p light"
 
 # Atom editor
 alias a=atom
