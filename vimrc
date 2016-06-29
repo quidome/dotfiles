@@ -26,6 +26,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" let Vundle manage all the other plugins too
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
@@ -33,6 +35,7 @@ Plugin 'fatih/vim-go'
 Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'will133/vim-dirdiff'
 
 call vundle#end()            " required, end vundle
