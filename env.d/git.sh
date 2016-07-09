@@ -8,5 +8,3 @@ function git_tracks() {
 function git_reset() {
   git fetch origin && git reset --hard $(git_tracks)
 }
-
-# alias git_reset='git fetch origin && git reset --hard origin/develop'

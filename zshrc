@@ -83,13 +83,15 @@ bindkey -e
 
 # 1:start
 # load everything in .env.d
-echo $0: running scripts in .env.d
-echo -----------------------------------
+export ZSH_SCRIPTS=".zshrc"
+#echo $0: running scripts in .env.d
+#echo -----------------------------------
 if [ -d $HOME/.env.d ]; then
   for i in $HOME/.env.d/*.sh; do
     if [ -r $i ]; then
-      echo load $i
+      #echo load ${i##*/} $i
       . $i
+      export ZSH_SCRIPTS=${ZSH_SCRIPTS}:${i##*/}
     fi
   done
   unset i
