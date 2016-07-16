@@ -184,7 +184,7 @@ for_window [class="^Firefox$" title="^Library$"] border normal
 
 # assign the following to specific workspaces
 assign [window_role="^browser$"] 2
-assign [class="^(Gajim|[Tt]elegram|HipChat)$"] 3
+assign [class="^(Gajim|[Tt]elegram|HipChat|[Cc]utegram)$"] 3
 assign [class="^(Thunar|Zathura)$"] 3
 
 
