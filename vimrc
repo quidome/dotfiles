@@ -1,10 +1,6 @@
 nnoremap <F11> :set nonumber!<CR>:GitGutterDisable<CR>
 map <C-n> :NERDTreeToggle<CR>
 
-map <Leader>r :VimuxPromptCommand<CR>
-map <Leader>a :VimuxRunLastCommand<CR>
-let VimuxUseNearest = 0
-
 " no need for shift
 nnoremap    ;     :
 
@@ -14,31 +10,87 @@ nmap s <Plug>(easymotion-s2)
 " q no more
 map q :
 
-set t_Co=256
+" install plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
 
-" Vundle - plugin management
-" mkdir -p $HOME/.vim/bundle
-" git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-" vim +PluginInstall +qall
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" color nested [({
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Add git diff to gutter
+Plug 'airblade/vim-gitgutter'
 
-" let Vundle manage all the other plugins too
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'rodjek/vim-puppet'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'will133/vim-dirdiff'
+" Solarized Colorscheme for Vim
+"Plug 'altercation/vim-colors-solarized'
 
-call vundle#end()            " required, end vundle
+" Lean & mean status/tabline for vim that's light as air.
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#branch#empty_message = 'no scm'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ctrlp#color_template = 'normal'
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#eclim#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#flags = 'f'
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='sol'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+"
+Plug 'vim-airline/vim-airline-themes'
+
+"
+Plug 'fatih/vim-go'
+
+"
+Plug 'rodjek/vim-puppet'
+
+"
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+"
+Plug 'tpope/vim-fugitive'
+
+" http://www.vim.org/scripts/script.php?script_id=102
+Plug 'will133/vim-dirdiff'
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.DS_Store"
+
+" delimitMate provides insert mode auto-completion for quotes, parens, brackets, etc
+"Plug 'Raimondi/delimitMate'
+"let g:delimitMate_balance_matchpairs = 1
+"let g:delimitMate_expand_cr = 2
+"let g:delimitMate_expand_inside_quotes = 1
+"let g:delimitMate_expand_space = 1
+"let g:delimitMate_jump_expansion = 1
+
+" you complete me
+"let g:ycm_complete_in_comments = 1 " Completion in comments
+"let g:ycm_complete_in_strings = 1 " Completion in string
+"let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+
+" sirver/UltiSnips
+"Plug 'sirver/UltiSnips'
+"let g:UltiSnipsExpandTrigger       ="<c-tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+
+" tmux interaction
+"Plug 'johnsonch/vimux'
+"map <Leader>r :VimuxPromptCommand<CR>
+"map <Leader>a :VimuxRunLastCommand<CR>
+"let VimuxUseNearest = 0
+
+" Addn & mean status/tabline for vim that's light as air. plugins to &runtimepath
+call plug#end()
 
 filetype plugin indent on
 filetype on           " Enable filetype detection
@@ -55,11 +107,6 @@ try
 catch
 endtry
 highlight clear SignColumn
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
 
 " unite plugin
 nnoremap <Leader>f :Unite -start-insert file_rec/async<CR>
@@ -102,6 +149,7 @@ set pastetoggle=<F10>
 set relativenumber
 set scrolloff=3 " don't scroll any closer to top/bottom
 set secure
+set shiftwidth=2
 set shortmess=aoOtT     " Abbreviate the status messages
 set showcmd             " Show command I'm typing
 set showmatch
@@ -110,7 +158,7 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=2
-set shiftwidth=2
+set t_Co=256
 set tabstop=2
 set timeoutlen=500
 set undodir=~/.vim/undodir
@@ -118,36 +166,6 @@ set undofile
 set wildchar=<TAB>      " Character to start command line completion
 set wildmenu            " Enhanced command line completion mode
 set wildmode=longest:full,full
-
-let g:UltiSnipsExpandTrigger       ="<c-tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-
-let g:airline#extensions#branch#empty_message = 'no scm'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ctrlp#color_template = 'normal'
-let g:airline#extensions#ctrlp#show_adjacent_modes = 1
-let g:airline#extensions#eclim#enabled = 1
-let g:airline#extensions#hunks#enabled = 1
-let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#flags = 'f'
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='sol'
-
-let g:delimitMate_balance_matchpairs = 1
-let g:delimitMate_expand_cr = 2
-let g:delimitMate_expand_inside_quotes = 1
-let g:delimitMate_expand_space = 1
-let g:delimitMate_jump_expansion = 1
-
-let g:rainbow_active = 1
-
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -158,7 +176,3 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-
-" DirDiff settings
-" http://www.vim.org/scripts/script.php?script_id=102
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,.DS_Store"
