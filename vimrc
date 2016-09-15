@@ -1,5 +1,9 @@
 nnoremap <F11> :set nonumber!<CR>:GitGutterDisable<CR>
-map <C-n> :NERDTreeToggle<CR>
+
+" easy buffer switching
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 
 " no need for shift
 nnoremap    ;     :
@@ -9,6 +13,14 @@ nmap s <Plug>(easymotion-s2)
 
 " q no more
 map q :
+
+" neovim terminal stuff
+nnoremap <Leader>t :call TermEnter()<CR>
+"autocmd TermOpen * set bufhidden=hide
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap <C-Left> <m-b>
+noremap <C-Right> <m-f>
+":au TermOpen * :let  g:terminal_scrollback_buffer_size=100000
 
 " install plug
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -54,8 +66,9 @@ Plug 'fatih/vim-go'
 "
 Plug 'rodjek/vim-puppet'
 
-"
+" nerdtree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+map <C-n> :NERDTreeToggle<CR>
 
 "
 Plug 'tpope/vim-fugitive'
