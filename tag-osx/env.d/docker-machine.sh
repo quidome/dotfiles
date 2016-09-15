@@ -1,4 +1,4 @@
-DEFAULT_DOCKER_MACHINE='docker-vm'
+DEFAULT_DOCKER_MACHINE='default'
 
 # set docker env if local box is running
 if [[ $(docker-machine status ${DEFAULT_DOCKER_MACHINE}) == Running ]] ; then

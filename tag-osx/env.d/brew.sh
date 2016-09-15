@@ -1,9 +1,7 @@
 if [[ $OSTYPE == darwin* ]]; then
+  
   # HOMEBREW_GITHUB_API_TOKEN should be set
-  if [ -z ${HOMEBREW_GITHUB_API_TOKEN+x} ]; then echo "HOMEBREW_GITHUB_API_TOKEN is unset"; fi
-
-  # Symlink to /Applications
-  # export HOMEBREW_CASK_OPTS=--appdir=/Applications
+  [ ${HOMEBREW_GITHUB_API_TOKEN:+1} ] || echo "HOMEBREW_GITHUB_API_TOKEN is unset"
 
   # Add sbin from brew to PATH
   export PATH="$(brew --prefix)/sbin:$PATH"
