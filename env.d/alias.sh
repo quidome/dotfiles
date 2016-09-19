@@ -16,9 +16,9 @@ alias ap='atom -a'
 alias y=yaourt
 
 # neovim
-alias v=nvim
 alias vi=nvim
 alias vim=nvim
+alias vimdiff=nvim\ -d
 
 # command line md viewer
 # requires clone of github.com/axiros/terminal_markdown_viewer
