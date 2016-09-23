@@ -33,9 +33,6 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 " Add git diff to gutter
 Plug 'airblade/vim-gitgutter'
 
-" Solarized Colorscheme for Vim
-"Plug 'altercation/vim-colors-solarized'
-
 " Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#branch#empty_message = 'no scm'
@@ -50,7 +47,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='sol'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -59,6 +55,10 @@ let g:airline_symbols.space = "\ua0"
 
 "
 Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='solarized'
+
+" Solarized Colorscheme for Vim
+Plug 'altercation/vim-colors-solarized'
 
 "
 Plug 'fatih/vim-go'
@@ -115,8 +115,10 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Favo colors
+" summerfruit is a colorscheme for light backgrounds
+" use solarized for dark backgrounds
 try
-  colorscheme summerfruit256
+  colorscheme solarized
 catch
 endtry
 highlight clear SignColumn
@@ -134,7 +136,7 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 syntax enable
 syntax on             " Enable syntax highlighting
 set autoindent
-set background=light
+set background=dark
 set backspace=indent,eol,start " Set for maximum backspace smartness"
 set clipboard=unnamed
 set cmdheight=1         " Less Hit Return messages
