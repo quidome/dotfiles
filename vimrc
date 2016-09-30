@@ -1,4 +1,10 @@
+" Set keymappings
+
+" make content copyable
 nnoremap <F11> :set nonumber!<CR>:GitGutterDisable<CR>
+
+" Disable search highlights by pressing escape
+nnoremap <leader><esc> :noh<return><esc>
 
 " easy buffer switching
 nnoremap <Tab> :bnext<CR>
@@ -55,16 +61,23 @@ let g:airline_symbols.space = "\ua0"
 
 "
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
+let g:airline_theme='sol'
 
 " Solarized Colorscheme for Vim
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+
+"
+Plug 'vim-scripts/summerfruit256.vim'
 
 "
 Plug 'fatih/vim-go'
 
 "
 Plug 'rodjek/vim-puppet'
+
+"
+Plug 'godlygeek/tabular'
 
 " nerdtree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -118,9 +131,11 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 " summerfruit is a colorscheme for light backgrounds
 " use solarized for dark backgrounds
 try
-  colorscheme solarized
+  colorscheme summerfruit256
 catch
 endtry
+
+" Make gutter background color match that of line numbers
 highlight clear SignColumn
 
 " unite plugin
@@ -136,7 +151,7 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 syntax enable
 syntax on             " Enable syntax highlighting
 set autoindent
-set background=dark
+set background=light
 set backspace=indent,eol,start " Set for maximum backspace smartness"
 set clipboard=unnamed
 set cmdheight=1         " Less Hit Return messages
