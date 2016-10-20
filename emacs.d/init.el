@@ -46,10 +46,15 @@
 (setq auto-save-file-name-transforms
           `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
-(global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 (load-theme 'leuven t)
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (push "HISTFILE" exec-path-from-shell-variables)
+  (setq exec-path-from-shell-check-startup-files nil)
+  (exec-path-from-shell-initialize))
 
 (use-package magit
   :ensure t
