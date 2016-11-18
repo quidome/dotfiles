@@ -48,7 +48,7 @@
           `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-(load-theme 'leuven t)
+(load-theme 'atom-dark t)
 
 (use-package exec-path-from-shell
   :ensure t
