@@ -43,7 +43,9 @@
 (eval-when-compile
   (require 'use-package))
 
+;; 
 ;; Settings
+;; 
 (setq auto-save-file-name-transforms
           `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
@@ -57,6 +59,9 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\.md" . markdown-mode) auto-mode-alist))
+
+;; Disable scrollbar
+(scroll-bar-mode -1)
 
 (use-package exec-path-from-shell
   :ensure t
