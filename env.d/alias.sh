@@ -8,6 +8,8 @@ alias s=subl
 # i2cssh profile
 #alias i2cssh="i2cssh -p light"
 
+alias e='emacsclient -t'
+
 # Atom editor
 alias a=atom
 alias ap='atom -a'
