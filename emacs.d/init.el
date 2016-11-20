@@ -48,7 +48,15 @@
           `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-(load-theme 'atom-dark t)
+(load-theme 'monokai t)
+
+;; Add markdown mode
+;; brew install homebrew/emacs/markdown-mode
+;; AUR: emacs-markdown-mode-git
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\.md" . markdown-mode) auto-mode-alist))
 
 (use-package exec-path-from-shell
   :ensure t
