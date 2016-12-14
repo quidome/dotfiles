@@ -31,6 +31,18 @@
 
 (defconst my-savefile-dir (expand-file-name "savefile" user-emacs-directory))
 
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/auto-backup/"))))
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/auto-save/" t)
+(make-directory "~/.emacs.d/auto-backup/" t)
+
+;; Disable stupid lockfiles
+(setq create-lockfiles nil)
+
 ;; Keep init clean
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
@@ -43,14 +55,14 @@
 (eval-when-compile
   (require 'use-package))
 
-;; 
+;;
 ;; Settings
-;; 
+;;
 (setq auto-save-file-name-transforms
           `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-(load-theme 'monokai t)
+(load-theme 'leuven t)
 
 ;; Add markdown mode
 ;; brew install homebrew/emacs/markdown-mode
@@ -62,6 +74,11 @@
 
 ;; Disable scrollbar
 (scroll-bar-mode -1)
+
+;; Include config files
+(require 'init-magit)
+(require 'init-flycheck)
+(require 'init-powerline)
 
 (use-package exec-path-from-shell
   :ensure t
@@ -83,22 +100,7 @@
         ido-auto-merge-work-directories-length -1)
   (ido-mode +1))
 
-(use-package magit
-  :ensure t
-  :bind ("C-x g" . magit-status)
-  :init
-  ;; Ask for the branch name first when creating a branch rather than
-  ;; specifying upstream
-  (setq magit-branch-read-upstream-first nil))
-
-;; if remote url is not using the default gerrit port and
-;; ssh scheme, need to manually set this variable
 (use-package magit-gerrit)
-
-(use-package powerline
-  :ensure t
-  :config
-  (powerline-default-theme))
 
 (use-package yaml-mode :ensure t :defer t)
 
@@ -107,3 +109,6 @@
   :diminish ""
   :config
   (which-key-mode t))
+
+(provide 'init)
+;;; init.el ends here
