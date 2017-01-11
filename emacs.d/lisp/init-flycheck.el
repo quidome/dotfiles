@@ -20,10 +20,10 @@
 
   ;; Override default flycheck triggers
   (setq flycheck-emacs-lisp-load-path 'inherit
-        flycheck-check-syntax-automatically '(save idle-change mode-enabled)
-        flycheck-idle-change-delay 0.8
-        flycheck-disabled-checkers '(php-phpmd)
-        flycheck-phpcs-standard "CSNStores")
+	flycheck-check-syntax-automatically '(save idle-change mode-enabled)
+	flycheck-idle-change-delay 5
+	flycheck-disabled-checkers '(php-phpmd)
+	flycheck-phpcs-standard "CSNStores")
 
   (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list))
 

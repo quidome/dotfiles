@@ -64,7 +64,10 @@
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 (load-theme 'leuven t)
 
-;; Add markdown mode
+;; cleanup whitespace on save
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; add markdown mode
 ;; brew install homebrew/emacs/markdown-mode
 ;; AUR: emacs-markdown-mode-git
 (autoload 'markdown-mode "markdown-mode.el"
@@ -79,6 +82,7 @@
 (require 'init-magit)
 (require 'init-flycheck)
 (require 'init-powerline)
+;; (require 'init-whitespace)
 
 (use-package exec-path-from-shell
   :ensure t
