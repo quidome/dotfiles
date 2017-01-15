@@ -11,7 +11,7 @@
  '(magit-commit-arguments nil)
  '(package-selected-packages
    (quote
-    (json-mode rpm-spec-mode flycheck go-mode which-key monokai-theme atom-dark-theme ## exec-path-from-shell enh-ruby-mode auto-complete use-package zenburn-theme powerline yaml-mode puppet-mode magit-gerrit magit))))
+    (ansible ansible-doc ansible-vault json-mode rpm-spec-mode flycheck go-mode which-key monokai-theme atom-dark-theme ## exec-path-from-shell enh-ruby-mode auto-complete use-package zenburn-theme powerline yaml-mode puppet-mode magit-gerrit magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
