@@ -1,4 +1,5 @@
 alias git_reset=func_git_reset
+alias git_bd=func_git_delete_branches
 
 function func_git_reset() {
   git fetch origin && git reset --hard $(func_git_get_tracking_branch)
@@ -52,4 +53,16 @@ function func_git_get_remote_branch() {
     fi
   fi
   return ${retval}
+}
+
+function func_git_delete_branches() {
+    for branch in $(git branch --merged|grep -vE '(develop|master|\*)'); do
+	git branch -d $branch
+    done
+}
+
+
+function func_git_get_remote_refname() {
+    local rem_branch=$(git for-each-ref --format='%(refname:short)' $(git symbolic-ref -q HEAD))
+    echo $rem_branch
 }

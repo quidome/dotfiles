@@ -19,10 +19,10 @@
 (let ((files (directory-files-and-attributes "~/.emacs.d/lisp" t)))
   (dolist (file files)
     (let ((filename (car file))
-          (dir (nth 1 file)))
+	  (dir (nth 1 file)))
       (when (and dir
-                 (not (string-suffix-p "." filename)))
-        (add-to-list 'load-path (car file))))))
+		 (not (string-suffix-p "." filename)))
+	(add-to-list 'load-path (car file))))))
 
 ;; Package providers
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -59,10 +59,10 @@
 ;; Settings
 ;;
 (setq auto-save-file-name-transforms
-          `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+	  `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-(load-theme 'leuven t)
+(load-theme 'monokai t)
 
 ;; cleanup whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -95,13 +95,13 @@
   :ensure t
   :config
   (setq ido-enable-prefix nil
-        ido-enable-flex-matching t
-        ido-create-new-buffer 'always
-        ido-use-filename-at-point 'guess
-        ido-max-prospects 10
-        ido-save-directory-list-file (expand-file-name "ido.hist" my-savefile-dir)
-        ido-default-file-method 'selected-window
-        ido-auto-merge-work-directories-length -1)
+	ido-enable-flex-matching t
+	ido-create-new-buffer 'always
+	ido-use-filename-at-point 'guess
+	ido-max-prospects 10
+	ido-save-directory-list-file (expand-file-name "ido.hist" my-savefile-dir)
+	ido-default-file-method 'selected-window
+	ido-auto-merge-work-directories-length -1)
   (ido-mode +1))
 
 (use-package magit-gerrit)
