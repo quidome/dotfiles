@@ -1,2 +1,4 @@
 .*.un~
 setup/Gemfile.lock
+emacs.d/elpa/
+emacs.d/ido.last
