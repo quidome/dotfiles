@@ -2,3 +2,4 @@ termcolor
 markdown
 pygments
 PyYAML
+neovim
