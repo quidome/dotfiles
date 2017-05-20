@@ -168,7 +168,7 @@ new_window pixel 1
 # font for window titles. ISO 10646 = Unicode
 #font "-xos4-terminus-medium-r-*-*-12-*-*-*-*-*-*-*"
 #font "pango:Monospace 10"
-font "pango:Meslo LG S for Powerline 9"
+font "pango:Meslo LG S for Powerline 12"
 
 # class                 border  backgr. text    indicator
 client.focused          #303030 #686868 #ffffff #2e9ef4

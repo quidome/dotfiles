@@ -62,7 +62,6 @@
 	  `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
-(load-theme 'monokai t)
 
 ;; cleanup whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
