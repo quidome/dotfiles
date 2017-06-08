@@ -14,7 +14,7 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
-    font = Monospace 12
+    font = Inconsolata 11
     scrollback_lines = 5000
     scrollbar_position = hidden
     show_titlebar = False

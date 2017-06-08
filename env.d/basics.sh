@@ -1,6 +1,6 @@
 # editor
 export ALTERNATE_EDITOR=""
-export EDITOR=vim
+export EDITOR='emacsclient -t'
 
 alias delkey=func_ssh_delete_key
 
