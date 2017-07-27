@@ -4,4 +4,4 @@
 export GOPATH=${HOME}/go
 [[ $OSTYPE == darwin* ]] && export GOROOT=/usr/local/opt/go/libexec
 
-export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+export PATH=${GOROOT}/bin:${GOPATH}/bin:${PATH}

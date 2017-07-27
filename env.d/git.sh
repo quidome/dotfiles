@@ -1,5 +1,6 @@
 alias git_reset=func_git_reset
 alias git_bd=func_git_delete_branches
+alias gsp='git stash; git pull; git stash pop'
 
 function func_git_reset() {
   git fetch origin && git reset --hard $(func_git_get_tracking_branch)
@@ -65,4 +66,28 @@ function func_git_delete_branches() {
 function func_git_get_remote_refname() {
     local rem_branch=$(git for-each-ref --format='%(refname:short)' $(git symbolic-ref -q HEAD))
     echo $rem_branch
+}
+
+
+function func_git_grep_recursive() {
+    if [ $# -eq 0 ]
+    then
+	echo "No arguments supplied"
+    else
+	search=${1}
+	if [ -z "$2" ]
+	then
+	    spath=.
+	else
+	    spath=${2}
+	fi
+
+	for repo in $(find ${spath} -type d -name .git) ; do
+	    output="$(git -C ${repo%/*} --no-pager grep ${search})"
+	    if [ $? -eq 0 ]; then
+		echo \#\#\#\#\#\#\#\#\#\# ${repo%/*}
+		echo ${output}
+	    fi
+	done
+    fi
 }

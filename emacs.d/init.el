@@ -81,6 +81,7 @@
 (require 'init-magit)
 (require 'init-flycheck)
 (require 'init-powerline)
+(require 'init-gometalinter)
 ;; (require 'init-whitespace)
 
 (use-package exec-path-from-shell

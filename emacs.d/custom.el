@@ -47,7 +47,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (powershell ansible ansible-doc ansible-vault json-mode rpm-spec-mode flycheck go-mode which-key monokai-theme ## exec-path-from-shell enh-ruby-mode auto-complete use-package powerline yaml-mode puppet-mode magit-gerrit magit)))
+    (flycheck-gometalinter powershell ansible ansible-doc ansible-vault json-mode rpm-spec-mode flycheck go-mode which-key monokai-theme ## exec-path-from-shell enh-ruby-mode auto-complete use-package powerline yaml-mode puppet-mode magit-gerrit magit)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
