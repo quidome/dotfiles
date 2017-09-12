@@ -4,5 +4,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # uncomment following lines to load a virtualenv when opening a shell
 if (tty -s); then
-  workon py3_default
+  workon py3
 fi
