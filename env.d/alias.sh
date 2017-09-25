@@ -2,12 +2,6 @@
 [[ $OSTYPE == darwin* ]] || alias ls='ls --color=auto'
 alias ll='ls -la'
 
-# Sublime
-alias s=subl
-
-# i2cssh profile
-#alias i2cssh="i2cssh -p light"
-
 alias e='emacsclient -t'
 
 # Atom editor

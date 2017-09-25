@@ -75,7 +75,7 @@
       (cons '("\.md" . markdown-mode) auto-mode-alist))
 
 ;; Disable scrollbar
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
 
 ;; Include config files
 (require 'init-magit)
