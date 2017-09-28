@@ -131,7 +131,8 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 " summerfruit is a colorscheme for light backgrounds
 " use solarized for dark backgrounds
 try
-  colorscheme summerfruit256
+"  colorscheme summerfruit256
+  colorscheme solarized
 catch
 endtry
 
