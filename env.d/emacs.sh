@@ -1,4 +1,9 @@
 # My emacs env settings
+#
+# When running dmg installed version from https://emacsformacosx.com/
+# remember to create some symlinks in /usr/local/bin
+#
+# ln -sf /Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/* /usr/local/bin
 
 # settings
 export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal

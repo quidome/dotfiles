@@ -2,6 +2,9 @@
 export ALTERNATE_EDITOR=""
 export EDITOR='emacsclient -t'
 
+# make qt stuff work
+export PATH="/usr/local/opt/qt/bin:$PATH"
+
 alias delkey=func_ssh_delete_key
 
 function func_ssh_delete_key() {
