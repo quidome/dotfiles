@@ -7,7 +7,6 @@
 ;; don't load packages before init is completed
 (setq package-enable-at-startup nil)	; don't activate packages before init is read
 (require 'package)
-(package-initialize)
 
 
 ;; package providers

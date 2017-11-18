@@ -37,4 +37,3 @@
 (tool-bar-mode -1) 
 
 ;;; init.el ends here
-(put 'upcase-region 'disabled nil)
