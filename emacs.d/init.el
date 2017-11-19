@@ -59,6 +59,8 @@
 ;; my magit config, with some gerrit settings
 (require 'init-magit)
 
+;; flycheck
+(require 'init-flycheck)
 
 ;; have nice powerline thingy
 (use-package powerline
