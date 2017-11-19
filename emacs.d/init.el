@@ -13,33 +13,52 @@
 (package-initialize)
 
 ;; set some locations
-(setq my-lisp-dir (expand-file-name "lisp" user-emacs-directory))
+(setq
+ my-lisp-dir (expand-file-name "lisp" user-emacs-directory)
+ custom-file (expand-file-name "custom.el" user-emacs-directory)
+ )
 
 ;; add my lisp to load path
 (add-to-list 'load-path my-lisp-dir)
 
 ;; Keep custom config out of init.el
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq )
 (load custom-file 'noerror)
 
 ;; start emacs server
 (load "server")
 (unless (server-running-p) (server-start))
 
-;; init and configure package related stuff
+;; remove trailing whitespace before we save stuff
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+;; load additional elisp files
 (require 'init-packages)
 
-;; simple configuration, possibly OS related
+
+;; import variables from environment
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (push "HISTFILE" exec-path-from-shell-variables)
+  (push "GERRIT_SSH_CREDS" exec-path-from-shell-variables)
+  (setq exec-path-from-shell-check-startup-files nil)
+  (exec-path-from-shell-initialize))
+
+
+;; perform app settings, possibly based on OS
+;; sets: osx, linux
 (require 'os-tweaks)
 
-;; keeping the filesystem clean
+
+;; deal with all weird emacs files, don't spread
+;; them all over the system
 (require 'init-housekeeping)
 
-;; load my magit config
-(require 'init-magit)
 
-;; store all non-complex package loading here
-;; move that stuff to own files if it gets too messy
+;; my magit config, with some gerrit settings
+(require 'init-magit)
 
 
 ;; have nice powerline thingy
@@ -49,13 +68,5 @@
   (powerline-default-theme))
 
 
-;; import shell variables
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (push "HISTFILE" exec-path-from-shell-variables)
-  (setq exec-path-from-shell-check-startup-files nil)
-  (exec-path-from-shell-initialize))
-
-
+(provide 'init)
 ;;; init.el ends here

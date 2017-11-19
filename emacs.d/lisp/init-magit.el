@@ -13,13 +13,11 @@
   ;; specifying upstream
   (setq magit-branch-read-upstream-first nil)
 
-
   (use-package magit-gerrit
-    :init
+    :config
     (when (getenv "GERRIT_SSH_CREDS")
-      (setq-default magit-gerrit-ssh-creds (getenv "GERRIT_SSH_CREDS"))
-      )
-    )
+      (setq-default magit-gerrit-ssh-creds (getenv "GERRIT_SSH_CREDS")))
+  )
 )
 
 
