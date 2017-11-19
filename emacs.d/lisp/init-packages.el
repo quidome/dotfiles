@@ -19,6 +19,7 @@
 (setq elpa-packages '(
 		     ansible
 		     flycheck
+		     flycheck-pycheckers
 		     gitignore-mode
 		     go-mode
 		     leuven-theme
