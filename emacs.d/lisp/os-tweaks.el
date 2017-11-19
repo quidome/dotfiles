@@ -1,5 +1,5 @@
 ;; os-tweaks.el --- some generic configuration
-;; including os related stuff
+;-*-Emacs-Lisp-*-
 
 ;;; Commentary:
 

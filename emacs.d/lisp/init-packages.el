@@ -1,4 +1,5 @@
 ;; init-packages.el --- packages init and configuration
+;-*-Emacs-Lisp-*-
 
 ;;; Commentary:
 

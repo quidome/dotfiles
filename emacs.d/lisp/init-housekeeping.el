@@ -1,4 +1,5 @@
 ;; init-housekeeping.el --- Powerline configuration
+;-*-Emacs-Lisp-*-
 
 ;;; Commentary:
 
