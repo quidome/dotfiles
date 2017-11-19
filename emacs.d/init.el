@@ -35,6 +35,9 @@
 ;; keeping the filesystem clean
 (require 'init-housekeeping)
 
+;; load my magit config
+(require 'init-magit)
+
 ;; store all non-complex package loading here
 ;; move that stuff to own files if it gets too messy
 
