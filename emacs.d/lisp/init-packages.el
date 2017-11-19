@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; don't load packages before init is completed
-(setq package-enable-at-startup nil)	; don't activate packages before init is read
+(setq package-enable-at-startup nil)
 (require 'package)
 
 
@@ -30,6 +30,7 @@
 		     puppet-mode
 		     pyenv-mode
 		     rubocop
+		     use-package
 		     yaml-mode
 		     ))
 
@@ -73,6 +74,14 @@
     (package-list-packages t)
     (package-menu-mark-upgrades)
     (package-menu-execute t)))
+
+;; install packages
+(install-packages)
+
+;; very package related so I put this here
+(eval-when-compile
+  (require 'use-package))
+
 
 (provide 'init-packages)
 ;;; init-packages.el ends here
