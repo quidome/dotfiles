@@ -12,6 +12,10 @@
 ;; if we remove it, don't remove this line
 (package-initialize)
 
+;; tweak some gui settings
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+
 ;; set some locations
 (setq my-lisp-dir (expand-file-name "lisp" user-emacs-directory))
 
