@@ -22,7 +22,6 @@
 (add-to-list 'load-path my-lisp-dir)
 
 ;; Keep custom config out of init.el
-(setq )
 (load custom-file 'noerror)
 
 ;; start emacs server
