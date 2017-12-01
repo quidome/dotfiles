@@ -22,7 +22,7 @@
 		     flycheck-pycheckers
 		     gitignore-mode
 		     go-mode
-		     leuven-theme
+		     ivy
 		     magit
 		     magit-gerrit
 		     magit-popup
@@ -38,7 +38,7 @@
 
 
 (defun install-packages ()
-  "Install packages if not already installed"
+  "Install packages if not already installed."
   (interactive)
 
   (when (not (packages-installed? elpa-packages))

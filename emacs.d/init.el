@@ -12,6 +12,10 @@
 ;; if we remove it, don't remove this line
 (package-initialize)
 
+;; variables
+(defvar
+  my-lisp-dir)
+
 ;; set some locations
 (setq
  my-lisp-dir (expand-file-name "lisp" user-emacs-directory)
@@ -31,6 +35,22 @@
 ;; remove trailing whitespace before we save stuff
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; generic emacs settings
+;; Disable the splash screen (to enable it agin, replace the t with 0)
+(setq inhibit-splash-screen t)
+
+;; Enable transient mark mode
+(transient-mark-mode 1)
+
+;;My first function to have list-buffers (buffer menu)
+;; be focused when calling it
+(defun buffer-list-moveto ()
+  "Open buffer list and jump to that window."
+  (interactive)
+  (list-buffers)
+  (other-window 1 nil)
+  )
+(global-set-key (kbd "C-x C-b") 'buffer-list-moveto)
 
 ;; load additional elisp files
 (require 'init-packages)
@@ -50,6 +70,8 @@
 ;; sets: osx, linux
 (require 'os-tweaks)
 
+;; ivy stuff
+(ivy-mode 1)
 
 ;; deal with all weird emacs files, don't spread
 ;; them all over the system
@@ -68,6 +90,15 @@
   :config
   (powerline-default-theme))
 
+;; enable org mode
+(require 'org)
 
-(provide 'init)
+;; collection of smaller stuff like keybindings
+;;window selection
+(global-set-key [M-left] 'windmove-left)          ; move to left window
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to lower window
+
+
 ;;; init.el ends here

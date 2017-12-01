@@ -8,9 +8,11 @@
 
 ;;
 (defun osx ()
+  "Easy function to check if OS is OSX."
   (eq system-type 'darwin))
 
 (defun linux ()
+  "Easy function to check if OS is linux."
   (eq system-type 'gnu/linux))
 
 ;; tweak some gui settings
