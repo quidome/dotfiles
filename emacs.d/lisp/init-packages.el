@@ -17,24 +17,27 @@
 
 ;; package list
 (setq elpa-packages '(
-		     ansible
-		     flycheck
-		     flycheck-pycheckers
-		     gitignore-mode
-		     go-mode
-		     ivy
-		     magit
-		     magit-gerrit
-		     magit-popup
-		     markdown-mode
-		     org
-		     powerline
-		     puppet-mode
-		     pyenv-mode
-		     rubocop
-		     use-package
-		     yaml-mode
-		     ))
+		      ansible
+		      docker
+		      dockerfile-mode
+		      flycheck
+		      flycheck-pycheckers
+		      gitignore-mode
+		      go-mode
+		      ivy
+		      magit
+		      magit-gerrit
+		      magit-popup
+		      markdown-mode
+		      org
+		      powerline
+		      puppet-mode
+		      pyenv-mode
+		      rubocop
+		      rspec-mode
+		      use-package
+		      yaml-mode
+		      ))
 
 
 (defun install-packages ()
