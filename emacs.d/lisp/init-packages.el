@@ -33,8 +33,8 @@
 		      powerline
 		      puppet-mode
 		      pyenv-mode
-		      rubocop
 		      rspec-mode
+		      rubocop
 		      use-package
 		      yaml-mode
 		      ))
@@ -51,6 +51,7 @@
     ))
 
 (defun packages-installed? (package-list)
+  "Check if packages in PACKAGE-LIST have been installed."
   (cond
    ((null package-list) t)
    (t
@@ -60,21 +61,24 @@
     )))
 
 (defun install-package-list (package-list)
+  "Install packages in PACKAGE-LIST."
   (when package-list
     (install-package (car package-list))
     (install-package-list (cdr package-list))
     ))
 
 (defun install-package (package)
+  "Install PACKAGE if not already installed."
   (when (not (package-installed? package))
     (package-install package)))
 
 (defun package-installed? (package)
+  "Check if PACKAGE has been installed."
   (require package nil t))
 
 
 (defun update-packages ()
-  "Update all installed packages"
+  "Update all installed packages."
   (save-window-excursion
     (package-list-packages t)
     (package-menu-mark-upgrades)

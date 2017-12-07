@@ -20,7 +20,9 @@
 (tool-bar-mode -1)
 
 (when (linux)
-  (menu-bar-mode -1))
+  (menu-bar-mode -1)
+  (load-theme 'monokai)
+  )
 
 (provide 'os-tweaks)
 ;;; os-tweaks.el ends here
