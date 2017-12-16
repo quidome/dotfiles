@@ -132,15 +132,10 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 " use solarized for dark backgrounds
 try
 "  colorscheme summerfruit256
-<<<<<<< Updated upstream
-  colorscheme default
-catch
-=======
 "  colorscheme solarized
    colorscheme default
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
->>>>>>> Stashed changes
 endtry
 
 " Make gutter background color match that of line numbers
