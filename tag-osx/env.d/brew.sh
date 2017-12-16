@@ -1,5 +1,5 @@
 if [[ $OSTYPE == darwin* ]]; then
-  
+
   # HOMEBREW_GITHUB_API_TOKEN should be set
   [ ${HOMEBREW_GITHUB_API_TOKEN:+1} ] || echo "HOMEBREW_GITHUB_API_TOKEN is unset"
 
@@ -13,6 +13,7 @@ function brewyouthemother() {
 
   $BREW_BIN update
   $BREW_BIN upgrade
+  $BREW_BIN cask upgrade
 
   $BREW_BIN cleanup
   $BREW_BIN cask cleanup

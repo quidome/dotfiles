@@ -61,8 +61,8 @@ let g:airline_symbols.space = "\ua0"
 
 "
 Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme='solarized'
-let g:airline_theme='sol'
+let g:airline_theme='dark_minimal'
+"let g:airline_theme='sol'
 
 " Solarized Colorscheme for Vim
 "Plug 'altercation/vim-colors-solarized'
@@ -132,8 +132,15 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 " use solarized for dark backgrounds
 try
 "  colorscheme summerfruit256
+<<<<<<< Updated upstream
   colorscheme default
 catch
+=======
+"  colorscheme solarized
+   colorscheme default
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+>>>>>>> Stashed changes
 endtry
 
 " Make gutter background color match that of line numbers
