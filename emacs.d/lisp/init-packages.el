@@ -30,6 +30,7 @@
 		      magit-popup
 		      markdown-mode
 		      org
+		      pomidor
 		      powerline
 		      puppet-mode
 		      pyenv-mode

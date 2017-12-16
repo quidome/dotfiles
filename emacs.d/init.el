@@ -42,6 +42,11 @@
 ;; Enable transient mark mode
 (transient-mark-mode 1)
 
+;;Display date and time
+(setq display-time-day-and-date t)
+(setq display-time-24hr-format t)
+(display-time)
+
 ;;My first function to have list-buffers (buffer menu)
 ;; be focused when calling it
 (defun buffer-list-moveto ()
@@ -77,7 +82,6 @@
 ;; them all over the system
 (require 'init-housekeeping)
 
-
 ;; my magit config, with some gerrit settings
 (require 'init-magit)
 
@@ -93,12 +97,6 @@
 ;; enable org mode
 (require 'org)
 
-;; collection of smaller stuff like keybindings
-;;window selection
-(global-set-key [M-left] 'windmove-left)          ; move to left window
-(global-set-key [M-right] 'windmove-right)        ; move to right window
-(global-set-key [M-up] 'windmove-up)              ; move to upper window
-(global-set-key [M-down] 'windmove-down)          ; move to lower window
-
+(windmove-default-keybindings)
 
 ;;; init.el ends here
