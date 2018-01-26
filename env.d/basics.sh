@@ -17,3 +17,6 @@ function func_ssh_delete_key() {
     sed -i "${line_number}d" $HOME/.ssh/known_hosts
   fi
 }
+
+# markdown colors
+export MDV_THEME=785.3229
