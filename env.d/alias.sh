@@ -1,6 +1,6 @@
 # Generic stuff
-[[ $OSTYPE == darwin* ]] || alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ll='exa -l'
+alias lg='ll --git'
 
 alias e='emacsclient -t'
 
