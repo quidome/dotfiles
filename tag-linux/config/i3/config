@@ -215,8 +215,17 @@ bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '3%+'"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '2%-'"
 
 bar {
+#	font pango:Inconsolata 10,Font Awesome 5 Free, Font Awesome 5 Brands
+	font pango:Inconsolata 10
+	tray_output none
 	position top
-	status_command bumblebee-status -m nic disk:root memory battery date time pasink -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t gruvbox-powerline
+	status_command bumblebee-status -m nic cpu memory zpool battery pacman date time \
+		       	-p root.path=/ \
+			   memory.format="{percent:05.02f}%" \
+			   time.format="%H:%M CW %V" \
+			   date.format="%a, %b %d %Y" \
+			   zpool.format="{percentuse}% of {size}" zpool.showio=false \
+			-t gruvbox-powerline
 }
 
 
