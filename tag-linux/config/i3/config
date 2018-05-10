@@ -219,13 +219,14 @@ bar {
 	font pango:Inconsolata 10
 	tray_output none
 	position top
-	status_command bumblebee-status -m nic cpu memory zpool battery pacman date time \
-		       	-p root.path=/ \
-			   memory.format="{percent:05.02f}%" \
-			   time.format="%H:%M CW %V" \
-			   date.format="%a, %b %d %Y" \
-			   zpool.format="{percentuse}% of {size}" zpool.showio=false \
-			-t gruvbox-powerline
+	status_command i3status
+	# status_command bumblebee-status -m nic cpu memory zpool battery pacman date time \
+	# 	       	-p root.path=/ \
+	# 		   memory.format="{percent:05.02f}%" \
+	# 		   time.format="%H:%M CW %V" \
+	# 		   date.format="%a, %b %d %Y" \
+	# 		   zpool.format="{percentuse}% of {size}" zpool.showio=false \
+	# 		-t gruvbox-powerline
 }
 
 
