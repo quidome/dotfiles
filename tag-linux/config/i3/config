@@ -201,10 +201,11 @@ for_window [class="^Firefox$" title="^Library$"] border normal
 
 # assign the following to specific workspaces
 assign [window_role="^browser$"] $ws2
-assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
-assign [class="^(Thunar|Zathura)$"] $ws4
-assign [title="^Signal$"] $ws4
 assign [class="^([Ee]macs)$"] $ws3
+assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
+assign [class="^(Riot)$"] $ws4
+assign [title="^Signal$"] $ws4
+assign [class="^(Thunar|Zathura)$"] $ws5
 
 # take screenshot with PrtSc key
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
@@ -214,19 +215,12 @@ bindsym mod1+Print exec --no-startup-id import -window "$(xdotool getwindowfocus
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '3%+'"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '2%-'"
 
+
 bar {
-#	font pango:Inconsolata 10,Font Awesome 5 Free, Font Awesome 5 Brands
-	font pango:Inconsolata 10
-	tray_output none
-	position top
-	status_command i3status
-	# status_command bumblebee-status -m nic cpu memory zpool battery pacman date time \
-	# 	       	-p root.path=/ \
-	# 		   memory.format="{percent:05.02f}%" \
-	# 		   time.format="%H:%M CW %V" \
-	# 		   date.format="%a, %b %d %Y" \
-	# 		   zpool.format="{percentuse}% of {size}" zpool.showio=false \
-	# 		-t gruvbox-powerline
+    output eDP-1
+    font pango:Inconsolata 14
+    position top
+    status_command i3status
 }
 
 
