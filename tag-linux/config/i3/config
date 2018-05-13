@@ -223,6 +223,12 @@ bar {
     status_command i3status
 }
 
+bar {
+    output HDMI-3
+    position top
+    status_command i3status
+}
+
 
 #exec --no-startup-id nm-applet
 # exec --no-startup-id mpd

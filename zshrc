@@ -105,7 +105,7 @@ zstyle -s ':completion:*:hosts' hosts _ssh_config
 zstyle ':completion:*:hosts' hosts $_ssh_config
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/qmeijer/Applications/gcloud/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/qmeijer/Applications/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/qmeijer/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/qmeijer/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/qmeijer/Applications/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/qmeijer/Applications/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/qmeijer/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/qmeijer/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

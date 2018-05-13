@@ -1,6 +1,13 @@
-#VIRTUALENVWRAPPER_PYTHON=$(which python2)
+# set place to store virtualenvs
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+
+
+if [[ $OSTYPE == darwin* ]] ; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [[ $OSTYPE == linux* ]] ; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+
 
 # gpip function allows to pip install in global config
 gpip2(){

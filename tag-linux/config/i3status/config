@@ -42,7 +42,7 @@ path_exists VPN {
 
 battery all {
         format = "%status %percentage %remaining"
-	low_threshold = 70
+        low_threshold = 15
 }
 
 tztime local {
