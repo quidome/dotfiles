@@ -19,7 +19,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Inconsolata 10
+font pango:Inconsolata 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -44,7 +44,7 @@ mode "$control" {
     bindsym p exec systemctl poweroff
     bindsym r exec systemctl reboot
     bindsym k exec i3-msg exit
-    bindsym l mode "default"; exec xautolock -locknow
+    bindsym l mode "default"; exec i3lock -c 0f0f0f
     bindsym s exec systemctl suspend
     bindsym Escape mode "default"
 }
@@ -211,20 +211,30 @@ assign [class="^(Thunar|Zathura)$"] $ws5
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
 bindsym mod1+Print exec --no-startup-id import -window "$(xdotool getwindowfocus -f)" ~/pictures/screenshots/snapwin-$(date +%F_%H%M%S_%N).png
 
+# laptop screen brightness
+bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+"
+
+# keyboard led brightness
+bindsym XF86KbdBrightnessDown exec "brightnessctl -d smc::kbd_backlight s 5%-"
+bindsym XF86KbdBrightnessUp exec "brightnessctl -d smc::kbd_backlight s 5%+"
+
 # volume control
-bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '3%+'"
-bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '2%-'"
+bindsym XF86AudioRaiseVolume exec "pamixer -i 3"
+bindsym XF86AudioLowerVolume exec "pamixer -d 2"
+bindsym XF86AudioMute exec "pamixer -t"
+
+
 
 
 bar {
-    output eDP-1
+    output iieDP-1
     font pango:Inconsolata 14
     position top
     status_command i3status
 }
 
 bar {
-    output HDMI-3
     position top
     status_command i3status
 }
@@ -236,8 +246,8 @@ bar {
 # exec --no-startup-id polybar Bar
 exec --no-startup-id killall notify-osd
 # exec --no-startup-id dunst
-exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy\ -g"
-exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
+exec --no-startup-id xautolock -time 2 -locker "i3lock -c 0f0f0f"
+# exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
 # exec --no-startup-id redshift -l 53.558913:10.214877 -t 6500:2500
 # exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
 # exec --no-startup-id setxkbmap -option caps:swapescape
