@@ -25,8 +25,8 @@ order += "tztime local"
 order += "volume master"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = " (%quality at %essid) %ip"
+        format_down = " down"
 }
 
 ethernet _first_ {
@@ -42,7 +42,12 @@ path_exists VPN {
 
 battery all {
         format = "%status %percentage %remaining"
-        low_threshold = 15
+	status_chr = ""
+	status_bat = ""
+	status_unk = ""
+	status_full = ""
+        low_threshold = 10
+	threshold_type = percentage
 }
 
 tztime local {
@@ -54,11 +59,11 @@ load {
 }
 
 disk "/" {
-        format = "%avail"
+        format = " %avail"
 }
 
 volume master {
-       format = "VOL %volume"
-       format_muted = "VOL muted (%volume)"
+       format = " %volume"
+       format_muted = " (%volume)"
        device = "pulse:0"
 }
