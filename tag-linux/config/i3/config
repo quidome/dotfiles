@@ -35,6 +35,7 @@ bindsym $mod+Shift+q kill
 # show program launchers; all (d) or desktop (p)
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec rofi -show drun
+bindsym $mod+Shift+b exec browser
 
 # power menu
 set $control power
@@ -44,8 +45,8 @@ mode "$control" {
     bindsym p exec systemctl poweroff
     bindsym r exec systemctl reboot
     bindsym k exec i3-msg exit
-    bindsym l mode "default"; exec i3lock -c 0f0f0f
-    bindsym s exec systemctl suspend
+    bindsym l mode "default"; exec xset s activate
+    bindsym s mode "default"; exec systemctl suspend
     bindsym Escape mode "default"
 }
 
@@ -231,6 +232,8 @@ bindsym XF86AudioRaiseVolume exec "pamixer -i 3"
 bindsym XF86AudioLowerVolume exec "pamixer -d 2"
 bindsym XF86AudioMute exec "pamixer -t"
 
+# more screen lock combox
+bindsym $mod+XF86Eject exec "i3lock -c 0f0f0f"
 
 
 
@@ -246,14 +249,14 @@ bar {
     status_command i3status
 }
 
-
+exec --no-startup-id xss-lock -- /bin/i3lock-fancy
 #exec --no-startup-id nm-applet
 # exec --no-startup-id mpd
 #exec --no-startup-id urxvtd -q -o -f
 # exec --no-startup-id polybar Bar
-exec --no-startup-id killall notify-osd
+# exec --no-startup-id killall notify-osd
 # exec --no-startup-id dunst
-exec --no-startup-id xautolock -time 2 -locker "i3lock -c 0f0f0f"
+# exec --no-startup-id xautolock -time 2 -locker "i3lock -c 0f0f0f"
 # exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
 # exec --no-startup-id redshift -l 53.558913:10.214877 -t 6500:2500
 # exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
