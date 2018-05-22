@@ -11,7 +11,6 @@
 
 # perform startup stuff first
 exec_always --no-startup-id ~/.fehbg
-#exec urxvt -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
 
 # set modifier key
 # Mod4 - windows key
@@ -249,16 +248,5 @@ bar {
     status_command i3status
 }
 
-exec --no-startup-id xss-lock -- /bin/i3lock-fancy
-#exec --no-startup-id nm-applet
-# exec --no-startup-id mpd
-#exec --no-startup-id urxvtd -q -o -f
-# exec --no-startup-id polybar Bar
-# exec --no-startup-id killall notify-osd
-# exec --no-startup-id dunst
-# exec --no-startup-id xautolock -time 2 -locker "i3lock -c 0f0f0f"
-# exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
-# exec --no-startup-id redshift -l 53.558913:10.214877 -t 6500:2500
-# exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
-# exec --no-startup-id setxkbmap -option caps:swapescape
-# exec_always --no-startup-id compton -f
+# startup of applications
+exec --no-startup-id xss-lock -- /bin/i3lock -c 263238 -n

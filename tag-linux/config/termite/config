@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Source Code Pro Medium 10
+font = Source Code Pro Light 10
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -31,36 +31,56 @@ filter_unmatched_urls = true
 # emit escape sequences for extra modified keys
 #modify_other_keys = false
 
+
 [colors]
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-foreground = #dcdccc
-foreground_bold = #ffffff
-background = #3f3f3f
+# Base16 Material
+# Author: Nate Peterson
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+foreground          = #eeffff
+foreground_bold     = #eeffff
+cursor              = #eeffff
+cursor_foreground   = #263238
+background          = rgba(i38, 50, 56, 1)
 
-# if unset, will reverse foreground and background
-highlight = #2f2f2f
+# 16 color space
 
-# colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
+# Black, Gray, Silver, White
+color0  = #263238
+color8  = #546e7a
+color7  = #eeffff
 color15 = #ffffff
+
+# Red
+color1  = #f07178
+color9  = #f07178
+
+# Green
+color2  = #c3e88d
+color10 = #c3e88d
+
+# Yellow
+color3  = #ffcb6b
+color11 = #ffcb6b
+
+# Blue
+color4  = #82aaff
+color12 = #82aaff
+
+# Purple
+color5  = #c792ea
+color13 = #c792ea
+
+# Teal
+color6  = #89ddff
+color14 = #89ddff
+
+# Extra colors
+color16 = #f78c6c
+color17 = #ff5370
+color18 = #2e3c43
+color19 = #314549
+color20 = #b2ccd6
+color21 = #eeffff
 
 [hints]
 #font = Monospace 12
