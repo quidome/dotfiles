@@ -146,6 +146,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec i3-msg exit
 
+
+# scratchpad stuff
+bindsym $mod+Shift+BackSpace move scratchpad
+bindsym $mod+backslash scratchpad show
+
+# choose a class to show in scratchpad directly
+bindsym $mod+BackSpace [class="Termite"] scratchpad show
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode
