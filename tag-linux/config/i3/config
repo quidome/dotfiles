@@ -218,8 +218,8 @@ assign [title="^Signal$"] $ws4
 assign [class="^(Thunar|Zathura)$"] $ws5
 
 # take screenshot with PrtSc key
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
-bindsym mod1+Print exec --no-startup-id import -window "$(xdotool getwindowfocus -f)" ~/pictures/screenshots/snapwin-$(date +%F_%H%M%S_%N).png
+bindsym $mod+shift+s exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
+bindsym $mod+shift+w exec --no-startup-id import -window "$(xdotool getwindowfocus -f)" ~/pictures/screenshots/$(date +%F_%H%M%S_%N)_xdo.png
 
 # laptop screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
