@@ -211,13 +211,17 @@ for_window [class="^Firefox$" title="^Library$"] border normal
 
 # assign the following to specific workspaces
 assign [window_role="^browser$"] $ws2
+
+# move IDE's to workspace 3
 assign [class="^([Ee]macs)$"] $ws3
+assign [class="^jetbrains-idea$"] $ws3
+
+# move messengers to workspace 3
 assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
 assign [class="^(Riot)$"] $ws4
 assign [title="^Signal$"] $ws4
-assign [class="^(Thunar|Zathura)$"] $ws5
 
-# take screenshot with PrtSc key
+# take screenshots
 bindsym $mod+shift+s exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
 bindsym $mod+shift+w exec --no-startup-id import -window "$(xdotool getwindowfocus -f)" ~/pictures/screenshots/$(date +%F_%H%M%S_%N)_xdo.png
 
@@ -241,15 +245,6 @@ bindsym XF86AudioMute exec "pamixer -t"
 
 # more screen lock combox
 bindsym $mod+XF86Eject exec "i3lock -c 0f0f0f"
-
-
-
-bar {
-    output iieDP-1
-    font pango:Inconsolata 14
-    position top
-    status_command i3status
-}
 
 bar {
     position top
