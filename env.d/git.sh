@@ -2,6 +2,35 @@ alias git_reset=func_git_reset
 alias git_bd=func_git_delete_branches
 alias gsp='git stash; git pull; git stash pop'
 
+function git_check_changes() {
+    local search_path='.'
+    local repo_path git_result exit_code ahead changes
+
+    # set search_path if given
+    if [ -e $1 ]; then
+	search_path=$1
+    fi
+
+    # get status of all git repos found under search_path
+    for repo_path in $(find ${search_path} -name .git -type d|xargs dirname); do
+	git_result=$(git -C $repo_path status -sb --porcelain --untracked-files=no)
+	exit_code=$?
+
+	if [ ${exit_code} -eq 0 ]; then
+	    ahead=$(echo ${git_result} | head -1 | grep ahead | wc -l)
+	    changes=$(echo ${git_result} | tail -n +2 | wc -l)
+
+	    if [ ${ahead} -gt 0 ] || [ ${changes} -gt 0 ] ; then
+		echo -e "${repo_path}\n${git_result}\n"
+	    fi
+	else
+	    echo -e "Error occured:\n${git_result}"
+	fi
+
+    done
+}
+
+
 function func_git_reset() {
   git fetch origin && git reset --hard $(func_git_get_tracking_branch)
 }
