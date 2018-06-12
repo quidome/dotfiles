@@ -229,7 +229,7 @@ assign [window_role="^browser$"] $ws2
 
 # move IDE's to workspace 3
 assign [class="^([Ee]macs)$"] $ws3
-assign [class="^jetbrains-idea$"] $ws3
+# assign [class="^jetbrains-idea$"] $ws3
 
 # move messengers to workspace 3
 assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4

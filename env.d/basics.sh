@@ -3,8 +3,12 @@ export ALTERNATE_EDITOR=""
 export EDITOR='emacsclient -t'
 
 # make qt stuff work
-export PATH="/usr/local/opt/qt/bin:$PATH"
+#export PATH="/usr/local/opt/qt/bin:$PATH"
 
+# markdown colors
+export MDV_THEME=785.3229
+
+# aliases
 alias delkey=func_ssh_delete_key
 
 function func_ssh_delete_key() {
@@ -18,5 +22,9 @@ function func_ssh_delete_key() {
   fi
 }
 
-# markdown colors
-export MDV_THEME=785.3229
+
+function show() {
+    local search_term=$1
+
+    egrep --color "${search_term}|$"
+}
