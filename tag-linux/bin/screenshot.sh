@@ -5,7 +5,6 @@
 #   scrot
 #   import
 
-
 screenshot_path=${HOME}/pictures/screenshots
 screenshot_id=$(date +%F_%H%M%S_%N)
 
@@ -33,5 +32,3 @@ case "$1" in
 	exit 1
 	;;
 esac
-
-echo expect your file here: ${filename}
