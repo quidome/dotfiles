@@ -36,6 +36,10 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec rofi -show drun
 bindsym $mod+Shift+b exec browser
 
+# x/autorandr keybindings
+bindsym $mod+x exec autorandr -c
+bindsym $mod+Shift+x exec autorandr_menu
+
 # power menu
 set $control power
 bindsym $mod+Shift+e mode "$control"
@@ -237,8 +241,9 @@ assign [class="^(Riot)$"] $ws4
 assign [title="^Signal$"] $ws4
 
 # take screenshots
-bindsym $mod+shift+s exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
-bindsym $mod+shift+w exec --no-startup-id import -window "$(xdotool getwindowfocus -f)" ~/pictures/screenshots/$(date +%F_%H%M%S_%N)_xdo.png
+bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
+bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
+bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
 
 # laptop screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
