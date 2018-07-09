@@ -9,9 +9,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# perform startup stuff first
-exec_always --no-startup-id ~/.fehbg
-
 # set modifier key
 # Mod4 - windows key
 set $mod Mod4
@@ -272,4 +269,4 @@ bar {
 }
 
 # startup of applications
-exec --no-startup-id xss-lock -- /bin/i3lock -c 263238 -n
+# exec --no-startup-id xss-lock -- /bin/i3lock -c 263238 -n

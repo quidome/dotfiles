@@ -24,7 +24,7 @@ URxvt.keysym.C-Down:    perl:font-size:decrease
 
 ! }}}
 ! ----- color, fonts and cursor {{{
-#include "/home/quidome/.colors/invisibone"
+#include "/home/qmeijer/.colors/invisibone"
 ! For solarized colorscheme
 ! URxvt.intensityStyles:  false
 URxvt*font:                 xft:Meslo LG S for Powerline:regular:pixelsize=11

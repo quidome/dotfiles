@@ -1,3 +1,10 @@
+
+# autostart X
+if [[ -x /usr/bin/startx ]] && [[ $(tty) = /dev/tty1 ]] && [[ ! $UID = 0 ]]; then
+  startx
+  logout
+fi
+
 # Set fng Zsh, it'll source the following files in this order by default:
 #
 # /etc/zshenv (/etc/zsh/zshenv on arch)
