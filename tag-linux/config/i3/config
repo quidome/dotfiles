@@ -265,8 +265,6 @@ bindsym $mod+XF86Eject exec "i3lock -c 0f0f0f"
 
 bar {
     position top
+    font pango: Source Code Pro Medium 10
     status_command i3status
 }
-
-# startup of applications
-# exec --no-startup-id xss-lock -- /bin/i3lock -c 263238 -n
