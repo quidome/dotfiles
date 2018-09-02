@@ -32,6 +32,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec rofi -show drun
 bindsym $mod+Shift+b exec browser
+bindsym $mod+Shift+p exec $HOME/bin/rofipass
 
 # x/autorandr keybindings
 bindsym $mod+x exec autorandr -c
