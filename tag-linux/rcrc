@@ -1,3 +1,4 @@
 TAGS="linux"
 EXCLUDES="LICENSE README.md"
 DOTFILES_DIRS="$HOME/.dotfiles"
+UNDOTTED="bin"
