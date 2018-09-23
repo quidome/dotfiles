@@ -42,12 +42,13 @@ bindsym $mod+Shift+x exec autorandr_menu
 set $control power
 bindsym $mod+Shift+e mode "$control"
 
+set $Locker xset s activate && sleep 1
 mode "$control" {
-    bindsym p exec systemctl poweroff
-    bindsym r exec systemctl reboot
-    bindsym k exec i3-msg exit
-    bindsym l mode "default"; exec xset s activate
-    bindsym s mode "default"; exec systemctl suspend
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym k exec --no-startup-id i3-msg exit, mode "default"
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym Escape mode "default"
 }
 
@@ -226,17 +227,23 @@ for_window [class="^(MPlayer|mpv)$"] border normal
 for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" title="^Library$"] border normal
 
-# assign the following to specific workspaces
+# WS2: browsers
 assign [window_role="^browser$"] $ws2
 
-# move IDE's to workspace 3
+# WS3: emacs
 assign [class="^([Ee]macs)$"] $ws3
 # assign [class="^jetbrains-idea$"] $ws3
 
-# move messengers to workspace 3
+# WS4: messengers
 assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
 assign [class="^(Riot)$"] $ws4
 assign [title="^Signal$"] $ws4
+
+# WS5: intellij
+assign [class="^(jetbrains-idea)$"] $ws5
+
+# WS7: music stuff
+for_window [class="Spotify"] move to workspace $ws7
 
 # take screenshots
 bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
@@ -262,10 +269,14 @@ bindsym XF86AudioLowerVolume exec "pamixer -d 2"
 bindsym XF86AudioMute exec "pamixer -t"
 
 # more screen lock combox
-bindsym $mod+XF86Eject exec "i3lock -c 0f0f0f"
+bindsym $mod+XF86Eject exec --no-startup-id xset s activate
 
 bar {
     position top
-    font pango: Source Code Pro Medium 10
+    # font pango: Source Code Pro Medium 10
     status_command i3status
 }
+
+# startup applications
+exec --no-startup-id /bin/xss-lock -- /bin/i3lock -c 263238 -n &
+exec --no-startup-id feh --bg-fill '/home/qmeijer/pictures/wallpapers/Ju5PuBC-arch-linux-wallpaper.jpg'

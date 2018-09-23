@@ -105,6 +105,13 @@ if [ -d $HOME/.env.d ]; then
 fi
 # 1:end
 
+## Setup the CDPATH with interesting directories
+typeset -U path cdpath fpath
+cdpath=(
+    .
+    ${PUPPET_VAGRANT}
+)
+
 # Add .puppethosts to host completion
 # do this after .env inclusion to load config vars first
 zstyle -s ':completion:*:hosts' hosts _ssh_config
