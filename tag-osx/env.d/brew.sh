@@ -16,7 +16,6 @@ function brewyouthemother() {
   $BREW_BIN cask upgrade
 
   $BREW_BIN cleanup
-  $BREW_BIN cask cleanup
 
   $BREW_BIN doctor
   $BREW_BIN cask doctor
