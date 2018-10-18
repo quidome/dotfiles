@@ -1,6 +1,5 @@
 # editor
-export ALTERNATE_EDITOR=""
-export EDITOR='emacsclient -t'
+export EDITOR=vim
 
 # make qt stuff work
 #export PATH="/usr/local/opt/qt/bin:$PATH"

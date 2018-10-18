@@ -6,8 +6,8 @@
 # ln -sf /Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/* /usr/local/bin
 
 # settings
-export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
+#export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
+#export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
 
 # aliases
 alias e='emacsclient -t'
