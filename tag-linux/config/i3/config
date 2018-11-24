@@ -279,4 +279,4 @@ bar {
 
 # startup applications
 exec --no-startup-id /bin/xss-lock -- /bin/i3lock -c 263238 -n &
-exec --no-startup-id feh --bg-fill '/home/qmeijer/pictures/wallpapers/Ju5PuBC-arch-linux-wallpaper.jpg'
+exec --no-startup-id feh --bg-fill ~/pictures/wallpapers/Ju5PuBC-arch-linux-wallpaper.jpg
