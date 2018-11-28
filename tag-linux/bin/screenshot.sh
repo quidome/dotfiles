@@ -19,13 +19,13 @@ filename="${screenshot_path}/${screenshot_id}_${1}.png"
 
 case "$1" in
     win)
-	import -window "$(xdotool getwindowfocus -f)" $filename
+	import -window "$(xdotool getwindowfocus -f)" "$filename"
 	;;
     sel)
-	import $filename
+	import "$filename"
 	;;
     scrn)
-	scrot $filename
+	scrot "$filename"
 	;;
     *)
 	echo invalid
