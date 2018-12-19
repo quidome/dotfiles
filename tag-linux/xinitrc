@@ -5,5 +5,5 @@
 # basic X startup
 
 # start wm
-exec i3
+exec awesome
 #exec awesome

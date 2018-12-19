@@ -14,6 +14,9 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- battery widget
+local battery = require("battery")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -45,8 +48,9 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.wallpaper = awful.util.get_configuration_dir() .. "themes/arch-linux-wallpaper.png"
 
 -- This is used later as the default terminal and editor to run.
+-- terminal = "urxvtc"
 terminal = "termite"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 home = os.getenv("HOME")
@@ -123,6 +127,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+batterywidget = wibox.widget.textbox()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -223,6 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            batterywidget,
             s.mylayoutbox,
         },
     }
@@ -336,6 +342,10 @@ globalkeys = gears.table.join(
     -- Menubar
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --           {description = "show the menubar", group = "launcher"})
+
+    -- xrandr utils
+    awful.key({modkey, "Shift" }, "x", function() awful.util.spawn("autorandr -c") end),
+
     -- Brightness controls
     awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("brightnessctl s 5%-") end),
     awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn("brightnessctl s 5%+") end),
@@ -611,6 +621,16 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+
+-- {{ hooks
+batterywidget:set_text(batteryInfo("BAT0"))
+batterywidget_timer = timer({timeout = 30})
+batterywidget_timer:connect_signal("timeout", function()
+  batterywidget:set_text(batteryInfo("BAT0"))
+end)
+batterywidget_timer:start()
+-- }}
 
 -- {{{ autostart stuff
 awful.spawn.with_shell(awful.util.get_configuration_dir() .. "autorun.sh")

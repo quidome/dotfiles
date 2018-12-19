@@ -68,9 +68,10 @@ module-margin-right = 2
 ; font-2 = siji:pixelsize=10;1
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon Siji:pixelsize=10;1"
-font-3 = fontawesome:pixelsize=14
+; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-2 = "Wuncon Siji:pixelsize=10;1"
+; font-3 = fontawesome:pixelsize=14
+; font-4 = dejavusans:pixelsize=13
 
 modules-left = i3
 modules-center =
@@ -275,20 +276,29 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/vpn]
-type = internal/network
-interface = tun0
-interval = 3.0
+type = custom/script
+exec = echo vpn
+exec-if = pgrep -x openvpn
+interval = 5
+format-underline = #268bd2
+format-prefix = "🖧 "
+format-prefix-foreground = #5b
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = vpn%local_ip%
+; [module/vpn]
+; type = internal/network
+; interface = tun0
+; interval = 3.0
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname%
-;label-disconnected-foreground = ${colors.foreground-alt}
+; format-connected-underline = #55aa55
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = ${colors.foreground-alt}
+; label-connected = vpn%local_ip%
+
+; format-disconnected =
+; ;format-disconnected = <label-disconnected>
+; ;format-disconnected-underline = ${self.format-connected-underline}
+; ;label-disconnected = %ifname%
+; ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
