@@ -1,10 +1,10 @@
 #!/bin/bash
 # Ansible managed, do not edit directly
 
-menu=$($HOME/go/bin/gopass ls --flat | rofi -dmenu -p "gnupass")
+menu=$(gopass ls --flat | rofi -dmenu -p "gopass")
 
 if [[ $menu == \|* ]]; then
     eval echo \"$@\" $menu > /dev/null 2>&1 &
 else
-    eval pass -c $menu \"$@\" > /dev/null 2>&1 &
+    eval gopass -c $menu \"$@\" > /dev/null 2>&1 &
 fi

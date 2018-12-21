@@ -4,6 +4,10 @@
 #
 # basic X startup
 
+# Make sure this is before the 'exec' command or it won't be sourced.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
+
 # start wm
+# exec i3
 exec awesome
-#exec awesome
