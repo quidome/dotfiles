@@ -8,4 +8,4 @@ run () {
   fi
 }
 
-run /bin/xss-lock -- /bin/i3lock -c 263238 -n
+#run /bin/xss-lock -- /bin/i3lock -c 263238 -n
