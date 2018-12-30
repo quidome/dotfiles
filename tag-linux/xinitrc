@@ -37,15 +37,16 @@ xset fp rehash
 xset b off
 
 # set the cursorq
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name left_ptr &
 
 # set screen locker
-#/bin/xss-lock -- /bin/i3lock -c 263238 -n &
+/bin/xss-lock -- /bin/i3lock -c 263238 -n &
 
 # start the window manager
 session=${1:-awesome}
 
 case $session in
+    awesome|awesomewm ) exec awesome;;
     i3|i3wm           ) exec i3;;
     kde               ) exec startkde;;
     xfce|xfce4        ) exec startxfce4;;
