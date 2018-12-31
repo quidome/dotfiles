@@ -1,13 +1,11 @@
+# add path to local install python apps
+[ -d ${HOME}/.local/bin ] && export PATH=$PATH:${HOME}/.local/bin
+
 # set place to store virtualenvs
 export WORKON_HOME=~/.virtualenvs
 
-
-if [[ $OSTYPE == darwin* ]] ; then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [[ $OSTYPE == linux* ]] ; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
-
+[ $OS = osx ] && . /usr/local/bin/virtualenvwrapper.sh
+[ $OS = linux ] && . /usr/bin/virtualenvwrapper.sh
 
 # gpip function allows to pip install in global config
 gpip2(){

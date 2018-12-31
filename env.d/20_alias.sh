@@ -2,7 +2,6 @@
 alias ll='exa -l'
 alias lg='ll --git'
 
-alias e='emacsclient -t'
 
 # Atom editor
 alias a=atom
@@ -14,6 +13,8 @@ alias y=yaourt
 # cssh
 alias cssh='i2cssh -p ${ITERM_PROFILE} -b'
 
-# clipboard stuff
-alias cbcopy='xclip -selection clipboard'
-alias cbpaste='cbcopy -o'
+# linux clipboard stuff
+if [ $OS = linux ]; then
+    alias cbcopy='xclip -selection clipboard'
+    alias cbpaste='cbcopy -o'
+fi

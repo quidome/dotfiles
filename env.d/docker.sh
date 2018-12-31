@@ -1,4 +1,4 @@
-function fedora()
+fedora()
 {
     local container_name=my_fedora
     local image_name='fedora'
@@ -6,7 +6,7 @@ function fedora()
 }
 
 
-function debian()
+debian()
 {
     local container_name=my_debian
     local image_name=debian
@@ -14,7 +14,7 @@ function debian()
 }
 
 
-function arch() {
+arch() {
     local container_name=my_arch
     local image_name='archlinux/base:latest'
 
@@ -22,7 +22,7 @@ function arch() {
 }
 
 
-function func_rundocker() {
+func_rundocker() {
     # check arguments
     if [ $# -ne 2 ]; then
 	echo "Arguments mismatch: need 2, got ${#}"
@@ -31,17 +31,17 @@ function func_rundocker() {
 	container_name=${1}
 	image_name=${2}
 
-	docker_status=$(docker ps -a -f name="${container_name}$" --format {{.Status}})
+	docker_status=$(docker ps -a -f name="${container_name}$" --format '{{.Status}}')
 
 	if [[ -z "$docker_status" ]]; then
 	    echo "no traces of ${container_name} found, run a new one"
-	    docker run --name ${container_name} -h ${container_name}.local -i -t ${image_name} /bin/bash
+	    docker run --name "${container_name}" -h "${container_name}.local" -i -t "${image_name}" /bin/bash
 	elif [[ $docker_status =~ ^Up ]]; then
 	    echo "attaching to running ${container_name} instance: ${docker_status}"
-	    docker attach ${container_name}
+	    docker attach "${container_name}"
 	else
 	    echo "restarting stopped ${container_name} instance: ${docker_status}"
-	    docker start -a -i ${container_name}
+	    docker start -a -i "${container_name}"
 	fi
     fi
 }

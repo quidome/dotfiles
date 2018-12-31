@@ -14,7 +14,10 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- battery widget
+-- load lain
+local lain = require("lain")
+
+-- added local widgets
 local battery = require("battery")
 
 -- {{{ Error handling
@@ -44,8 +47,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.wallpaper = awful.util.get_configuration_dir() .. "themes/arch-linux-wallpaper.png"
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+-- beautiful.wallpaper = awful.util.get_configuration_dir() .. "themes/arch-linux-wallpaper.png"
+beautiful.init("/usr/share/awesome/themes/zenburn-custom/theme.lua")
+beautiful.wallpaper = "/usr/share/awesome/themes/dust/background.jpg"
+
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "urxvtc"
@@ -128,6 +134,27 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 batterywidget = wibox.widget.textbox()
+
+-- create pulse audio widget
+-- PulseAudio volume (based on multicolor theme)
+local volume = lain.widget.pulse {
+   settings = function()
+      if volume_now.left == volume_now.right then
+	 vlevel = volume_now.left .. "%"
+      else
+        vlevel = volume_now.left .. "-" .. volume_now.right .. "%"
+      end
+
+      if volume_now.muted == "yes" then
+	 vlevel = vlevel .. " M"
+      else
+	 vlevel = vlevel .. " 🎶"
+      end
+
+      widget:set_markup(lain.util.markup(theme.fg_normal, vlevel))
+    end
+}
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -228,6 +255,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+	    volume.widget,
             batterywidget,
             s.mylayoutbox,
         },
@@ -630,6 +658,7 @@ batterywidget_timer:connect_signal("timeout", function()
   batterywidget:set_text(batteryInfo("BAT0"))
 end)
 batterywidget_timer:start()
+
 -- }}
 
 -- {{{ autostart stuff
