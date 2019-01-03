@@ -387,9 +387,9 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioNext", function() awful.util.spawn("playerctl next") end),
     awful.key({}, "XF86AudioPrev", function() awful.util.spawn("playerctl previous") end),
 
-    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("pamixer -i 3") end),
-    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("pamixer -d 3") end),
-    awful.key({}, "XF86AudioMute", function() awful.util.spawn("pamixer -t") end),
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("pamixer -i 3") volume.update() end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("pamixer -d 3") volume.update() end),
+    awful.key({}, "XF86AudioMute", function() awful.util.spawn("pamixer -t") volume.update() end),
 
     -- Rofi launchers
     awful.key({ modkey, "Shift" }, "b",
