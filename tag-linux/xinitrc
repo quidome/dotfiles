@@ -42,6 +42,9 @@ xset b off
 # set screen locker
 /bin/xss-lock -- /bin/i3lock -c 263238 -n &
 
+# start flameshot daemon
+/usr/bin/flameshot -p "${HOME}/pictures/screenshots/" &
+
 # start the window manager
 session=${1:-awesome}
 
@@ -51,5 +54,5 @@ case $session in
     kde               ) exec startkde;;
     xfce|xfce4        ) exec startxfce4;;
     # No known session, try to run it as command
-    *                 ) exec $1;;
+    *                 ) exec "${1}";;
 esac

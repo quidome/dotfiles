@@ -51,6 +51,10 @@ end
 -- beautiful.wallpaper = awful.util.get_configuration_dir() .. "themes/arch-linux-wallpaper.png"
 beautiful.init("/usr/share/awesome/themes/zenburn-custom/theme.lua")
 beautiful.wallpaper = "/usr/share/awesome/themes/dust/background.jpg"
+--beautiful.notification_icon_size = 2
+--beautiful.notification_max_width = 100
+--beautiful.notification_max_height = 10
+
 
 
 -- This is used later as the default terminal and editor to run.
@@ -421,7 +425,20 @@ globalkeys = gears.table.join(
        function ()
 	  awful.util.spawn("xset s activate")
        end ,
-       {description = "lock screen", group = "screen"})
+       {description = "lock screen", group = "screen"}),
+
+    -- screen shots
+    awful.key({ }, "Print", function () awful.util.spawn("flameshot gui")                    end ,
+       {description = "Launch flameshot screenshots" , group = "screen"}),
+    awful.key({ }, "XF86Tools", function () awful.util.spawn("flameshot gui")                    end ,
+       {description = "Launch flameshot screenshots" , group = "screen"})
+
+    -- -- move screen but keep tag
+    -- awful.key({ modkey, "Shift" }, "o",
+    --    function()
+    -- 	  local current_tag =
+    --    end ,
+    --    {description = "Move to screen, keep tag" , group = "client"})
 
 )
 
@@ -558,6 +575,7 @@ awful.rules.rules = {
           "Sxiv",
           "Wpa_gui",
           "pinentry",
+          "pinentry-qt",
           "veromix",
           "xtightvncviewer"},
 

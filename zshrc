@@ -1,10 +1,3 @@
-
-# autostart X
-if [[ -x /usr/bin/startx ]] && [[ $(tty) = /dev/tty1 ]] && [[ ! $UID = 0 ]]; then
-  startx
-  logout
-fi
-
 # Set fng Zsh, it'll source the following files in this order by default:
 #
 # /etc/zshenv (/etc/zsh/zshenv on arch)
@@ -42,6 +35,19 @@ fi
 #     A global configuration file, will be sourced when a login shell exits.
 # ~/.zlogout
 #     Same as /etc/zsh/zlogout but for per-user configuration.tath first
+
+
+# autostart sway when on tty1 and not root
+if [[ -x /bin/sway ]] && [[ $(tty) = /dev/tty6 ]] && [[ ! $UID = 0 ]]; then
+  _JAVA_AWT_WM_NONREPARENTING=1 /bin/sway
+  logout
+fi
+
+# autostart X when on tty1 and not root
+if [[ -x /usr/bin/startx ]] && [[ $(tty) = /dev/tty1 ]] && [[ ! $UID = 0 ]]; then
+  startx
+  logout
+fi
 
 fpath=($HOME/.zsh-completion $fpath)
 

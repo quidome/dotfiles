@@ -1,0 +1,28 @@
+# -*- mode: Conf;-*-
+# sway key bindings
+
+# take screenshots
+bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
+bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
+bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
+
+# laptop screen brightness
+bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+"
+
+# keyboard led brightness
+bindsym XF86KbdBrightnessDown exec "brightnessctl -d smc::kbd_backlight s 5%-"
+bindsym XF86KbdBrightnessUp exec "brightnessctl -d smc::kbd_backlight s 5%+"
+
+# media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# volume control
+bindsym XF86AudioRaiseVolume exec "pamixer -i 3"
+bindsym XF86AudioLowerVolume exec "pamixer -d 2"
+bindsym XF86AudioMute exec "pamixer -t"
+
+# more screen lock combox
+bindsym $mod+XF86Eject exec --no-startup-id xset s activate
