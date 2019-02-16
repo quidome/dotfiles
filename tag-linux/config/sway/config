@@ -15,7 +15,7 @@ set $right     l
 # Applications
 set $term      /usr/bin/kitty
 set $menu      /usr/bin/rofi
-set $lock      /usr/bin/swaylock-blur -f -c ~/.config/swaylock/config
+set $lock      '/usr/bin/swaylock-blur -f -c ~/.config/swaylock/config'
 set $web       /usr/local/bin/browser
 set $files     $term /usr/bin/ranger # New terminal emulator instance for ranger
 set $processes $term /usr/bin/gotop
