@@ -23,5 +23,23 @@ assign [title="^Signal$"] $ws4
 # WS5: intellij
 assign [class="^(jetbrains-idea)$"] $ws5
 
+# WS6: rambox (for now)
+assign [class="^rambox$"] $ws6
+
 # WS7: music stuff
 for_window [class="Spotify"] move to workspace $ws7
+
+
+# Rules for fixing window behaviour
+# Fix rendering of jetbrains fuzzy search (doble shift)
+for_window [class="jetbrains-idea"  title="win*"] {
+    border none
+    floating enable
+    move position center
+    move up 300px
+}
+
+# Fix rendering of jetbrains splash screen and other floating windows
+for_window [class="jetbrains-idea" floating] {
+    border none
+}

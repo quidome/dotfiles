@@ -50,7 +50,7 @@ end
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- beautiful.wallpaper = awful.util.get_configuration_dir() .. "themes/arch-linux-wallpaper.png"
 beautiful.init("/usr/share/awesome/themes/zenburn-custom/theme.lua")
-beautiful.wallpaper = "/usr/share/awesome/themes/dust/background.jpg"
+beautiful.wallpaper = awful.util.get_xdg_config_home() .. "/wallpaper.png"
 --beautiful.notification_icon_size = 2
 --beautiful.notification_max_width = 100
 --beautiful.notification_max_height = 10
@@ -59,7 +59,7 @@ beautiful.wallpaper = "/usr/share/awesome/themes/dust/background.jpg"
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "urxvtc"
-terminal = "termite"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
