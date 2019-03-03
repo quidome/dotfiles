@@ -277,11 +277,11 @@ bindsym XF86AudioMute exec "pamixer -t"
 # more screen lock combox
 bindsym $mod+XF86Eject exec --no-startup-id xset s activate
 
-#bar {
-#    position top
+bar {
+    position top
     # font pango: Source Code Pro Medium 10
-#    status_command i3status
-#}
+    status_command i3status
+}
 
 # startup applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
