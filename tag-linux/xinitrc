@@ -35,12 +35,13 @@ fi
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xset b off
+xset s 300 300
 
 # set the cursorq
 #xsetroot -cursor_name left_ptr &
 
 # set screen locker
-/bin/xss-lock -- /bin/i3lock -c 263238 -n &
+/bin/xss-lock -- /bin/i3lock -c 1f1e1d -n &
 
 # start flameshot daemon
 /usr/bin/flameshot -p "${HOME}/pictures/screenshots/" &
