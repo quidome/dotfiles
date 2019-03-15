@@ -9,25 +9,25 @@ for_window [class="^Firefox$" title="^Library$"] floating enable
 for_window [class="^Firefox$" title="^Library$"] border normal
 
 # WS2: browsers
-assign [window_role="^browser$"] $ws2
+# assign [window_role="^browser$"] $ws2
 
 # WS3: emacs
-assign [class="^([Ee]macs)$"] $ws3
+# assign [class="^([Ee]macs)$"] $ws3
 # assign [class="^jetbrains-idea$"] $ws3
 
 # WS4: messengers
-assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
-assign [class="^(Riot)$"] $ws4
-assign [title="^Signal$"] $ws4
+# assign [class="^(Gajim|[Tt]elegram([Dd]esktop)?|HipChat|[Cc]utegram)$"] $ws4
+# assign [class="^(Riot)$"] $ws4
+# assign [title="^Signal$"] $ws4
 
 # WS5: intellij
-assign [class="^(jetbrains-idea)$"] $ws5
+# assign [class="^(jetbrains-idea)$"] $ws5
 
 # WS6: rambox (for now)
-assign [class="^rambox$"] $ws6
+# assign [class="^rambox$"] $ws6
 
 # WS7: music stuff
-for_window [class="Spotify"] move to workspace $ws7
+# for_window [class="Spotify"] move to workspace $ws7
 
 
 # Rules for fixing window behaviour

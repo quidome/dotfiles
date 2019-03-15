@@ -22,3 +22,5 @@ tramp
 .idea
 *.iml
 
+### kde dolphinb
+.directory

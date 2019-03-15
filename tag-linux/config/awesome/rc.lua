@@ -376,7 +376,8 @@ globalkeys = gears.table.join(
     --           {description = "show the menubar", group = "launcher"})
 
     -- xrandr utils
-    awful.key({modkey, "Shift" }, "x", function() awful.util.spawn("autorandr -c") end),
+    awful.key({modkey, "Control" }, "x", function() awful.util.spawn("/usr/bin/autorandr -c --default default") end),
+    awful.key({modkey, "Control", "Shift"  }, "x", function() awful.util.spawn("/usr/bin/autorandr horizontal") end),
 
     -- Brightness controls
     awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),

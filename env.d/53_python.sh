@@ -1,11 +1,11 @@
 # add path to local install python apps
-[ -d ${HOME}/.local/bin ] && export PATH=$PATH:${HOME}/.local/bin
+[ -d "${HOME}/.local/bin" ] && export PATH=$PATH:${HOME}/.local/bin
 
 # set place to store virtualenvs
 export WORKON_HOME=~/.virtualenvs
 
-[ $OS = osx ] && . /usr/local/bin/virtualenvwrapper.sh
-[ $OS = linux ] && . /usr/bin/virtualenvwrapper.sh
+[ "$OS" = osx ] && . /usr/local/bin/virtualenvwrapper.sh
+[ "$OS" = linux ] && . /usr/bin/virtualenvwrapper.sh
 
 # gpip function allows to pip install in global config
 gpip2(){

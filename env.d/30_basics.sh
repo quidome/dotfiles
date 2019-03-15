@@ -10,20 +10,19 @@ export MDV_THEME=785.3229
 # aliases
 alias delkey=func_ssh_delete_key
 
-function func_ssh_delete_key() {
-  local line_number=$1
-  if [ $OS = osx ]]; then
+func_ssh_delete_key() {
+  line_number=$1
+  if [ "$OS" = osx ]; then
     # use bsd sed
-    sed -i'' -E "${line_number}d" $HOME/.ssh/known_hosts
-  elif [ $OS = linux ]; then
+    sed -i'' -E "${line_number}d" "$HOME/.ssh/known_hosts"
+  elif [ "$OS" = linux ]; then
     # regular gnu sed
-    sed -i "${line_number}d" $HOME/.ssh/known_hosts
+    sed -i "${line_number}d" "$HOME/.ssh/known_hosts"
   fi
 }
 
 
-function show() {
-    local search_term=$1
-
-    egrep --color "${search_term}|$"
+show() {
+    search_term=$1
+    grep --color -E "${search_term}|$"
 }

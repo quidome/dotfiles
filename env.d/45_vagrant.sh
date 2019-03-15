@@ -1,9 +1,9 @@
 # Vagrant aliases and more
 
 VAGRANT_BINARY=:
-if [ $(command -v vagrant) ] ; then
-  VAGRANT_BINARY=$(command -v vagrant)
-  alias v=${VAGRANT_BINARY}
+if [ "$(command -v vagrant)" ] ; then
+  VAGRANT_BINARY="$(command -v vagrant)"
+  alias v="${VAGRANT_BINARY}"
   alias vacd='cd ${PUPPET_VAGRANT}'
   alias cd_vagrant='cd ${PUPPET_VAGRANT}'
   alias vhalt="${VAGRANT_BINARY} halt"
@@ -16,8 +16,10 @@ if [ $(command -v vagrant) ] ; then
 fi
 
 func_vssh(){
-  [[ ! "${PWD}" =~ ^"${PUPPET_VAGRANT}" ]] && cd "${PUPPET_VAGRANT}" || false
-  RET=$?
-  ${VAGRANT_BINARY} ssh "$1"
-  [ $RET -eq 0 ] && cd -
+    (
+	[[ ! "${PWD}" =~ ^"${PUPPET_VAGRANT}" ]] && cd "${PUPPET_VAGRANT}" || false
+	RET=$?
+	${VAGRANT_BINARY} ssh "$1"
+	[ $RET -eq 0 ]
+    )
 }
