@@ -10,9 +10,9 @@ general {
         colors = true
         interval = 5
 
-	color_good = "#8bc34a"
-	color_degraded = "#ff9800"
-	color_bad = "#f36c60"
+        color_good = "#8bc34a"
+        color_degraded = "#ff9800"
+        color_bad = "#f36c60"
 }
 
 order += "disk /"
@@ -39,17 +39,19 @@ ethernet _first_ {
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = "/proc/sys/net/ipv4/conf/tun0"
-	format = "VPN"
+        format = "VPN"
 }
 
 battery all {
         format = "%status %percentage %remaining"
-	status_chr = ""
-	status_bat = ""
-	status_unk = ""
-	status_full = "FULL"
+        hide_seconds = true
+        status_chr = ""
+        status_bat = ""
+        status_unk = ""
+        status_full = "FULL"
         low_threshold = 10
-	threshold_type = percentage
+        threshold_type = percentage
+        integer_battery_capacity = true
 }
 
 tztime local {
@@ -65,13 +67,13 @@ disk "/" {
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
+        format = "%degrees °C"
         max_threshold = 70
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
 }
 
 volume master {
-       format = " %volume"
-       format_muted = " (%volume)"
-       device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo"
+        format = " %volume"
+        format_muted = " (%volume)"
+        device = "pulse:alsa_output.pci-0000_00_1f.3.analog-stereo"
 }

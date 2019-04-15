@@ -1,3 +1,4 @@
+# -*- mode: Conf;-*-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -9,76 +10,103 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# set vars here
-# set modifier key
-# Mod4 - windows key
-set $mod Mod4
+### Variables
+# Keys
+set $mod       Mod4
+set $left      h
+set $down      j
+set $up        k
+set $right     l
 
-# default terminal
-set $terminal termite
+# Applications
+set $term       /usr/bin/kitty
+set $menu       /usr/bin/rofi
+set $lock       xset s activate && sleep 1
+set $web        /usr/local/bin/browser
+set $files      $term /usr/bin/ranger # New terminal instance for ranger
+set $processes  $term /usr/bin/gotop
+set $pass       ~/bin/rofipass
+set $screenshot /usr/bin/flameshot gui
 
-# screen locke
-set $locker xset s activate && sleep 1
+### Appearance
+set $wallpaper  ~/.config/wallpaper.png
+set $colors     ~/.cache/wal
 
-# define workspaces
-# set $ws1 "1:"
-# set $ws2 "2:"
-# set $ws3 "3:"
-# set $ws4 "4:"
-# set $ws5 "5:"
-# set $ws6 "6:"
-# set $ws7 "7:"
-# set $ws8 "8:"
-# set $ws9 "9:"
+############################################################
+# Custom config here
+# border style <normal|1pixel>
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+new_window pixel 1
 
-
+# window colors
+# class                 border  backgr. text    indicator
+client.focused          #303030 #686868 #ffffff #2e9ef4
+client.focused_inactive #333333 #303030 #ffffff #484e50
+client.unfocused        #333333 #222222 #cfcfcf #292d2e
+client.urgent           #d370a3 #ffa7da #ffffff #ffa7da
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Source Code Pro Medium 10
+font pango: Fira Code 10
+# font pango: Source Code Pro Medium 10
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
+### Key bindings
+#
+# Basics:
+#
 # start a terminal
-bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # show program launchers; all (d) or desktop (p)
 bindsym $mod+d exec rofi -show run
-bindsym $mod+p exec rofi -show drun
-bindsym $mod+Shift+b exec browser
-bindsym $mod+Shift+p exec $HOME/bin/rofipass
+# bindsym $mod+p exec rofi -show drun
+# bindsym $mod+Shift+b exec $web
+# bindsym $mod+Shift+p exec $pass
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+#
+# My custom binds:
+#
+    ## Applications
+    # Launch firefox chooser
+    bindsym $mod+Shift+b exec $web
+    # Launch file browser
+    bindsym $mod+n exec $files
+    # Launch process viewer
+    bindsym $mod+t exec $processes
+    # Launch menu
+    bindsym $mod+p exec $menu -show drun
+    # Launch gopass prompt
+    bindsym $mod+Shift+p exec $pass
+
+    ## custom power menu
+    set $control power
+    bindsym $mod+Shift+e mode "$control"
+
+    mode "$control" {
+        bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym k exec --no-startup-id i3-msg exit, mode "default"
+        bindsym l exec --no-startup-id $lock, mode "default"
+        bindsym s exec --no-startup-id systemctl suspend, mode "default"
+        bindsym Escape mode "default"
+    }
 
 # x/autorandr keybindings
 bindsym $mod+x exec autorandr -c
 bindsym $mod+Shift+x exec autorandr_menu
 
-# power menu
-set $control power
-bindsym $mod+Shift+e mode "$control"
-
-mode "$control" {
-    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym k exec --no-startup-id i3-msg exit, mode "default"
-    bindsym l exec --no-startup-id $locker, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym Escape mode "default"
-}
+#
+# Moving around:
+#
 
 # change focus
 bindsym $mod+j focus left
@@ -103,6 +131,25 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+#
+# Workspaces:
+#
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+
+#
+# Layout stuff:
+#
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -164,21 +211,23 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec i3-msg exit
 
-# scratchpad stuff
+#
+# Scratchpad:
+#
 bindsym $mod+Shift+BackSpace move scratchpad
 bindsym $mod+backslash scratchpad show
 
 # choose a class to show in scratchpad directly
-bindsym $mod+BackSpace [class="Termite"] scratchpad show
+bindsym $mod+BackSpace [class="kitty"] scratchpad show
 
-# resize window (you can also use the mouse for that)
+#
+# Resizing containers:
+#
 mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode
 
@@ -204,6 +253,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#
+# Placement rules
+#
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -211,19 +265,6 @@ bindsym $mod+r mode "resize"
 #        tray_output primary
 #}
 
-
-############################################################
-# Custom config here
-# border style <normal|1pixel>
-
-new_window pixel 1
-
-# window colors
-# class                 border  backgr. text    indicator
-client.focused          #303030 #686868 #ffffff #2e9ef4
-client.focused_inactive #333333 #303030 #ffffff #484e50
-client.unfocused        #333333 #222222 #cfcfcf #292d2e
-client.urgent           #d370a3 #ffa7da #ffffff #ffa7da
 
 # window rules
 # use xprop to match windows
@@ -252,17 +293,12 @@ assign [class="^(jetbrains-idea)$"] $ws5
 for_window [class="Spotify"] move to workspace $ws7
 
 # take screenshots
-bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
-bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
-bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
+bindsym Print exec --no-startup-id $screenshot
+bindsym XF86Tools exec --no-startup-id $screenshot
 
 # laptop screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+"
-
-# keyboard led brightness
-bindsym XF86KbdBrightnessDown exec "brightnessctl -d smc::kbd_backlight s 5%-"
-bindsym XF86KbdBrightnessUp exec "brightnessctl -d smc::kbd_backlight s 5%+"
 
 # media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -275,16 +311,19 @@ bindsym XF86AudioLowerVolume exec "pamixer -d 2"
 bindsym XF86AudioMute exec "pamixer -t"
 
 # more screen lock combox
-bindsym $mod+XF86Eject exec --no-startup-id xset s activate
+bindsym $mod+XF86Eject exec --no-startup-id $lock
 
+#
+# Status Bar:
+#
 bar {
     position top
     # font pango: Source Code Pro Medium 10
     status_command i3status
 }
 
-# startup applications
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec --no-startup-id /bin/xss-lock -- /bin/i3lock -c 263238 -n &
-exec --no-startup-id feh --bg-fill ~/pictures/wallpapers/Ju5PuBC-arch-linux-wallpaper.jpg
-# exec --no-startup-id dunst
+#
+### Autostart
+#
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id feh --bg-fill $wallpaper

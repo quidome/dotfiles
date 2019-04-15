@@ -380,8 +380,8 @@ globalkeys = gears.table.join(
     awful.key({modkey, "Control", "Shift"  }, "x", function() awful.util.spawn("/usr/bin/autorandr horizontal") end),
 
     -- Brightness controls
-    awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),
-    awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn("xbacklight -inc 10") end),
+    awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn("brightnessctl s 5%-") end),
+    awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn("brightnessctl s 5%+") end),
 
     -- awful.key({}, "XF86KbdBrightnessDown", function() awful.util.spawn("brightnessctl -d smc::kbd_backlight s 5%-") end),
     -- awful.key({}, "XF86KbdBrightnessUp", function() awful.util.spawn("brightnessctl -d smc::kbd_backlight s 5%+") end),

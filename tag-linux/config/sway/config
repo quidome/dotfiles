@@ -15,7 +15,7 @@ set $right     l
 # Applications
 set $term      /usr/bin/kitty
 set $menu      /usr/bin/rofi
-set $lock      '/usr/bin/swaylock-blur -f -c ~/.config/swaylock/config'
+set $lock      '/usr/bin/swaylock -f -C ~/.config/swaylock/config'
 set $web       /usr/local/bin/browser
 set $files     $term /usr/bin/ranger # New terminal emulator instance for ranger
 set $processes $term /usr/bin/gotop
@@ -124,7 +124,7 @@ exec swayidle -w \
     mode "$control" {
         bindsym p exec systemctl poweroff, mode "default"
         bindsym r exec systemctl reboot, mode "default"
-        bindsym k exec $exit, mode "default"
+        bindsym k exec swaymsg exit, mode "default"
         bindsym l exec $lock, mode "default"
         bindsym s exec systemctl suspend, mode "default"
         bindsym Escape mode "default"

@@ -10,10 +10,6 @@ bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sc
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s 5%+"
 
-# keyboard led brightness
-bindsym XF86KbdBrightnessDown exec "brightnessctl -d smc::kbd_backlight s 5%-"
-bindsym XF86KbdBrightnessUp exec "brightnessctl -d smc::kbd_backlight s 5%+"
-
 # media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next

@@ -37,7 +37,7 @@
 #     Same as /etc/zsh/zlogout but for per-user configuration.tath first
 
 
-# autostart sway when on tty1 and not root
+# autostart sway when on tty6 and not root
 if [[ -x /bin/sway ]] && [[ $(tty) = /dev/tty6 ]] && [[ ! $UID = 0 ]]; then
   _JAVA_AWT_WM_NONREPARENTING=1 /bin/sway
   logout
