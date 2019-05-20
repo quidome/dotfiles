@@ -36,6 +36,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 xset b off
 xset s 300 300
+xset dpms 300 300 600 
 
 # set the cursorq
 #xsetroot -cursor_name left_ptr &

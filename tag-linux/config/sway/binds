@@ -2,9 +2,13 @@
 # sway key bindings
 
 # take screenshots
-bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
-bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
-bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
+# use prtscr(Print) or F13(XF86Tools)
+bindsym --release Shift+XF86Tools exec grim -g \"$(slurp)\" - | wl-copy
+bindsym --release XF86Tools exec grim - | wl-copy
+
+# bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
+# bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
+# bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
 
 # laptop screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"

@@ -52,6 +52,7 @@ battery all {
         low_threshold = 10
         threshold_type = percentage
         integer_battery_capacity = true
+        last_full_capacity = true
 }
 
 tztime local {
