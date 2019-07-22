@@ -1,8 +1,8 @@
 # editor
 export EDITOR=vim
 
-# make qt stuff work
-#export PATH="/usr/local/opt/qt/bin:$PATH"
+# location for repos and such
+export SRC_PATH="${HOME}/src"
 
 # markdown colors
 export MDV_THEME=785.3229

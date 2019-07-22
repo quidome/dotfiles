@@ -23,8 +23,8 @@ set $term       /usr/bin/kitty
 set $menu       /usr/bin/rofi
 set $lock       xset s activate && sleep 1
 set $web        /usr/local/bin/browser
-set $files      $term /usr/bin/ranger # New terminal instance for ranger
-set $processes  $term /usr/bin/gotop
+set $files      /usr/bin/ranger # New terminal instance for ranger
+set $processes  /usr/bin/gotop
 set $pass       ~/bin/rofipass
 set $screenshot /usr/bin/flameshot gui
 
@@ -78,9 +78,9 @@ bindsym $mod+Shift+c reload
     # Launch firefox chooser
     bindsym $mod+Shift+b exec $web
     # Launch file browser
-    bindsym $mod+n exec $files
+    bindsym $mod+n exec $term $files
     # Launch process viewer
-    bindsym $mod+t exec $processes
+    bindsym $mod+t exec $term $processes
     # Launch menu
     bindsym $mod+p exec $menu -show drun
     # Launch gopass prompt
@@ -218,11 +218,17 @@ bindsym $mod+Shift+r restart
 #
 # Scratchpad:
 #
-bindsym $mod+Shift+BackSpace move scratchpad
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 800 600
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+exec --no-startup-id $term --name=dropdown
+
+bindsym $mod+Shift+backslash move scratchpad
 bindsym $mod+backslash scratchpad show
 
 # choose a class to show in scratchpad directly
-bindsym $mod+BackSpace [class="kitty"] scratchpad show
+bindsym $mod+BackSpace [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 #
 # Resizing containers:
@@ -290,6 +296,9 @@ assign [class="^(jetbrains-idea)$"] $ws5
 
 # WS7: music stuff
 for_window [class="Spotify"] move to workspace $ws7
+
+# WS10: remote desktop sessions
+assign [class="^rdesktop$"] $ws10
 
 # take screenshots
 bindsym Print exec --no-startup-id $screenshot
