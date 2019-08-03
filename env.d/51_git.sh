@@ -1,3 +1,6 @@
+# git get
+export GG_WORKSPACE=$SRC_PATH
+
 alias git_reset=func_git_reset
 alias git_bd=func_git_delete_branches
 alias gsp='git stash; git pull; git stash pop'

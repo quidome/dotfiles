@@ -6,7 +6,8 @@ if [[
        "$TERM" == screen-256color ||
        "${KDE_FULL_SESSION}" == "true" ||
        "${TERM_PROGRAM}" == "vscode" ||
-       "${TERMINAL_EMULATOR}" == "JetBrains-JediTerm"
+       "${TERMINAL_EMULATOR}" == "JetBrains-JediTerm" ||
+       "${NO_TMUX}" == "1"
    ]]
 then
     return 1
