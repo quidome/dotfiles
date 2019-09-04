@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # helper function
 # commit module to new repository
 repoAdd () {

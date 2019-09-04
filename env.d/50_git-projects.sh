@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # Functions to "manage" git projects
 
 export GITPROJECT=${HOME}/.config/gitproject

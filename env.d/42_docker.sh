@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 fedora()
 {
     local container_name=my_fedora

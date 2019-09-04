@@ -1,8 +1,8 @@
+# shellcheck shell=bash
+# shellcheck disable=SC2148,SC1090
+
 # set aliases
 alias apl=ansible-playbook
-
-# don't save playbook retries
-ANSIBLE_RETRY_FILES_ENABLED=no
 
 function anson(){
     # enable ansible

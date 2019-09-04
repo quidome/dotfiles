@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # Generic stuff
 alias ll='exa -l'
 alias lg='ll --git'

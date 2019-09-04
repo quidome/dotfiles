@@ -1,3 +1,4 @@
+# shellcheck shell=bash disable=SC2139
 # Vagrant aliases and more
 
 VAGRANT_BINARY=:
