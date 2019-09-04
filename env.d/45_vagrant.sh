@@ -15,12 +15,3 @@ if [ "$(command -v vagrant)" ] ; then
 
   export VAGRANT_DEFAULT_PROVIDER=virtualbox
 fi
-
-func_vssh(){
-    (
-	[[ ! "${PWD}" =~ ^"${PUPPET_VAGRANT}" ]] && cd "${PUPPET_VAGRANT}" || false
-	RET=$?
-	${VAGRANT_BINARY} ssh "$1"
-	[ $RET -eq 0 ]
-    )
-}

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pkill -x waybar
 /usr/bin/waybar -c ~/.config/waybar/config-top </dev/null &>/dev/null &

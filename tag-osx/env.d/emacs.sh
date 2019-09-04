@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # My emacs env settings
 #
 # When running dmg installed version from https://emacsformacosx.com/
