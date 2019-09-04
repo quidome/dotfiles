@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/quidome/dotfiles.svg?branch=master)](https://travis-ci.org/quidome/dotfiles)
+[![Build Status](https://travis-ci.com/quidome/dotfiles.svg?branch=master)](https://travis-ci.com/quidome/dotfiles)
 
 # dotfiles
 
