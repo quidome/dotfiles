@@ -12,13 +12,14 @@ func_gitproject() {
 	ls -1 "${GITPROJECT}"
     else
 	project=$1
+	command="$2"
 
 	# perform git action on project
 	if [ -e "${GITPROJECT}/${project}" ] ; then
 	    while IFS= read -r repo
 	    do
 		echo "## ${repo}"
-		git -C "${repo}" "${@:2}"
+		[ -z "$command" ] || git -C "${repo}" "$command"
 	    done < "${GITPROJECT}/${project}"
 	else
 	    echo "${GITPROJECT}/${1} does not exist"
@@ -33,7 +34,7 @@ func_openproject() {
     if [ -e "${GITPROJECT}/${project}" ] ; then
 	while IFS= read -r repo
 	do
-	    atom -a "${repo}"
+	    code -a "${repo}"
 	done < "${GITPROJECT}/${project}"
     else
 	echo "${GITPROJECT}/${1} does not exist"
