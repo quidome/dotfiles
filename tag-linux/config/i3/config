@@ -47,14 +47,14 @@ client.urgent           #d370a3 #ffa7da #ffffff #ffa7da
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono, FontAwesome 12
+font pango:Source Code Pro, DejaVu Sans Mono, FontAwesome 11
 
 ### Key bindings
 #
 # Basics:
 #
 # start a terminal
-bindsym $mod+Return exec --no-startup-id SKIP_TMUX=1 $term
+bindsym $mod+Return exec --no-startup-id $term
 
 
 # kill focused window
@@ -103,6 +103,7 @@ bindsym $mod+Shift+c reload
 # x/autorandr keybindings
 bindsym $mod+x exec --no-startup-id autorandr -c
 bindsym $mod+Shift+x exec --no-startup-id autorandr -l default
+bindsym $mod+Ctrl+Shift+x exec --no-startup-id autorandr horizontal
 
 #
 # Moving around:
