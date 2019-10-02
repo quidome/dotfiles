@@ -11,15 +11,16 @@ func_gitproject() {
 	echo "## gpr projects in ${GITPROJECT}:"
 	ls -1 "${GITPROJECT}"
     else
-	project=$1
-	command="$2"
+	project="${1}"
+	shift
+	command=$*
 
 	# perform git action on project
 	if [ -e "${GITPROJECT}/${project}" ] ; then
 	    while IFS= read -r repo
 	    do
 		echo "## ${repo}"
-		[ -z "$command" ] || git -C "${repo}" "$command"
+		[ $# -eq 0 ] || git -C "${repo}" $*
 	    done < "${GITPROJECT}/${project}"
 	else
 	    echo "${GITPROJECT}/${1} does not exist"
