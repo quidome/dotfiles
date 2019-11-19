@@ -24,9 +24,9 @@ block = "custom"
 command = "echo -n  $(/home/qmeijer/go/bin/gerrit-cli -user qmeijer -pass $(gopass show websites/gerrit.tools.bol.com/qmeijer | head -1))"
 interval = 120
 
-[[block]]
-block = "pacman"
-interval = 10
+#[[block]]
+#block = "pacman"
+#interval = 10
 
 [[block]]
 block = "load"
