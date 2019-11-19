@@ -19,8 +19,8 @@ func_gitproject() {
 	if [ -e "${GITPROJECT}/${project}" ] ; then
 	    while IFS= read -r repo
 	    do
-		echo "## ${repo}"
-		[ $# -eq 0 ] || git -C "${repo}" $*
+		echo "###### ${repo} ######"
+		[ $# -eq 0 ] || git -C "${repo}" "${command[@]}"
 	    done < "${GITPROJECT}/${project}"
 	else
 	    echo "${GITPROJECT}/${1} does not exist"
