@@ -1,10 +1,12 @@
+# shellcheck shell=bash
 if [[ $OSTYPE == darwin* ]]; then
 
   # HOMEBREW_GITHUB_API_TOKEN should be set
   [ ${HOMEBREW_GITHUB_API_TOKEN:+1} ] || echo "HOMEBREW_GITHUB_API_TOKEN is unset"
 
   # Add sbin from brew to PATH
-  export PATH="$(brew --prefix)/sbin:$PATH"
+  brew_path=$(brew --prefix)
+  export PATH="$PATH:$brew_path/sbin"
 fi
 
 # update and clean brew, including casks

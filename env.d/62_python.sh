@@ -1,3 +1,5 @@
+# shellcheck shell=bash disable=SC1091
+
 # add path to local install python apps
 [ -d "${HOME}/.local/bin" ] && export PATH=$PATH:${HOME}/.local/bin
 

@@ -24,3 +24,6 @@ tramp
 
 ### kde dolphinb
 .directory
+
+### rbenv 
+.ruby-version

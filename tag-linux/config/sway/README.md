@@ -9,7 +9,8 @@ I start sway from tty6 by adding this on top of my .zshrc file:
 ```
 # autostart sway when on tty1 and not root
 if [[ -x /bin/sway ]] && [[ $(tty) = /dev/tty6 ]] && [[ ! $UID = 0 ]]; then
-  _JAVA_AWT_WM_NONREPARENTING=1 /bin/sway
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  /bin/sway
   logout
 fi
 ```
