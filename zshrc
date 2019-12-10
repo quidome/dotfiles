@@ -36,18 +36,19 @@
 # ~/.zlogout
 #     Same as /etc/zsh/zlogout but for per-user configuration.tath first
 
+TTY_I3=/dev/tty1
+TTY_SWAY=/dev/tty6
 
-# autostart sway when on tty6 and not root
-if [[ -x /bin/sway ]] && [[ $(tty) = /dev/tty6 ]] && [[ ! $UID = 0 ]]; then
+# autostart sway when on TTY_SWAY and not root
+if [[ -x /bin/sway ]] && [[ $(tty) = "$TTY_SWAY" ]] && [[ ! $UID = 0 ]]; then
   # java settings required for intellij to work in sway
-  export _JAVA_AWT_WM_NONREPARENTING=1 
-  #export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
-  /bin/sway
+  # _JAVA_AWT_WM_NONREPARENTING=1
+  _JAVA_AWT_WM_NONREPARENTING=1 /bin/sway
   logout
 fi
 
-# autostart X when on tty1 and not root
-if [[ -x /usr/bin/startx ]] && [[ $(tty) = /dev/tty1 ]] && [[ ! $UID = 0 ]]; then
+# autostart X when on TTY_I3 and not root
+if [[ -x /usr/bin/startx ]] && [[ $(tty) = "$TTY_I3" ]] && [[ ! $UID = 0 ]]; then
   startx
   logout
 fi
