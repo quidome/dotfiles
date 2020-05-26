@@ -13,7 +13,7 @@ func_gitproject() {
     else
 	project="${1}"
 	shift
-	command=$*
+	command=( "$@" )
 
 	# perform git action on project
 	if [ -e "${GITPROJECT}/${project}" ] ; then
