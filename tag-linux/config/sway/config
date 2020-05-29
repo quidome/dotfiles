@@ -3,31 +3,38 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-
 ### Variables
-# Keys
-set $mod       Mod4
-set $left      h
-set $down      j
-set $up        k
-set $right     l
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $config_path     ~/.config/sway
+set $wallpaper_path  ~/Pictures/wallpapers
 
 # Applications
-set $term      /usr/bin/kitty
+set $term      /usr/bin/alacritty
 set $menu      /usr/bin/rofi
 set $lock      '/usr/bin/swaylock -f -C ~/.config/swaylock/config'
 set $web       /usr/local/bin/browser
-set $files     $term /usr/bin/ranger # New terminal emulator instance for ranger
-set $processes $term /usr/bin/gotop
+set $swayweb    ~/bin/browser
+set $files     $term -e /usr/bin/ranger # New terminal emulator instance for ranger
+set $processes $term -e /usr/bin/gotop
 set $pass      ~/bin/rofipass
+set $ncspot    /usr/bin/ncspot
 
 ### Appearance
-set $wallpaper ~/.config/wallpaper.png
+set $wallpaper $wallpaper_path/high-resolution-wallpapers-9.jpg
 set $colors    ~/.cache/wal
 
-include $colors/colors-sway
-set $good $color4
-set $bad  $color2
+# set colors (and $wallpaper)
+include $config_path/theme/colors-nord
+set $good $green
+set $bad  $red
 
 default_border none
 default_floating_border normal
@@ -41,12 +48,15 @@ client.urgent           $bad     $bad         $background   $background   $bad
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Fira Code Medium 10
+font pango: Source Code Pro 10
 
 ### Output configuraton
 output *    bg    $wallpaper    fill
-#output eDP-1    pos    0    0    res 1920x1080
-output eDP-1    pos    0    0
+
+# laptop screen
+output "Unknown 0x072F 0x00000000" mode 1920x1080@60Hz position 0,0 scale 1.00
+
+
 
 ### Idle configuration
 #
@@ -54,8 +64,7 @@ output eDP-1    pos    0    0
 #
 exec swayidle -w \
          timeout 300 $lock \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
+         timeout 600 'swaymsg "output * dpms off"'               resume 'swaymsg "output * dpms on"' \
          before-sleep $lock
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -80,13 +89,13 @@ exec swayidle -w \
 #
 # Basics:
 #
-    # start a terminal
+    # Start a terminal
     bindsym $mod+Return exec $term
 
-    # kill focused window
+    # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # start your launcher
+    # Start your launcher
     bindsym $mod+d exec $menu -modi run,drun -show run
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -96,10 +105,10 @@ exec swayidle -w \
     # mouse button for dragging.
     floating_modifier $mod normal
 
-    # reload the configuration file
+    # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your Wayland session)
+    # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 #
@@ -107,7 +116,7 @@ exec swayidle -w \
 #
     ## Applications
     # Launch firefox chooser
-    bindsym $mod+Shift+b exec $web
+    bindsym $mod+Shift+b exec $swayweb
     # Launch file browser
     bindsym $mod+n exec $files
     # Launch process viewer
@@ -116,6 +125,8 @@ exec swayidle -w \
     bindsym $mod+p exec $menu -show drun
     # Launch gopass prompt
     bindsym $mod+Shift+p exec $pass
+    # Launch command line spotify client
+    bindsym $mod+m exec $ncspot
 
     ## custom power menu
     set $control power
@@ -142,18 +153,18 @@ exec swayidle -w \
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # or use $mod+[up|down|left|right]
+    # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # _move_ the focused window with the same, but add Shift
+    # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # ditto, with arrow keys
+    # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
@@ -239,13 +250,13 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # ditto, with arrow keys
+    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # return to default mode
+    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -283,6 +294,9 @@ exec /usr/bin/waybar -c ~/.config/waybar/config-top
 
 # Start mako notification service
 exec systemctl --user start mako.service
+
+# Start kanshi output manager
+exec /usr/bin/kanshi
 
 #
 ### Include sway package config files

@@ -27,3 +27,4 @@ tramp
 
 ### rbenv 
 .ruby-version
+.ruby-gemset

@@ -4,7 +4,9 @@ alias ll='exa -l'
 alias lg='ll --git'
 
 # cssh
-alias cssh='i2cssh -p ${ITERM_PROFILE} -b'
+if [[ "$OS" == "darwin"* ]]; then
+    alias cssh='i2cssh -p ${ITERM_PROFILE} -b'
+fi
 
 # linux clipboard stuff
 if [ "$OS" = linux ]; then

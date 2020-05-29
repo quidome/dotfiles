@@ -1,23 +1,24 @@
-[theme]
-name = "plain"
-[theme.overrides]
-idle_bg = "#222222"
-idle_fg = "#cfcfcf"
-info_bg = "#222222"
-info_fg = "#ffffff"
-good_bg = "#222222"
-good_fg = "#ffffff"
-warning_bg = "#222222"
-# warning_fg = "#ffffff"
-critical_bg = "#ff2222"
-critical_fg = "#ffffff"
-
-separator = "|"
-separator_fg = "#666666"
-separator_bg = "#222222"
-
 [icons]
 name = "awesome"
+
+[theme]
+name = "slick"
+
+# [theme.overrides]
+# idle_bg = "#222222"
+# idle_fg = "#cfcfcf"
+# info_bg = "#222222"
+# info_fg = "#ffffff"
+# good_bg = "#222222"
+# good_fg = "#ffffff"
+# warning_bg = "#222222"
+# # warning_fg = "#ffffff"
+# critical_bg = "#ff2222"
+# critical_fg = "#ffffff"
+
+# separator = "|"
+# separator_fg = "#666666"
+# separator_bg = "#222222"
 
 [[block]]
 block = "custom"
@@ -31,7 +32,7 @@ interval = 120
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+format = "{5m}"
 
 [[block]]
 block = "temperature"
@@ -45,9 +46,13 @@ interval = 5
 
 [[block]]
 block = "disk_space"
+warning = 10
+alert = 5
 
 [[block]]
-block = "battery"
+block = "docker"
+interval = 2
+format = "{running}/{total}"
 
 [[block]]
 block = "net"
@@ -67,7 +72,14 @@ block = "custom"
 command = "[ -d /proc/sys/net/ipv4/conf/tun0 ] && echo  || echo "
 
 [[block]]
+block = "bluetooth"
+mac = "1C:52:16:19:39:48"
+
+[[block]]
 block = "sound"
+
+[[block]]
+block = "battery"
 
 [[block]]
 block = "time"

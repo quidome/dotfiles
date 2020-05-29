@@ -6,9 +6,12 @@
 bindsym --release Shift+XF86Tools exec grim -g \"$(slurp)\" - | wl-copy
 bindsym --release XF86Tools exec grim - | wl-copy
 
-# bindsym --release $mod+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh sel"
-# bindsym $mod+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh win"
-# bindsym $mod+Ctrl+Shift+XF86LaunchB exec --no-startup-id "~/bin/screenshot.sh scrn"
+# region copy & file
+bindsym Print exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%s).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG
+bindsym XF86Tools exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%s).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG
+# fullscreen copy & file
+bindsym Shift+Print exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%s).png && grim $IMG && wl-copy < $IMG
+bindsym Shift+XF86Tools exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%s).png && grim $IMG && wl-copy < $IMG
 
 # laptop screen brightness
 bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"

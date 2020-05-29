@@ -6,8 +6,10 @@
 # set place to store virtualenvs
 export WORKON_HOME=~/.virtualenvs
 
-[ "$OS" = osx ] && . /usr/local/bin/virtualenvwrapper.sh
-[ "$OS" = linux ] && . /usr/bin/virtualenvwrapper.sh
+case "$OSTYPE" in 
+  linux*) . /usr/bin/virtualenvwrapper.sh ;;
+  darwin) . /usr/local/bin/virtualenvwrapper.sh ;;
+esac
 
 # gpip function allows to pip install in global config
 gpip2(){

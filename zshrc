@@ -42,15 +42,23 @@ TTY_SWAY=/dev/tty6
 # autostart sway when on TTY_SWAY and not root
 if [[ -x /bin/sway ]] && [[ $(tty) = "$TTY_SWAY" ]] && [[ ! $UID = 0 ]]; then
   # java settings required for intellij to work in sway
-  # _JAVA_AWT_WM_NONREPARENTING=1
-  _JAVA_AWT_WM_NONREPARENTING=1 /bin/sway
-  logout
+  export _JAVA_AWT_WM_NONREPARENTING=1
+
+  # improve systray functionality
+  #export XDG_CURRENT_DESKTOP=Unity
+
+  # use wayland by default on qt
+  export QT_QPA_PLATFORM=wayland-egl
+
+  # make firefox use wayland
+  export MOZ_ENABLE_WAYLAND=1
+
+  exec /bin/sway 2> ~/sway.log
 fi
 
 # autostart X when on TTY_I3 and not root
 if [[ -x /usr/bin/startx ]] && [[ $(tty) = "$TTY_I3" ]] && [[ ! $UID = 0 ]]; then
-  startx
-  logout
+  exec startx
 fi
 
 fpath=($HOME/.zsh-completion $fpath)
@@ -127,3 +135,10 @@ cdpath=(
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ${PUPPET_HOSTS} ]] && _ssh_config+=($(cat ${PUPPET_HOSTS}))
 zstyle ':completion:*:hosts' hosts $_ssh_config
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='printf "\e]51;Evterm-clear-scrollback\e\\";tput clear'
+fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,18 +1,22 @@
-# shellcheck shell=bash disable=SC1090
-if [ -d "${HOME}/.rbenv/bin" ]; then
+# shellcheck shell=bash
+if command -v rbenv ; then
 
-       # include rbenv in path
-       export PATH="$HOME/.rbenv/bin:$PATH"
+    if test -d "${HOME}/.rbenv/bin"; then
+        # include rbenv in path
+        export PATH="$HOME/.rbenv/bin:$PATH"
+    fi
 
-       # init
-       eval "$(rbenv init -)"
+    # init rbenv
+    eval "$(rbenv init -)"
 
-       # make using gemsets easier
-       alias gemset='rbenv gemset'
+    # make using gemsets easier
+    alias gemset='rbenv gemset'
+
+    # add zsh completion for rbenv
+    . /usr/lib/rbenv/completions/rbenv.zsh
 fi
 
-# Load rvm config and change path
-if [ -d "$HOME/.rvm" ] ; then
-    . "$HOME/.rvm/scripts/rvm"
+if test -d $HOME/.rvm/bin/ ; then
+    # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
     export PATH="$PATH:$HOME/.rvm/bin"
 fi

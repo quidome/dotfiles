@@ -3,10 +3,12 @@
 
 # some exceptions, don't tmux for these
 if [ -n "$TMUX" ] ||
+       [[ "$(tty)" =~ "/dev/tty[0-9]" ]] ||
        [ "$TERM" = screen-256color ] ||
-       [ "${TERM_PROGRAM}" = "vscode" ] ||
-       [ "${TERMINAL_EMULATOR}" = "JetBrains-JediTerm" ] ||
-       [ "${NO_TMUX}" = "1" ]
+       [ "$TERM_PROGRAM" = "vscode" ] ||
+       [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] ||
+       [ "$NO_TMUX" = "1" ] ||
+       [ "$INSIDE_EMACS" = 'vterm' ]
 then
     return 1
 fi

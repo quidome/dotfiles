@@ -1,3 +1,4 @@
+# vim: ft=dosini cms=#%s
 [options]
 allow_bold = true
 audible_bell = false
@@ -38,64 +39,6 @@ filter_unmatched_urls = true
 # "off", "left" or "right"
 #scrollbar = off
 
-
-[colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-cursor              = #eeffff
-cursor_foreground   = #263238
-
-foreground          = #eeffff
-foreground_bold     = #eeffff
-background          = rgba(i38, 50, 56, 1)
-
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-
-# If unset, will reverse foreground and background
-highlight = #6f6f6f
-
-# Colors from color0 to color254 can be set
-# Colors taken from emacs material dark theme
-
-# Black, Gray, Silver, White
-color0  = #263238
-color8  = #546e7a
-color7  = #eeffff
-color15 = #ffffff
-
-# Red (regular and "bold")
-color1  = #f07178
-color9  = #f07178
-
-# Green (regular and "bold")
-color2  = #c3e88d
-color10 = #c3e88d
-
-# Yellow (regular and "bold")
-color3  = #ffcb6b
-color11 = #ffcb6b
-
-# Blue (regular and "bold")
-color4  = #82aaff
-color12 = #82aaff
-
-# Cyan (regular and "bold")
-color5  = #c792ea
-color13 = #c792ea
-
-# Magenta (regular and "bold")
-color6  = #89ddff
-color14 = #89ddff
-
-# # Extra colors (lets not do this, doesn't seem right)
-# color16 = #f78c6c
-# color17 = #ff5370
-# color18 = #2e3c43
-# color19 = #314549
-# color20 = #b2ccd6
-# color21 = #eeffff
-
 [hints]
 #font = Monospace 12
 #foreground = #dcdccc
@@ -107,4 +50,42 @@ color14 = #89ddff
 #border_width = 0.5
 #roundness = 2.0
 
-# vim: ft=dosini cms=#%s
+[colors]
+
+# special
+foreground      = #fcfcfa
+foreground_bold = #fcfcfa
+cursor          = #fcfcfa
+background      = #403e41
+
+# black
+color0  = #403e41
+color8  = #727072
+
+# red
+color1  = #ff6188
+color9  = #ff6188
+
+# green
+color2  = #a9dc76
+color10 = #a9dc76
+
+# yellow
+color3  = #ffd866
+color11 = #ffd866
+
+# blue
+color4  = #fc9867
+color12 = #fc9867
+
+# magenta
+color5  = #ab9df2
+color13 = #ab9df2
+
+# cyan
+color6  = #78dce8
+color14 = #78dce8
+
+# white
+color7  = #fcfcfa
+color15 = #fcfcfa
