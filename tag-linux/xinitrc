@@ -48,11 +48,19 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+##### end of default setup ####
+# my additions follow hereafter
+
+# make sure to load .xprofile if it exists,
+# using it to set paths
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xset b off
 xset s 300 300
-xset dpms 300 300 600 
+xset dpms 300 300 600
 
 # set the cursorq
 #xsetroot -cursor_name left_ptr &
@@ -74,3 +82,10 @@ case $session in
     # No known session, try to run it as command
     *                 ) exec "${1}";;
 esac
+
+#### below is also part of the default file
+# twm &
+# xclock -geometry 50x50-1+1 &
+# xterm -geometry 80x50+494+51 &
+# xterm -geometry 80x20+494-0 &
+# exec xterm -geometry 80x66+0+0 -name login

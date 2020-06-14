@@ -139,6 +139,3 @@ zstyle ':completion:*:hosts' hosts $_ssh_config
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     alias clear='printf "\e]51;Evterm-clear-scrollback\e\\";tput clear'
 fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"

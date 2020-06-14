@@ -3,6 +3,7 @@
 
 # set aliases
 alias apl=ansible-playbook
+alias cda=cd\ \$SRC_PATH/gitlab.com/quidome/ansible-archlinux/ansible
 
 function anson(){
     # enable ansible
