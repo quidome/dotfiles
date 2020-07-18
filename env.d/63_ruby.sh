@@ -1,5 +1,5 @@
 # shellcheck shell=bash
-if command -v rbenv ; then
+if command -v rbenv > /dev/null 2>&1 ; then
 
     if test -d "${HOME}/.rbenv/bin"; then
         # include rbenv in path

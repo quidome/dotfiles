@@ -133,7 +133,7 @@ cdpath=(
 # Add .puppethosts to host completion
 # do this after .env inclusion to load config vars first
 zstyle -s ':completion:*:hosts' hosts _ssh_config
-[[ -r ${PUPPET_HOSTS} ]] && _ssh_config+=($(cat ${PUPPET_HOSTS}))
+[[ -r ${BOLCOM_HOSTS} ]] && _ssh_config+=($(cat ${BOLCOM_HOSTS}))
 zstyle ':completion:*:hosts' hosts $_ssh_config
 
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then

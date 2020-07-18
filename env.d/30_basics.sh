@@ -8,18 +8,15 @@ export BROWSER=/usr/local/bin/browser
 # location for repos and such
 export SRC_PATH="${HOME}/src"
 
-# markdown colors
-export MDV_THEME=785.3229
-
 # aliases
 alias delkey=func_ssh_delete_key
 
 func_ssh_delete_key() {
   line_number=$1
-  if [ "$OS" = osx ]; then
+  if [[ "$OSTYPE" = "darwin"* ]]; then
     # use bsd sed
     sed -i'' -E "${line_number}d" "$HOME/.ssh/known_hosts"
-  elif [ "$OS" = linux ]; then
+  elif [[ "$OSTYPE" = "linux-gnu"* ]]; then
     # regular gnu sed
     sed -i "${line_number}d" "$HOME/.ssh/known_hosts"
   fi

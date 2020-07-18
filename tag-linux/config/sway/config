@@ -21,7 +21,7 @@ set $term      /usr/bin/alacritty
 set $menu      /usr/bin/rofi
 set $lock      '/usr/bin/swaylock -f -C ~/.config/swaylock/config'
 set $web       /usr/local/bin/browser
-set $swayweb    ~/bin/browser
+set $swayweb   ~/bin/sway-browser
 set $files     $term -e /usr/bin/ranger # New terminal emulator instance for ranger
 set $processes $term -e /usr/bin/gotop
 set $pass      ~/bin/rofipass
