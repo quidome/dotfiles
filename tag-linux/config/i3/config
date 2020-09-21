@@ -30,7 +30,7 @@ set $screenshot /usr/bin/flameshot gui
 set $ncspot     /usr/bin/ncspot
 
 ### Appearance
-set $wallpaper  ~/.config/wallpaper.jpg
+set $wallpaper  ~/.config/wallpaper.png
 set $colors     ~/.cache/wal
 
 ############################################################

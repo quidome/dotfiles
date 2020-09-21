@@ -69,11 +69,11 @@ speed_down = false
 
 [[block]]
 block = "custom"
-command = "[ -d /proc/sys/net/ipv4/conf/tun0 ] && echo  || echo "
+command = "/home/qmeijer/bin/vpn-status"
 
-[[block]]
-block = "bluetooth"
-mac = "1C:52:16:19:39:48"
+#[[block]]
+#block = "bluetooth"
+#mac = "1C:52:16:19:39:48"
 
 [[block]]
 block = "sound"

@@ -48,6 +48,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# twm &
+# xclock -geometry 50x50-1+1 &
+# xterm -geometry 80x50+494+51 &
+# xterm -geometry 80x20+494-0 &
+# exec xterm -geometry 80x66+0+0 -name login
+
 ##### end of default setup ####
 # my additions follow hereafter
 
@@ -66,10 +72,15 @@ xset dpms 300 300 600
 #xsetroot -cursor_name left_ptr &
 
 # set screen locker
-/bin/xss-lock -- /bin/i3lock -c 1f1e1d -n &
+xss-lock -- i3lock -c 1f1e1d -n &
 
 # start flameshot daemon
-/usr/bin/flameshot -p "${HOME}/pictures/screenshots/" &
+flameshot -p "${HOME}/Pictures/screenshots/" &
+
+# start gnome keyring daemon
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 
 # start the window manager
 session=${1:-i3wm}
@@ -82,10 +93,3 @@ case $session in
     # No known session, try to run it as command
     *                 ) exec "${1}";;
 esac
-
-#### below is also part of the default file
-# twm &
-# xclock -geometry 50x50-1+1 &
-# xterm -geometry 80x50+494+51 &
-# xterm -geometry 80x20+494-0 &
-# exec xterm -geometry 80x66+0+0 -name login

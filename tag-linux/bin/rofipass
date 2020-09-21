@@ -6,5 +6,5 @@ menu=$(gopass ls --flat | rofi -dmenu -p "gopass")
 if [[ $menu == \|* ]]; then
     eval echo \"$@\" $menu > /dev/null 2>&1 &
 else
-    eval gopass -c $menu \"$@\" > /dev/null 2>&1 &
+    eval gopass show --clip $menu \"$@\" > /dev/null 2>&1 &
 fi

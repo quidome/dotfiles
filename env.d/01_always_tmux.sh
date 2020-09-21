@@ -1,9 +1,10 @@
-# shellcheck shell=bash
+# shellcheck shell=bash disable=SC2039
 # always use tmux in terminals
 
 # some exceptions, don't tmux for these
 if [ -n "$TMUX" ] ||
-       [[ "$(tty)" =~ "/dev/tty[0-9]" ]] ||
+       [[ "$GIO_LAUNCHED_DESKTOP_FILE" == *"guake.desktop"* ]] ||
+       [[ "$(tty)" =~ /dev/tty[0-9] ]] ||
        [ "$TERM" = screen-256color ] ||
        [ "$TERM_PROGRAM" = "vscode" ] ||
        [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] ||

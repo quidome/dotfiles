@@ -3,5 +3,5 @@
 
 if TTY=$(tty) ; then
     export GPG_TTY="${TTY}"
+    gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
-gpg-connect-agent updatestartuptty /bye >/dev/null
