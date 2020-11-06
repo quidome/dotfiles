@@ -28,7 +28,7 @@ set $pass      ~/bin/rofipass
 set $ncspot    /usr/bin/ncspot
 
 ### Appearance
-set $wallpaper $wallpaper_path/high-resolution-wallpapers-9.jpg
+set $wallpaper ~/.config/wallpaper.png
 set $colors    ~/.cache/wal
 
 # set colors (and $wallpaper)
