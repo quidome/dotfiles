@@ -6,7 +6,7 @@ script_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # backups are written to path in $1 or into script path if empty
 backup_path=${1:-"$script_path"}
 
-backup_dest="${backup_path}/$(hostname -s)_$(date +%Y%m%d_%H%M)"
+backup_dest="${backup_path}/$(uname -n)_$(date +%Y%m%d_%H%M)"
 #backup_dest="${backup_path}/$(hostname -s)_$(date +%Y%m%d)"
 backup_include="${script_path}/backup_include"
 backup_exclude="${script_path}/backup_exclude"
@@ -14,23 +14,15 @@ backup_exclude="${script_path}/backup_exclude"
 echo "Creating backup into $backup_dest"
 echo "Backup exclude:"
 cat "$backup_exclude"
-echo 
+echo
 echo "Backup include:"
 cat "$backup_include"
 echo
 
-#if [ ! -d "$backup_dest" ]; then
-#  mkdir -p "$backup_dest"
-#fi
-
-# uncompressed copy
-#rsync ${DEBUG:+-nv} -arRP \
-#  --files-from="$backup_include" \
-#  --exclude-from="$backup_exclude" \
-#  / "$backup_dest"
-
 # tarbal
 tar --exclude-from="$backup_exclude" \
   --files-from="$backup_include" \
-  -czf "$backup_dest".tar.gz
+  -cf "$backup_dest".tar
 
+# encrypt the backup
+gpg -c "$backup_dest".tar
