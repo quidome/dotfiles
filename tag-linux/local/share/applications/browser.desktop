@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_IE]=
+Comment=
+Exec=/home/quidome/bin/browser %U
+GenericName[en_IE]=Web Browser
+GenericName=Web Browser
+Icon=internet-web-browser
+MimeType=text/html;application/xml;application/xml;application/xhtml+xml;
+Name[en_IE]=Browser Chooser
+Name=Browser Chooser
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

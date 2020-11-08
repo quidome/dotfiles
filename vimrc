@@ -71,7 +71,9 @@ let g:airline_theme='dark_minimal'
 Plug 'vim-scripts/summerfruit256.vim'
 
 "
-Plug 'fatih/vim-go'
+Plug 'morhetz/gruvbox'
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "
 Plug 'rodjek/vim-puppet'
@@ -133,7 +135,7 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 try
 "  colorscheme summerfruit256
 "  colorscheme solarized
-   colorscheme default
+   colorscheme gruvbox
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
 endtry
@@ -154,7 +156,7 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 syntax enable
 syntax on             " Enable syntax highlighting
 set autoindent
-set background=light
+set background=dark
 set backspace=indent,eol,start " Set for maximum backspace smartness"
 set clipboard=unnamed
 set cmdheight=1         " Less Hit Return messages

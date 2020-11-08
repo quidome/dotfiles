@@ -43,3 +43,6 @@ for_window [class="jetbrains-idea"  title="win*"] {
 for_window [class="jetbrains-idea" floating] {
     border none
 }
+
+# Fix firefix sharing Indicator
+for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
