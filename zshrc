@@ -57,7 +57,7 @@ if [[ ! $UID = 0 ]] && [[ $(tty) = "$TTY_SWAY" ]] && command -v start-sway >/dev
 fi
 
 # autostart X when on TTY_I3 and not root
-if command -v startx >/dev/null && [[ $(tty) = "$TTY_I3" ]] && [[ ! $UID = 0 ]]; then
+if [[ ! $UID = 0 ]] && [[ $(tty) = "$TTY_I3" ]] && command -v startx >/dev/null; then
   exec startx
 fi
 

@@ -22,7 +22,7 @@ set $right     l
 set $term       termite
 set $menu       rofi
 set $lock       xset s activate && sleep 1
-set $web        ~/bin/browser
+set $web        browser
 set $files      ranger # New terminal instance for ranger
 set $processes  ytop
 set $pass       ~/bin/rofipass
@@ -30,7 +30,7 @@ set $screenshot flameshot gui
 set $ncspot     ncspot
 
 ### Appearance
-set $wallpaper  ~/.config/wallpaper.png
+set $wallpaper  ~/.config/wallpaper
 set $colors     ~/.cache/wal
 
 ############################################################
