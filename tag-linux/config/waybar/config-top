@@ -30,7 +30,7 @@
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        "on-click": "/usr/bin/pulseaudio-ctl mute",
+        "on-click": "pulseaudio-ctl mute",
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "Muted ",

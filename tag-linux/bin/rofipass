@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Ansible managed, do not edit directly
 
 menu=$(gopass ls --flat | rofi -dmenu -p "gopass")

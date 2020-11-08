@@ -1,5 +1,5 @@
 /* Load wal colors */
-@import url("/home/qmeijer/.cache/wal/colors-waybar.css");
+/*@import url("/home/qmeijer/.cache/wal/colors-waybar.css"); */
 @define-color good @color4;
 @define-color bad @color2;
 
