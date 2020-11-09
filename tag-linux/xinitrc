@@ -84,7 +84,7 @@ xset dpms 300 300 600
 xss-lock -- i3lock -c 1f1e1d -n &
 
 # start flameshot daemon
-flameshot -p "${HOME}/Pictures/screenshots/" &
+flameshot &
 
 # start gnome keyring daemon
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_IE]=
 Comment=
-Exec=/home/quidome/bin/browser %U
+Exec=/home/qmeijer/bin/browser %U
 GenericName[en_IE]=Web Browser
 GenericName=Web Browser
 Icon=internet-web-browser

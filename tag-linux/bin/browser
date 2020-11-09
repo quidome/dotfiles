@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+#\"| xclip -selection c\"\n"| wl-copy"\ntemp_firefox
+
+menu=$(echo -e "firefox -P home\nfirefox -P work\nchromium\nfirewarden chromium\n| xclip -selection c\n| wl-copy\ntemp_firefox" | rofi -dmenu -p "browser ")
+
+if [[ $menu == \|* ]]; then
+    eval echo \"$@\" $menu > /dev/null 2>&1 &
+else
+    eval $menu \"$@\" > /dev/null 2>&1 &
+fi
