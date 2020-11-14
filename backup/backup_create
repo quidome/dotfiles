@@ -19,10 +19,18 @@ echo "Backup include:"
 cat "$backup_include"
 echo
 
+echo -n "Enter passphrase for backup: "
+read -s passphrase
+
 # tarbal
 tar --exclude-from="$backup_exclude" \
   --files-from="$backup_include" \
   -cf "$backup_dest".tar
 
 # encrypt the backup
-gpg -c "$backup_dest".tar
+echo "$passphrase" | gpg -c --pinentry-mode loopback --passphrase-fd 0 "$backup_dest".tar
+
+cat <<EOF
+To decrypt, use:
+echo <passphrase> | gpg --passphrase-fd 0 --pinentry-mode loopback --output <backup_name>.tar --decrypt <backup_name>.tar.gpg
+EOF
