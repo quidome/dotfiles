@@ -1,9 +1,9 @@
 # shellcheck shell=bash
 # editor
-export EDITOR=vim
-export GUI_EDITOR=gvim
+export EDITOR=nvim
+export GUI_EDITOR=nvim
 
-export BROWSER=/usr/local/bin/browser
+#export BROWSER=$HOME/bin/browser
 
 # location for repos and such
 export SRC_PATH="${HOME}/src"
