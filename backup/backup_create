@@ -21,6 +21,16 @@ echo
 
 echo -n "Enter passphrase for backup: "
 read -s passphrase
+echo
+echo -n "Enter passphrase again: "
+read -s passphrase_verify
+echo
+
+# verify phrases
+if [ "$passphrase" != "$passphrase_verify" ] ; then
+  echo "mismatch, try again"
+  exit 1
+fi
 
 # tarbal
 tar --exclude-from="$backup_exclude" \
