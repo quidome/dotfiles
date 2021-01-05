@@ -89,7 +89,9 @@ bindsym $mod+Shift+c reload
     bindsym $mod+Shift+p exec $pass
     # launch command line spotify player
     bindsym $mod+m exec "$term -e $ncspot"
-
+    # jump to urgent window
+    bindsym $mod+u [urgent=latest] focus
+   
     ## custom power menu
     set $control power
     bindsym $mod+Shift+e mode "$control"
