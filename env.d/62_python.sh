@@ -1,4 +1,4 @@
-# shellcheck shell=bash disable=SC1091
+# shellcheck shell=bash disable=SC1091,SC2039
 
 # add path to local install python apps
 [ -d "${HOME}/.local/bin" ] && export PATH=$PATH:${HOME}/.local/bin
@@ -9,7 +9,7 @@ export WORKON_HOME=~/.virtualenvs
 if WRAPPER=$(command -v virtualenvwrapper.sh) ; then
   # https://github.com/NixOS/nixpkgs/issues/30586
   # work around a source issue on nixos
-  source <(sed 's/exec/source/' $WRAPPER)
+  source <"(sed 's/exec/source/' $WRAPPER)"
 else
   echo "$0: virtualenvwrapper.sh not found in path"
 fi
