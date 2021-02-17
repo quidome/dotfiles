@@ -28,7 +28,7 @@ set $pass      ~/bin/wofipass
 set $ncspot    ncspot
 
 ### Appearance
-set $wallpaper ~/.config/wallpaper.png
+set $wallpaper ~/.config/wallpaper
 set $colors    ~/.cache/wal
 
 # set colors (and $wallpaper)

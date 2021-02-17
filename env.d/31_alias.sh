@@ -2,6 +2,7 @@
 # Generic stuff
 alias ll='exa -l'
 alias lg='ll --git'
+alias vimdiff='nvim -d'
 
 # cssh
 if [[ "$OSTYPE" == "darwin"* ]]; then
