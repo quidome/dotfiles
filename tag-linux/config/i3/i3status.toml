@@ -20,10 +20,10 @@ name = "slick"
 # separator_fg = "#666666"
 # separator_bg = "#222222"
 
-[[block]]
-block = "custom"
-command = "echo -n  $(/home/qmeijer/go/bin/gerrit-cli -user qmeijer -pass $(gopass show websites/gerrit.tools.bol.com/qmeijer | head -1))"
-interval = 120
+# [[block]]
+# block = "custom"
+# command = "echo -n  $(/home/qmeijer/go/bin/gerrit-cli -user qmeijer -pass $(gopass show websites/gerrit.tools.bol.com/qmeijer | head -1))"
+# interval = 120
 
 #[[block]]
 #block = "pacman"
@@ -34,8 +34,8 @@ block = "load"
 interval = 1
 format = "{5m}"
 
-[[block]]
-block = "temperature"
+#[[block]]
+#block = "temperature"
 
 [[block]]
 block = "memory"
@@ -67,9 +67,9 @@ device = "enp0s31f6"
 speed_up = false
 speed_down = false
 
-[[block]]
-block = "custom"
-command = "/home/qmeijer/bin/vpn-status"
+#[[block]]
+#block = "custom"
+#command = "/home/qmeijer/bin/vpn-status"
 
 #[[block]]
 #block = "bluetooth"

@@ -17,15 +17,15 @@ set $config_path     ~/.config/sway
 set $wallpaper_path  ~/Pictures/wallpapers
 
 # Applications
-set $term      /usr/bin/alacritty
-set $menu      /usr/bin/rofi
-set $lock      '/usr/bin/swaylock -f -C ~/.config/swaylock/config'
-set $web       /usr/local/bin/browser
+set $term      alacritty
+set $menu      wofi
+set $lock      'swaylock -f -C ~/.config/swaylock/config'
+set $web       ~/bin/browser
 set $swayweb   ~/bin/sway-browser
 set $files     $term -e /usr/bin/ranger # New terminal emulator instance for ranger
 set $processes $term -e /usr/bin/gotop
-set $pass      ~/bin/rofipass
-set $ncspot    /usr/bin/ncspot
+set $pass      ~/bin/wofipass
+set $ncspot    ncspot
 
 ### Appearance
 set $wallpaper ~/.config/wallpaper.png
@@ -54,8 +54,7 @@ font pango: Source Code Pro 10
 output *    bg    $wallpaper    fill
 
 # laptop screen
-output "Unknown 0x072F 0x00000000" mode 1920x1080@60Hz position 0,0 scale 1.00
-
+output LVDS-1 mode 1280x800@60Hz position 0,0 scale 1.00
 
 
 ### Idle configuration
@@ -96,7 +95,7 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu -modi run,drun -show run
+    bindsym $mod+d exec $menu --show run
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -122,7 +121,7 @@ exec swayidle -w \
     # Launch process viewer
     bindsym $mod+t exec $processes
     # Launch menu
-    bindsym $mod+p exec $menu -show drun
+    bindsym $mod+p exec $menu --show drun
     # Launch gopass prompt
     bindsym $mod+Shift+p exec $pass
     # Launch command line spotify client
@@ -290,13 +289,13 @@ include ~/.config/sway/rules
 ### Autostart
 #
 # Start waybar
-exec /usr/bin/waybar -c ~/.config/waybar/config-top
+#exec /usr/bin/waybar -c ~/.config/waybar/config-top
 
 # Start mako notification service
-exec systemctl --user start mako.service
+#exec systemctl --user start mako.service
 
 # Start kanshi output manager
-exec /usr/bin/kanshi
+#exec /usr/bin/kanshi
 
 #
 ### Include sway package config files
