@@ -7,6 +7,7 @@ export GUI_EDITOR=nvim
 
 # location for repos and such
 export SRC_PATH="${HOME}/src"
+export REPOS_PATH="${HOME}/repos"
 
 # aliases
 alias delkey=func_ssh_delete_key
