@@ -36,6 +36,31 @@
 # ~/.zlogout
 #     Same as /etc/zsh/zlogout but for per-user configuration.tath first
 
+TTY_I3=/dev/tty1
+TTY_SWAY=/dev/tty9
+
+# autostart sway when on TTY_SWAY and not root
+if [[ ! $UID = 0 ]] && [[ $(tty) = "$TTY_SWAY" ]] && command -v start-sway >/dev/null ; then
+  # java settings required for intellij to work in sway
+  #export _JAVA_AWT_WM_NONREPARENTING=1
+
+  # improve systray functionality
+  #export XDG_CURRENT_DESKTOP=Unity
+
+  # use wayland by default on qt
+  #export QT_QPA_PLATFORM=wayland-egl
+
+  # make firefox use wayland
+  #export MOZ_ENABLE_WAYLAND=1
+
+  exec start-sway 2> ~/sway.log
+fi
+
+# autostart X when on TTY_I3 and not root
+if [[ ! $UID = 0 ]] && [[ $(tty) = "$TTY_I3" ]] && command -v startx >/dev/null; then
+  exec startx
+fi
+
 fpath=($HOME/.zsh-completion $fpath)
 
 # Prompt
