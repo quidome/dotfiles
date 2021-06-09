@@ -341,7 +341,7 @@ bindsym $mod+XF86Eject exec --no-startup-id $lock
 bar {
    #font pango:DejaVu Sans Mono, FontAwesome 12
    position top
-   status_command i3status-rs $HOME/.config/i3/i3status.toml
+   status_command i3status-rs $HOME/.config/i3status-rust/config-top.toml
    # colors {
    #     separator #666666
    #     background #222222
