@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 # Ansible managed, do not edit directly
 
-menu=$(gopass ls --flat | rofi -dmenu -p "gopass")
+graphical_env=$(loginctl show-session $(awk '/tty/ {print $1}' <(loginctl)) -p Type | awk -F= '{print $2}')
+
+if [ "$graphical_env" == "wayland" ] ; then
+  menu_provider=wofi
+else
+  menu_provider=rofi
+fi
+
+menu=$(gopass ls --flat | "$menu_provider" -dmenu -p "gopass")
 
 if [[ $menu == \|* ]]; then
     eval echo \"$@\" $menu > /dev/null 2>&1 &
