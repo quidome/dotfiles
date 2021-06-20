@@ -4,12 +4,12 @@
 graphical_env=$(loginctl show-session $(awk '/tty/ {print $1}' <(loginctl)) -p Type | awk -F= '{print $2}')
 
 if [ "$graphical_env" == "wayland" ] ; then
-  menu_provider=wofi
+  menu_provider='wofi -d'
 else
-  menu_provider=rofi
+  menu_provider='rofi -dmenu'
 fi
 
-menu=$(gopass ls --flat | "$menu_provider" -dmenu -p "gopass")
+menu=$(gopass ls --flat | $menu_provider -p "gopass")
 
 if [[ $menu == \|* ]]; then
     eval echo \"$@\" $menu > /dev/null 2>&1 &
