@@ -22,9 +22,9 @@ if tmux list-sessions |grep -e '.'; then
   # all clients)
   current_session_id=$(tmux list-sessions |tail -n 1 |awk -F: '{print $1}')
   new_session_id=${animals[RANDOM % $#animals + 1]}
-  tmux new-session -d -t $current_session_id -s $new_session_id
+  tmux new-session -d -t "$current_session_id" -s "$new_session_id"
   tmux select-window -t "$( tmux new-window -P -F '#{window_index}' )"
-  tmux attach-session -t $new_session_id \; set-option destroy-unattached
+  tmux attach-session -t "$new_session_id" \; set-option destroy-unattached
 else
-  tmux new-session -s ${animals[RANDOM % $#animals + 1]}
+  tmux new-session -s "${animals[RANDOM % $#animals + 1]}"
 fi
