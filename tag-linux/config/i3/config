@@ -19,7 +19,7 @@ set $up        k
 set $right     l
 
 # Applications
-set $term       termite
+set $term       alacritty
 set $menu       rofi
 set $lock       xset s activate && sleep 1
 set $web        browser-chooser
@@ -91,7 +91,7 @@ bindsym $mod+Shift+c reload
     bindsym $mod+m exec "$term -e $ncspot"
     # jump to urgent window
     bindsym $mod+u [urgent=latest] focus
-   
+
     ## custom power menu
     set $control power
     bindsym $mod+Shift+e mode "$control"
@@ -227,42 +227,42 @@ bindsym $mod+Shift+r restart
 #
 # Scratchpad:
 #
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 800 600
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-exec --no-startup-id NO_TMUX=1 $term --name=dropdown
+for_window [class="Alacritty" instance="__scratchpad__"] floating enable
+for_window [class="Alacritty" instance="__scratchpad__"] resize set 800 600
+for_window [class="Alacritty" instance="__scratchpad__"] move scratchpad
+for_window [class="Alacritty" instance="__scratchpad__"] border pixel 5
+exec --no-startup-id NO_TMUX=1 $term --class=__scratchpad__
 
 bindsym $mod+Shift+backslash move scratchpad
 bindsym $mod+backslash scratchpad show
 
 # choose a class to show in scratchpad directly
-bindsym $mod+BackSpace [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+BackSpace [class="Alacritty" instance="__scratchpad__"] scratchpad show; [class="Alacritty" instance="__scratchpad__"] move position center
 
 #
 # Resizing containers:
 #
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
-	bindsym j resize shrink width 10 px or 10 ppt
-	bindsym k resize grow height 10 px or 10 ppt
-	bindsym l resize shrink height 10 px or 10 ppt
-	bindsym semicolon resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+# back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
