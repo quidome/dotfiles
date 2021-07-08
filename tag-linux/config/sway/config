@@ -20,8 +20,7 @@ set $wallpaper_path  ~/Pictures/wallpapers
 set $term      alacritty
 set $menu      wofi
 set $lock      'swaylock -f -C ~/.config/swaylock/config'
-set $web       ~/bin/browser
-set $swayweb   ~/bin/sway-browser
+set $web       browser-chooser
 set $files     $term -e /usr/bin/ranger # New terminal emulator instance for ranger
 set $processes $term -e /usr/bin/gotop
 set $pass      ~/bin/wofipass
