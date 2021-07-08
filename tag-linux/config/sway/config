@@ -21,8 +21,8 @@ set $term      alacritty
 set $menu      wofi
 set $lock      'swaylock -f -C ~/.config/swaylock/config'
 set $web       browser-chooser
-set $files     $term -e /usr/bin/ranger # New terminal emulator instance for ranger
-set $processes $term -e /usr/bin/gotop
+set $files     $term -e ranger # New terminal emulator instance for ranger
+set $processes $term -e gotop
 set $pass      ~/bin/wofipass
 set $ncspot    ncspot
 
