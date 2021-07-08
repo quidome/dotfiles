@@ -399,7 +399,7 @@ globalkeys = gears.table.join(
     -- Rofi launchers
     awful.key({ modkey, "Shift" }, "b",
        function ()
-	  awful.util.spawn("browser")
+	  awful.util.spawn("browser-chooser")
        end ,
        {description = "Show browser chooser", group = "launcher"}),
 
