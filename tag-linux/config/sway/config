@@ -114,7 +114,7 @@ exec swayidle -w \
 #
     ## Applications
     # Launch firefox chooser
-    bindsym $mod+Shift+b exec $swayweb
+    bindsym $mod+Shift+b exec $web
     # Launch file browser
     bindsym $mod+n exec $files
     # Launch process viewer
@@ -284,17 +284,20 @@ include ~/.config/sway/rules
 #     }
 # }
 
+
+# import environment and start required services
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
 #
 ### Autostart
 #
 # Start waybar
-#exec /usr/bin/waybar -c ~/.config/waybar/config-top
+#exec waybar -c ~/.config/waybar/config-top
 
 # Start mako notification service
 #exec systemctl --user start mako.service
 
 # Start kanshi output manager
-#exec /usr/bin/kanshi
+#exec kanshi
 
 #
 ### Include sway package config files
