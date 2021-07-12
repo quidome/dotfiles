@@ -19,7 +19,7 @@ set $up        k
 set $right     l
 
 # Applications
-set $term       alacritty
+set $term       termite
 set $menu       rofi
 set $lock       xset s activate && sleep 1
 set $web        browser-chooser
@@ -227,17 +227,17 @@ bindsym $mod+Shift+r restart
 #
 # Scratchpad:
 #
-for_window [class="Alacritty" instance="__scratchpad__"] floating enable
-for_window [class="Alacritty" instance="__scratchpad__"] resize set 800 600
-for_window [class="Alacritty" instance="__scratchpad__"] move scratchpad
-for_window [class="Alacritty" instance="__scratchpad__"] border pixel 5
-exec --no-startup-id NO_TMUX=1 $term --class=__scratchpad__
+for_window [class="Termite" instance="__scratchpad__"] floating enable
+for_window [class="Termite" instance="__scratchpad__"] resize set 800 600
+for_window [class="Termite" instance="__scratchpad__"] move scratchpad
+for_window [class="Termite" instance="__scratchpad__"] border pixel 5
+exec --no-startup-id NO_TMUX=1 $term --name=__scratchpad__
 
 bindsym $mod+Shift+backslash move scratchpad
 bindsym $mod+backslash scratchpad show
 
 # choose a class to show in scratchpad directly
-bindsym $mod+BackSpace [class="Alacritty" instance="__scratchpad__"] scratchpad show; [class="Alacritty" instance="__scratchpad__"] move position center
+bindsym $mod+BackSpace [class="Termite" instance="__scratchpad__"] scratchpad show; [class="Termite" instance="__scratchpad__"] move position center
 
 #
 # Resizing containers:
