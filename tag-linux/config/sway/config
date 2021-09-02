@@ -23,7 +23,7 @@ set $lock      'swaylock -f -C ~/.config/swaylock/config'
 set $web       browser-chooser
 set $files     $term -e ranger # New terminal emulator instance for ranger
 set $processes $term -e gotop
-set $pass      ~/bin/wofipass
+set $pass      ~/bin/rofipass
 set $ncspot    ncspot
 
 ### Appearance
