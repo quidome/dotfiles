@@ -290,14 +290,9 @@ exec_always "systemctl --user import-environment; systemctl --user start sway-se
 #
 ### Autostart
 #
-# Start waybar
-#exec waybar -c ~/.config/waybar/config-top
-
-# Start mako notification service
-#exec systemctl --user start mako.service
-
 # Start kanshi output manager
-#exec kanshi
+exec_always systemctl --user restart kanshi.service
+#exec /usr/bin/kanshmakoi
 
 #
 ### Include sway package config files
