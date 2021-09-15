@@ -1,8 +1,4 @@
 # shellcheck shell=bash
-# editor
-export EDITOR=nvim
-export GUI_EDITOR=nvim
-
 # location for repos and such
 export SRC_PATH="${HOME}/src"
 export REPOS_PATH="${HOME}/repos"
@@ -19,10 +15,4 @@ func_ssh_delete_key() {
     # regular gnu sed
     sed -i "${line_number}d" "$HOME/.ssh/known_hosts"
   fi
-}
-
-
-show() {
-    search_term=$1
-    grep --color -E "${search_term}|$"
 }
