@@ -282,7 +282,7 @@ exec_always "systemctl --user import-environment; systemctl --user start graphic
 
 exec_always ~/bin/import-gsettings
 
-# Start kanshi output manager
+# Kanshi needs to be restarted upon config reloads
 exec_always systemctl --user restart kanshi.service
 
 #
