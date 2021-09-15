@@ -55,6 +55,8 @@ output *    bg    $wallpaper    fill
 # laptop screen
 #output LVDS-1 mode 1280x800@60Hz position 0,0 scale 1.00
 
+gaps inner 2
+gaps outer 0
 
 ### Idle configuration
 #
