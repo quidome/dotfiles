@@ -278,7 +278,7 @@ include ~/.config/sway/rules
 #
 
 # import environment and start required services
-exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec_always "systemctl --user import-environment; systemctl --user start graphical-session.target"
 
 exec_always ~/bin/import-gsettings
 
