@@ -225,6 +225,8 @@ exec swayidle -w \
 
     # move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym Control+Space exec makoctl dismiss --all
 #
 # Scratchpad:
 #
