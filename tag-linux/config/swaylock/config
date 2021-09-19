@@ -1,9 +1,12 @@
-show-failed-attempts
+image=~/Pictures/wallpapers/183940.jpg
+scaling=fill
 
-font=Fira Code
-color=121112
-inside-color=817B78B2
-ring-color=D6D6D7B2
+ignore-empty-password
+indicator-radius=75
+indicator-thickness=14
 line-uses-ring
-key-hl-color=D6D6D7
-separator-color=D6D6D7
+
+# entry ring colors
+inside-color=28282899
+ring-color=282828
+key-hl-color=a1a1a1
