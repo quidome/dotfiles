@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# shows vpn status for statusbar
+# shellcheck shell=bash disable=SC2139
+
+openconnect_info () {
+    if opid=$(pgrep -x openconnect) ; then
+        otime=$(ps -o etime='' -p "${opid}" | sed 's/\s//g' | cut -d ':' -f1-2)
+        echo "${otime}"
+        return 0
+    else
+        return 1
+    fi
+}
+
+vpn_status () {
+    if opid=$(pgrep -x openconnect) ; then
+        otime=$(ps -o etime='' -p "${opid}" | sed 's/\s//g' | cut -d ':' -f1-2)
+        echo " ${otime}"
+    else
+        echo ""
+    fi
+}
+
+vpn_status_json () {
+  # should return json containing:
+  # text
+  # tooltip
+  # percentage
+
+  if tooltip=$(openconnect_info) ; then
+    percentage=100
+  else
+    tooltip="not connected"
+    percentage=0
+  fi
+
+
+  echo {\"text\": \"n/a\", \"tooltip\": \"$tooltip\", \"percentage\": $percentage}
+}
+
+if [ "$1" == "json" ] ; then
+  vpn_status_json
+else
+  vpn_status
+fi
