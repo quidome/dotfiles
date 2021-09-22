@@ -3,22 +3,21 @@
 # shellcheck shell=bash disable=SC2139
 
 openconnect_info () {
-    if opid=$(pgrep -x openconnect) ; then
-        otime=$(ps -o etime='' -p "${opid}" | sed 's/\s//g' | cut -d ':' -f1-2)
-        echo "${otime}"
-        return 0
-    else
-        return 1
-    fi
+  if opid=$(pgrep -x openconnect) ; then
+    otime=$(ps -o etime='' -p "${opid}" | sed 's/\s//g; s/^1-// ; s/^\([0-9]\{2\}:[0-9]\{2\}\)$/00:\1/ ; s/:[0-9]\+$//')
+    echo "${otime}"
+    return 0
+  else
+    return 1
+  fi
 }
 
 vpn_status () {
-    if opid=$(pgrep -x openconnect) ; then
-        otime=$(ps -o etime='' -p "${opid}" | sed 's/\s//g' | cut -d ':' -f1-2)
-        echo " ${otime}"
-    else
-        echo ""
-    fi
+  if processTime=$(openconnect_info) ; then
+    echo " ${processTime}"
+  else
+    echo ""
+  fi
 }
 
 vpn_status_json () {
@@ -29,13 +28,15 @@ vpn_status_json () {
 
   if tooltip=$(openconnect_info) ; then
     percentage=100
+    class=connected
   else
-    tooltip="not connected"
+    tooltip="disconnected"
     percentage=0
+    class="disconnected"
   fi
 
 
-  echo {\"text\": \"n/a\", \"tooltip\": \"$tooltip\", \"percentage\": $percentage}
+  echo {\"text\": \"n/a\", \"tooltip\": \"$tooltip\", \"percentage\": $percentage, \"class\": \"$class\"}
 }
 
 if [ "$1" == "json" ] ; then
