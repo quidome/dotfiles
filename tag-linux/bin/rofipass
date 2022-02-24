@@ -9,7 +9,7 @@ else
   menu_provider='rofi -dmenu'
 fi
 
-menu=$(gopass ls --flat | $menu_provider -p "gopass")
+menu=$(gopass ls --flat | $menu_provider -p "")
 
 if [[ $menu == \|* ]]; then
     eval echo \"$@\" $menu > /dev/null 2>&1 &
