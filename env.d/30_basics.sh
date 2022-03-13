@@ -1,7 +1,6 @@
 # shellcheck shell=bash
 # location for repos and such
-export SRC_PATH="${HOME}/src"
-export REPOS_PATH="${HOME}/repos"
+export DEV_PATH="${HOME}/dev"
 
 # aliases
 alias delkey=func_ssh_delete_key
