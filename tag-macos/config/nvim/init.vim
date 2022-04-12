@@ -10,7 +10,6 @@ nnoremap <leader><esc> :noh<return><esc>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-
 " no need for shift
 nnoremap    ;     :
 
@@ -28,9 +27,11 @@ nnoremap <Leader>t :call TermEnter()<CR>
 noremap <C-Right> <m-f>
 ":au TermOpen * :let  g:terminal_scrollback_buffer_size=100000
 
-" install plug
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.vim/plugged')
+
+" Manage vim plugins
+" How to install for nvim:
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+call plug#begin()
 
 " color nested [({
 Plug 'luochen1990/rainbow'
@@ -61,14 +62,7 @@ let g:airline_symbols.space = "\ua0"
 
 "
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='dark_minimal'
-"let g:airline_theme='sol'
-
-" Solarized Colorscheme for Vim
-"Plug 'altercation/vim-colors-solarized'
-
-"
-Plug 'vim-scripts/summerfruit256.vim'
+let g:airline_theme='gruvbox'
 
 "
 Plug 'morhetz/gruvbox'
@@ -129,12 +123,14 @@ filetype plugin on    " Enable filetype-specific plugins
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" Favo colors
-" summerfruit is a colorscheme for light backgrounds
-" use solarized for dark backgrounds
+" Favo colors, gruvbox dark ftw
+if $TERM_BG == "light"
+  set background=light
+else
+  set background=dark
+endif
+
 try
-"  colorscheme summerfruit256
-"  colorscheme solarized
    colorscheme gruvbox
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
