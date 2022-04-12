@@ -1,7 +1,8 @@
 # shellcheck shell=bash
 # Setup GnuPG
 
-export GPG_TTY="$(tty)" 
+GPG_TTY="$(tty)"
+export GPG_TTY
 #if TTY=$(tty) ; then
 
 #gpgconf --launch gpg-agent 

@@ -1,4 +1,4 @@
-# shellcheck shell=bash disable=SC1090
+# shellcheck shell=bash disable=SC1091
 
 # The next line updates PATH for the Google Cloud SDK.
 [ -f "${HOME}/opt/google-cloud-sdk/path.zsh.inc" ] && . "${HOME}/opt/google-cloud-sdk/path.zsh.inc"
