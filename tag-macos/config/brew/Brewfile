@@ -1,0 +1,69 @@
+# Taps
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+# System
+brew "bash"
+brew "bat"
+brew "choose-gui"
+brew "exa"
+brew "fd"
+brew "fzf"
+brew "gopass"
+brew "htop"
+brew "mas"
+brew "md5sha1sum"
+brew "p7zip"
+brew "pinentry-mac"
+brew "rcm"
+brew "ripgrep"
+brew "sponge"
+brew "starship"
+brew "tmux"
+brew "watch"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
+# Ops
+brew "k9s"
+brew "kubectx"
+brew "stern"
+
+# Versioning and packaging
+brew "git-crypt"
+brew "git-delta"
+brew "subversion"
+
+# Dev
+brew "angular-cli"
+brew "go"
+brew "jq"
+brew "neovim"
+brew "node"
+brew "postgres"
+brew "shellcheck"
+brew "yarn"
+
+# puppet vagrant
+brew "git-flow"
+brew "pipenv"
+brew "pyenv"
+brew "pyenv-virtualenv"
+
+# Casks
+cask "alfred"
+cask "browserosaurus"
+cask "discord"
+cask "ferdi"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-source-code-pro"
+cask "obsidian"
+cask "rectangle"
+
+# Apple Store entries
+mas "Home Assistant", id: 1099568401
+mas "SimpleMind", id: 439654198
+mas "WhatsApp", id: 1147396723
