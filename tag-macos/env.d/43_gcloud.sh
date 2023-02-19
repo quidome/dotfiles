@@ -7,5 +7,7 @@ if [ -f '/Users/qmeijer/Library/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 if [ -f '/Users/qmeijer/Library/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/qmeijer/Library/google-cloud-sdk/completion.zsh.inc'; fi
 
 # set aliases for kubectx and kubens
-alias kns=kubens
-alias kctx=kubectx
+alias k=kubectl
+alias kn=kubens
+alias kc=kubectx
+alias gcl='gcloud auth login'
