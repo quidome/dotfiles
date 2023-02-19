@@ -8,13 +8,16 @@ tap "homebrew/core"
 brew "bash"
 brew "bat"
 brew "choose-gui"
+brew "dog"
 brew "exa"
 brew "fd"
 brew "fzf"
 brew "gopass"
 brew "htop"
+brew "jless"
 brew "mas"
 brew "md5sha1sum"
+brew "ncurses"
 brew "p7zip"
 brew "pinentry-mac"
 brew "rcm"
@@ -28,7 +31,7 @@ brew "zsh-syntax-highlighting"
 
 # Ops
 brew "k9s"
-brew "kubectx"
+brew "kubectx", args: ["ignore-dependencies"]
 brew "stern"
 
 # Versioning and packaging
@@ -38,13 +41,23 @@ brew "subversion"
 
 # Dev
 brew "angular-cli"
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "docker-credential-helper"
 brew "go"
 brew "jq"
+brew "maven"
 brew "neovim"
 brew "node"
-brew "postgres"
+brew "pandoc"
+brew "poetry"
+brew "postgresql@14"
 brew "shellcheck"
 brew "yarn"
+
+# graphics
+brew "imagemagick"
 
 # puppet vagrant
 brew "git-flow"
@@ -53,17 +66,16 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 
 # Casks
-cask "alfred"
+#cask "alfred"
+cask "apache-directory-studio"
 cask "browserosaurus"
 cask "discord"
-cask "ferdi"
+cask "emacs"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-source-code-pro"
+cask "gimp"
 cask "obsidian"
 cask "rectangle"
-
-# Apple Store entries
-mas "Home Assistant", id: 1099568401
-mas "SimpleMind", id: 439654198
-mas "WhatsApp", id: 1147396723
+cask "syncthing"
+cask "wireshark"
