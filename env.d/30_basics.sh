@@ -2,16 +2,4 @@
 # location for repos and such
 export DEV_PATH="${HOME}/dev"
 
-# aliases
-alias delkey=func_ssh_delete_key
-
-func_ssh_delete_key() {
-  line_number=$1
-  if [[ "$OSTYPE" = "darwin"* ]]; then
-    # use bsd sed
-    sed -i'' -E "${line_number}d" "$HOME/.ssh/known_hosts"
-  elif [[ "$OSTYPE" = "linux-gnu"* ]]; then
-    # regular gnu sed
-    sed -i "${line_number}d" "$HOME/.ssh/known_hosts"
-  fi
-}
+export PATH=$PATH:${HOME}/bin
