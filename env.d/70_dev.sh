@@ -1,6 +1,6 @@
 dev () {
 	local workspace url cmd localPath
-	workspace="$HOME/Workspace" 
+	workspace="$HOME/dev" 
 
 	if ! command -v git > /dev/null 2>&1
 	then
