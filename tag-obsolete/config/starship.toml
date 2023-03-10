@@ -1,0 +1,22 @@
+format = "$hostname$status$env_var$shlvl$directory$git_branch$git_status[\\$](bold) "
+
+[directory]
+truncate_to_repo = false
+
+[git_branch]
+format = "[$branch](bold purple)"
+
+[git_status]
+deleted = "✗"
+modified = "✗"
+renamed = "✗"
+staged = "[$count](green)"
+style = "yellow"
+
+[hostname]
+format = "[$hostname]($style):"
+
+[status]
+disabled = false
+not_executable_symbol = ""
+not_found_symbol = ""
