@@ -1,81 +1,28 @@
 # Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 # System
-brew "bash"
-brew "bat"
-brew "choose-gui"
-brew "dog"
-brew "exa"
-brew "fd"
-brew "fzf"
-brew "gopass"
-brew "htop"
-brew "jless"
-brew "mas"
-brew "md5sha1sum"
-brew "ncurses"
-brew "p7zip"
-brew "pinentry-mac"
-brew "rcm"
-brew "ripgrep"
-brew "sponge"
-brew "starship"
-brew "tmux"
-brew "watch"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
+#brew "bash"
+#brew "md5sha1sum"
+#brew "ncurses"
+#brew "p7zip"
+#brew "sponge"
+#brew "watch"
 
-# Ops
-brew "k9s"
-brew "kubectx", args: ["ignore-dependencies"]
-brew "stern"
-
-# Versioning and packaging
-brew "git-crypt"
-brew "git-delta"
-brew "subversion"
-
-# Dev
-brew "angular-cli"
-brew "colima"
-brew "docker"
-brew "docker-compose"
-brew "docker-credential-helper"
-brew "go"
-brew "jq"
-brew "maven"
-brew "neovim"
-brew "node"
-brew "pandoc"
+# Python
 brew "poetry"
-brew "postgresql@14"
-brew "shellcheck"
-brew "yarn"
-
-# graphics
-brew "imagemagick"
-
-# puppet vagrant
-brew "git-flow"
 brew "pipenv"
 brew "pyenv"
 brew "pyenv-virtualenv"
 
-# Casks
-#cask "alfred"
-cask "apache-directory-studio"
-cask "browserosaurus"
+# Nodejs
+brew "nvm"
+
+# Casks 
+cask "browserosaurus" 
 cask "discord"
-cask "emacs"
-cask "font-jetbrains-mono-nerd-font"
-cask "font-meslo-lg-nerd-font"
-cask "font-source-code-pro"
 cask "gimp"
 cask "obsidian"
 cask "rectangle"
-cask "syncthing"
-cask "wireshark"
