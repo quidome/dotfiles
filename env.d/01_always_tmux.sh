@@ -6,6 +6,7 @@ if [ -n "$TMUX" ] ||
        [[ "$GIO_LAUNCHED_DESKTOP_FILE" == *"guake.desktop"* ]] ||
        [[ "$(tty)" =~ /dev/tty[0-9] ]] ||
        [[ "$TERM" == screen* ]] ||
+       [[ "$TERM" == "" ]] ||
        [ "$TERM_PROGRAM" = "vscode" ] ||
        [ "$TERMINAL_EMULATOR" = "JetBrains-JediTerm" ] ||
        [ "$NO_TMUX" = "1" ] ||
