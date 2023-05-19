@@ -31,7 +31,7 @@ dev () {
 cddev () {
   local repo_path
   if repo_path=$(fd -H -td '\.git$' "$DEV_PATH" | xargs dirname | fzf -q "$1") && [ -d "$repo_path" ]; then
-    cd "$repo_path" || exit 1
+    cd "$repo_path" || return 1
   fi
 }
 
