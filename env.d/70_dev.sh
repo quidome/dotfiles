@@ -9,12 +9,11 @@ dev () {
     return 1
   fi
 
+  # If we don't get arguments, envoke cddev
   if [ $# -ne 1 ]
   then
-    echo Usage:
-    # echo "\t$(basename $0) <git url>"
-    printf '\t%s\n' "$(basename "$0")"
-    return 1
+    cddev
+    return $_
   fi
 
   url=$1
