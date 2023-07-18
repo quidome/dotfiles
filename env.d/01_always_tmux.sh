@@ -4,6 +4,7 @@
 # some exceptions, don't tmux for these
 if [ -n "$TMUX" ] ||
        [[ "$GIO_LAUNCHED_DESKTOP_FILE" == *"guake.desktop"* ]] ||
+       [ "$__CFBundleIdentifier" = "io.lapce" ] ||
        [[ "$(tty)" =~ /dev/tty[0-9] ]] ||
        [[ "$TERM" == screen* ]] ||
        [[ "$TERM" == "" ]] ||
