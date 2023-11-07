@@ -1,7 +1,7 @@
 # shellcheck shell=bash
-dev () {
+p () {
   local workspace url localPath
-  workspace="$HOME/dev"
+  workspace="$DEV_PATH"
 
   if ! command -v git > /dev/null 2>&1
   then
@@ -12,7 +12,7 @@ dev () {
   # If we don't get arguments, envoke cddev
   if [ $# -ne 1 ]
   then
-    cddev
+    cdp
     return $_
   fi
 
@@ -27,7 +27,7 @@ dev () {
   cd "$localPath" || exit 1
 }
 
-cddev () {
+cdp () {
   local repo_path
   if repo_path=$(fd -H -td '\.git$' "$DEV_PATH" | xargs dirname | fzf -q "$1") && [ -d "$repo_path" ]; then
     cd "$repo_path" || return 1
