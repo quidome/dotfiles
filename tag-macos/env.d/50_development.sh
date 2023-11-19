@@ -20,6 +20,12 @@ elif test -d "$HOME/.rvm/bin/" ; then
     export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
+# Multi language manager rtx (asdf clone)
+# used for: nodejs
+if command -v rtx 1> /dev/null 2>&1 ; then
+    eval "$(rtx activate zsh)"
+fi
+
 # Manage languages with sdkman
 # used for: java
 export SDKMAN_DIR="$SDKMAN_DIR_RAW"

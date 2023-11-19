@@ -1,5 +1,10 @@
 fpath=( ~/.zsh/completion "${fpath[@]}" )
-autoload -U compinit; compinit
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions/:$FPATH
+fi
+
+autoload -Uz compinit; compinit
 
 
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
