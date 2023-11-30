@@ -18,7 +18,7 @@ fi
 
 animals=(🐈 🦄 🐮 🐖 🐽 🐗 🐪 🦙 🦘 🦒 🦏 🦛 🐹 🦔 🦇 🐨 🦃 🐦 🦆 🦉 🐸 🦜 🦚 🦩 🐙 🐛 🐝 🦠 🐝 🐡 🦖 🐊)
 
-if tmux list-sessions |grep -e '.'; then
+if tmux list-sessions 2>/dev/null |grep -e '.'; then
   # There is at least one tmux session running. We'll take the oldest, and
   # create a new session in the same group (so all windows are available from
   # all clients)
