@@ -1,5 +1,8 @@
 # shellcheck shell=bash
 
+# Add golang install dir to path
+export PATH=$PATH:${HOME}/go/bin
+
 # Manage python with pyenv
 if command -v pyenv 1> /dev/null 2>&1 ; then
   eval "$(pyenv init -)"
