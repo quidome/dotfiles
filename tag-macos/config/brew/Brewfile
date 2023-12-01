@@ -57,6 +57,7 @@ brew "node"
 brew "poetry"
 brew "postgresql@14"
 brew "rtx"
+brew "rustup"
 brew "shellcheck"
 
 # puppet vagrant
