@@ -28,3 +28,9 @@ tramp
 ### rbenv 
 .ruby-version
 .ruby-gemset
+
+### RTX multi language manager
+.rtx.toml
+
+### Python development
+.venv
