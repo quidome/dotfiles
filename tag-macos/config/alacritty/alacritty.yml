@@ -30,19 +30,19 @@
   },
   "font": {
     "bold": {
-      "family": "IBM Plex Mono",
+      "family": "FiraCode Nerd Font",
       "style": "Bold"
     },
     "bold_italic": {
-      "family": "IBM Plex Mono",
+      "family": "FiraCode Nerd Font",
       "style": "Bold Italic"
     },
     "italic": {
-      "family": "IBM Plex Mono",
+      "family": "FiraCode Nerd Font",
       "style": "Italic"
     },
     "normal": {
-      "family": "IBM Plex Mono",
+      "family": "FiraCode Nerd Font",
       "style": "Regular"
     },
     "size": 14
