@@ -30,7 +30,7 @@ tramp
 .ruby-gemset
 
 ### RTX multi language manager
-.rtx.toml
+.mise.toml
 
 ### Python development
 .venv
