@@ -2,4 +2,4 @@
 
 export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
 
-alias brew-edit=nvim\ "${HOMEBREW_BUNDLE_FILE}"
+alias brew-edit="${EDITOR} ${HOMEBREW_BUNDLE_FILE}"

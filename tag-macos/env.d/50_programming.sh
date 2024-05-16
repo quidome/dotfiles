@@ -3,6 +3,11 @@
 # Add Intellij to path
 PATH=$PATH:'/Applications/IntelliJ IDEA.app/Contents/MacOS'
 
+# Direnv
+if command -v direnv >/dev/null 2>&1 ; then  
+  eval "$(direnv hook zsh)"
+fi
+
 # Golang
 export PATH=$PATH:${HOME}/go/bin
 
@@ -19,6 +24,12 @@ if test -f "${HOME}/.rbenv/bin/rbenv"; then
 fi
 
 # Nodejs
-if command -v fnm >/dev/null ; then
-  eval "$(fnm env --use-on-cd)"
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  . /opt/homebrew/opt/nvm/nvm.sh
+fi
+
+# Polyglot language manager: mice
+if command -v mise >/dev/null ; then
+  eval "$(mise activate zsh)"
 fi

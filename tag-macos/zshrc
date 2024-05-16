@@ -9,20 +9,14 @@ autoload -Uz compinit; compinit
 
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
 
-if [ -d $HOME/.env.d ]; then
-  for i in $HOME/.env.d/*.sh; do
-    if [ -r $i ]; then
-      . $i
+if [ -d "$HOME/.env.d" ]; then
+  for i in "$HOME/.env.d/"*.sh; do
+    if [ -r "$i" ]; then
+      . "$i"
       export ZSH_SCRIPTS=${ZSH_SCRIPTS}:${i##*/}
     fi
   done
   unset i
 fi
-
-eval "$(starship init zsh)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
