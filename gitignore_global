@@ -34,3 +34,6 @@ tramp
 
 ### Python development
 .venv
+
+### Direnv
+.envrc
