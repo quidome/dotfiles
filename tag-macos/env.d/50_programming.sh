@@ -1,16 +1,5 @@
 # shellcheck shell=bash
 
-# Add Intellij to path
-PATH=$PATH:'/Applications/IntelliJ IDEA.app/Contents/MacOS'
-
-# Direnv
-if command -v direnv >/dev/null 2>&1 ; then  
-  eval "$(direnv hook zsh)"
-fi
-
-# Golang
-export PATH=$PATH:${HOME}/go/bin
-
 # Python
 if command -v pyenv 1> /dev/null 2>&1 ; then
   eval "$(pyenv init -)"
