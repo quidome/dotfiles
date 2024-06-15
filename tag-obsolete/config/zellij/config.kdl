@@ -1,0 +1,10 @@
+keybinds {
+    unbind "Ctrl b"
+}
+
+default_layout "layout"
+
+copy_command "pbcopy"
+
+scrollback_editor "/opt/homebrew/bin/hx"
+pane_frames false

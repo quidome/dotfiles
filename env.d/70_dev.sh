@@ -12,7 +12,7 @@ p () {
   # If we don't get arguments, envoke cddev
   if [ $# -ne 1 ]
   then
-    cdp
+    _cdp
     return $_
   fi
 
@@ -24,13 +24,21 @@ p () {
     git clone "$url" "$localPath" || return 1
   fi
 
-  cd "$localPath" || exit 1
+  $(_cdz) "$localPath" || exit 1
 }
 
-cdp () {
+_cdp () {
   local repo_path
   if repo_path=$(fd -u -td '\.git$' "$DEV_PATH" | xargs dirname | fzf -q "$1") && [ -d "$repo_path" ]; then
-    cd "$repo_path" || return 1
+    $(_cdz) "$repo_path" || return 1
+  fi
+}
+
+_cdz() {
+  if command -v z >/dev/null 2>&1 ; then
+    echo z
+  else
+    echo cd
   fi
 }
 

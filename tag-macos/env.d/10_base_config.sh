@@ -1,23 +1,23 @@
 # shellcheck shell=bash
 
 # Exports
-export EDITOR=hx
+# export EDITOR=hx
 
 # Base tooling
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+# eval "$(starship init zsh)"
+# eval "$(zoxide init zsh)"
 
 # Set Aliases
 alias qinit='kinit --password-file=STDIN ${USER}@${KRBDOMAIN} <<<$(gopass show ${PWPATH}/krb/${USER})'
 alias gitclean='git branch | grep -vE "\*|main|master" | xargs git branch -d'
 
-alias ll='eza -la'
+# alias ll='eza -la'
 
-alias vim=nvim
-alias vimdiff='nvim -d'
+# alias vim=nvim
+# alias vimdiff='nvim -d'
 
 # GnuPG
-export GPG_TTY="$(tty)"
+# export GPG_TTY="$(tty)"
 #if TTY=$(tty) ; then
 
 #gpgconf --launch gpg-agent 
