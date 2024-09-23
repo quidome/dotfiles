@@ -1,3 +1,4 @@
+# shellcheck disable=SC1090
 fpath=( ~/.zsh/completion "${fpath[@]}" )
 
 if type brew &>/dev/null; then
@@ -6,10 +7,9 @@ fi
 
 autoload -Uz compinit; compinit
 
-
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
+source <(fzf --zsh)
 
 if [ -d "$HOME/.env.d" ]; then
   for i in "$HOME/.env.d/"*.sh; do

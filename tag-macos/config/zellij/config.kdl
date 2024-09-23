@@ -1,5 +1,10 @@
 keybinds {
-    unbind "Ctrl b"
+	shared_except "locked" {
+		bind "Ctrl q" {
+			 "Detach"
+		}
+	}
+	unbind "Ctrl b"
 }
 
 default_layout "layout"

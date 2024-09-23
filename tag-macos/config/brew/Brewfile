@@ -1,7 +1,5 @@
 # Taps
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 
 # System
 brew "bash"
@@ -12,9 +10,8 @@ brew "curl"
 brew "eza"
 brew "fd"
 brew "fzf"
-brew "gitui"
 brew "gopass"
-brew "helix"
+brew "gnupg"
 brew "htop"
 brew "mas"
 brew "ncurses"
@@ -27,19 +24,21 @@ brew "rename"
 brew "ripgrep"
 brew "sponge"
 brew "starship"
-brew "tmux"
 brew "watch"
 brew "wget"
 brew "zellij"
 brew "zoxide"
 brew "zsh-syntax-highlighting"
+cask "alacritty"
+cask "raycast"
+cask "syncthing"
 
 # Ops
 brew "k9s"
 brew "kubectx", args: ["ignore-dependencies"]
 brew "stern"
 
-Helix and addons
+# Helix and addons
 brew "helix"
 brew "bash-language-server"
 brew "marksman"
@@ -49,51 +48,54 @@ brew "yaml-language-server"
 # Versioning and packaging
 brew "git-crypt"
 brew "git-delta"
-brew "subversion"
+brew "gitui"
 
-# Dev language stuff
+# Dev misc
+cask "emacs"
 brew "direnv"
-brew "jenv"
 brew "golang"
+brew "shellcheck"
+brew "jless"
+brew "jq"
+
+# Java/Kotlin
 brew "ktlint"
 brew "maven"
+brew "jenv"
+cask "zulu@21"
+
+# Javascript/Node
 brew "nvm"
+
+# Python
 brew "poetry"
 brew "pyenv"
 brew "pyenv-virtualenv"
-brew "shellcheck"
-cask "zulu@21"
 
-# DevOps tooling
-brew "cloud-sql-proxy"
+# Docker / gcloud
+cask "google-cloud-sdk"
 brew "colima"
 brew "docker"
 brew "docker-compose"
 brew "docker-credential-helper"
-brew "gitlab-runner"
-cask "google-cloud-sdk"
-brew "httpie"
-brew "jless"
-brew "jq"
 brew "k9s"
 brew "kubectx", args: ["ignore-dependencies"]
+brew "stern"
+
+# DevOps tooling
+brew "httpie"
 brew "libpq"
 brew "libyaml"
 brew "neovim"
-brew "stern"
 brew "yq"
 
-# Casks
-cask "alacritty"
-cask "alfred"
+# Generic tools
 cask "bitwarden"
-cask "blender"
 cask "browserosaurus"
-cask "discord"
-cask "element"
-cask "emacs"
 cask "font-fira-code-nerd-font"
+
 cask "logseq"
 cask "obsidian"
+
+cask "element"
 cask "signal"
-cask "syncthing"
