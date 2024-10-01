@@ -4,6 +4,7 @@
 export EDITOR=hx
 
 # Base tooling
+source <(fzf --zsh)
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd=j)"
 

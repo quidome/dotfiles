@@ -18,7 +18,7 @@ if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
   . /opt/homebrew/opt/nvm/nvm.sh
 fi
 
-# Polyglot language manager: mice
+# Polyglot language manager: mise
 if command -v mise >/dev/null ; then
   eval "$(mise activate zsh)"
 fi

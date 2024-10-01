@@ -6,12 +6,6 @@
     defaultBranch = main
 [url "git@gitlab.bol.io:"]
     insteadOf = https://gitlab.bol.io/
-[url "git@gitlab.tools.bol.com:"]
-    insteadOf = https://gitlab.tools.bol.com/
-[url "ssh://git@gitlab.bol.io/"]
-    insteadOf = https://gitlab.bol.io/
-[url "ssh://git@gitlab.tools.bol.com/"]
-    insteadOf = https://gitlab.tools.bol.com/
 
 [branch]
     autosetuprebase = always
@@ -34,11 +28,6 @@
 
 [diff]
     colorMoved = default
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
 [push]
 	autoSetupRemote = true

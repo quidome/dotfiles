@@ -9,8 +9,6 @@ autoload -Uz compinit; compinit
 
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 
-source <(fzf --zsh)
-
 if [ -d "$HOME/.env.d" ]; then
   for i in "$HOME/.env.d/"*.sh; do
     if [ -r "$i" ]; then

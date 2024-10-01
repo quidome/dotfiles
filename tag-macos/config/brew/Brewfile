@@ -41,6 +41,7 @@ brew "stern"
 # Helix and addons
 brew "helix"
 brew "bash-language-server"
+brew "typescript-language-server"
 brew "marksman"
 brew "vscode-langservers-extracted"
 brew "yaml-language-server"
