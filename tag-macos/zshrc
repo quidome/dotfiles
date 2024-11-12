@@ -1,4 +1,7 @@
 # shellcheck disable=SC1090
+
+bindkey -e
+
 fpath=( ~/.zsh/completion "${fpath[@]}" )
 
 if type brew &>/dev/null; then
