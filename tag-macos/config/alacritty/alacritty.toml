@@ -47,9 +47,11 @@ style = "Regular"
 [selection]
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 args = ["-fp", "qmeijer"]
 program = "login"
 
 [window]
 option_as_alt = "Both"
+
+[terminal]

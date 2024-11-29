@@ -2,6 +2,8 @@
 
 # Exports
 export EDITOR=hx
+export DEV_PATH="${HOME}/dev"
+export PATH=$PATH:${HOME}/bin
 
 # Base tooling
 source <(fzf --zsh)
@@ -16,13 +18,3 @@ alias ll='eza -la'
 
 alias vim=nvim
 alias vimdiff='nvim -d'
-
-# GnuPG
-if TTY=$(tty) ; then
-    unset SSH_AGENT_PID
-    gpgconf --launch gpg-agent 
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-
-    export GPG_TTY="${TTY}"
-    gpg-connect-agent updatestartuptty /bye >/dev/null
-fi

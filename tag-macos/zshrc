@@ -10,6 +10,8 @@ fi
 
 autoload -Uz compinit; compinit
 
+# Homebrew setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 
 if [ -d "$HOME/.env.d" ]; then

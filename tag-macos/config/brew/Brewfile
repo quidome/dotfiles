@@ -66,7 +66,7 @@ brew "jenv"
 cask "zulu@21"
 
 # Javascript/Node
-brew "nvm"
+brew "fnm"
 
 # Python
 brew "poetry"
