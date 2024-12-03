@@ -1,0 +1,8 @@
+Include /Users/qmeijer/.colima/ssh_config
+
+Host hv01 hv04 rt01
+	User quidome
+	ForwardAgent yes
+
+Host *aapzak.nl *quido.me *balti.casa
+	User quidome
