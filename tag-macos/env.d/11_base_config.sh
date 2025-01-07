@@ -7,7 +7,7 @@ export PATH=$PATH:${HOME}/bin
 
 # Base tooling
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd=j)"
+eval "$(zoxide init zsh)"
 
 # shellcheck source=/opt/homebrew/bin/fzf
 source <(fzf --zsh)
