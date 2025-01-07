@@ -36,7 +36,7 @@ _cdp () {
 
 _cdz() {
   if command -v j >/dev/null 2>&1 ; then
-    echo j
+    echo z
   else
     echo cd
   fi
