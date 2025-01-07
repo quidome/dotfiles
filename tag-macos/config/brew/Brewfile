@@ -1,5 +1,10 @@
 # Taps
 tap "homebrew/services"
+tap "homebrew/homebrew-bol"
+
+# bol apps
+brew "homebrew/homebrew-bol/proxer"
+brew "homebrew/homebrew-bol/bol-cli"
 
 # System
 brew "bash"
