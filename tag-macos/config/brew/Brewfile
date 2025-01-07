@@ -35,7 +35,6 @@ brew "zellij"
 brew "zoxide"
 brew "zsh-syntax-highlighting"
 cask "alacritty"
-cask "raycast"
 cask "syncthing"
 
 # Ops
