@@ -5,6 +5,8 @@ export EDITOR=hx
 export DEV_PATH="${HOME}/dev"
 export PATH=$PATH:${HOME}/bin
 
+export PATH=$PATH:'/Applications/IntelliJ IDEA.app/Contents/MacOS'
+
 # Base tooling
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
