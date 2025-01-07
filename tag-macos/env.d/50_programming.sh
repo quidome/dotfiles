@@ -13,9 +13,8 @@ if test -f "${HOME}/.rbenv/bin/rbenv"; then
 fi
 
 # Nodejs
-if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  . /opt/homebrew/opt/nvm/nvm.sh
+if command -v fnm >/dev/null ; then
+  eval "$(fnm env)"
 fi
 
 # Polyglot language manager: mise
