@@ -1,4 +1,0 @@
-TAGS="macos"
-EXCLUDES="LICENSE README.md Makefile"
-DOTFILES_DIRS="$HOME/.dotfiles"
-UNDOTTED="bin bolcom backup"
