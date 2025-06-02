@@ -107,11 +107,11 @@ cask "arc"
 brew "bitwarden-cli"
 cask "bitwarden"
 cask "browserosaurus"
-cask "font-fira-code-nerd-font"
-
+cask "element"
 cask "logseq"
 cask "obsidian"
-
-cask "element"
-cask "signal"
 cask "raycast"
+cask "signal"
+
+# Fonts
+cask "font-jetbrains-mono"
