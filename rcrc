@@ -1,3 +1,0 @@
-EXCLUDES="LICENSE README.md Makefile _obsolete"
-DOTFILES_DIRS="$HOME/.dotfiles"
-UNDOTTED="bin bolcom backup"
