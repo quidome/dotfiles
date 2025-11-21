@@ -1,0 +1,4 @@
+alacritty.toml filter=git-crypt diff=git-crypt
+.gitconfig filter=git-crypt diff=git-crypt
+00-hidden.sh filter=git-crypt diff=git-crypt
+Brewfile filter=git-crypt diff=git-crypt

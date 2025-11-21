@@ -1,0 +1,12 @@
+default_layout "layout"
+keybinds {
+	shared_except "locked" {
+		bind "Ctrl q" {
+			 "Detach"
+		}
+	}
+	unbind "Ctrl b"
+}
+pane_frames false
+scrollback_editor "hx"
+show_startup_tips false

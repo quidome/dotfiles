@@ -1,0 +1,42 @@
+[[language]]
+auto-format = true
+language-servers = ["vscode-json-language-server"]
+name = "json"
+
+[[language]]
+auto-format = true
+language-servers = ["nixd"]
+name = "nix"
+
+[language.formatter]
+command = "alejandra"
+
+[[language]]
+auto-format = true
+language-servers = ["rust-analyzer"]
+name = "rust"
+
+[language.formatter]
+args = ["--edition", "2021"]
+command = "rustfmt"
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config.rust-analyzer.cargo]
+features = "all"
+[language-server.rust-analyzer.config.rust-analyzer.cargo.buildScripts]
+enable = true
+
+[language-server.vscode-json-language-server]
+args = ["--stdio"]
+command = "vscode-json-languageserver"
+
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+
+[language-server.yaml-language-server]
+args = ["--stdio"]
+
+[language-server.yaml-language-server.config.yaml]
+keyOrdering = false

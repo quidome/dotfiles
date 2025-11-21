@@ -9,3 +9,9 @@ This repository holds my dotfiles. I used to manage them with RCM but now I'm sw
 ```sh
   brew install stow
 ```
+
+## Update symlinks
+
+```sh
+  cd ~/.dotfiles && stow .
+```
