@@ -1,0 +1,17 @@
+[aliases]
+l = ["log", "--no-pager", "--limit=6"]
+s = ["st", "--no-pager"]
+
+[template-aliases]
+"format_timestamp(timestamp)" = "timestamp.ago()"
+
+[ui]
+conflict-marker-style = "git"
+diff-formatter = ":git"
+
+[ui.movement]
+edit = true
+
+[user]
+email = "qmeijer@bol.com"
+name = "Quido Meijer"

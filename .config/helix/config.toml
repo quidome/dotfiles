@@ -1,0 +1,32 @@
+theme = "molokai"
+[editor]
+bufferline = "always"
+cursorline = true
+line-number = "relative"
+scrolloff = 6
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+display-signature-help-docs = false
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["file-name", "file-modification-indicator", "spacer", "diagnostics"]
+left = ["mode", "spacer", "spinner", "spacer", "version-control"]
+right = ["position", "total-line-numbers"]
+separator = "|"
+
+[editor.statusline.mode]
+insert = "INSERT"
+normal = "NORMAL"
+select = "SELECT"
