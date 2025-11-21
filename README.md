@@ -1,10 +1,11 @@
-[![Build Status](https://travis-ci.com/quidome/dotfiles.svg?branch=master)](https://travis-ci.com/quidome/dotfiles)
+[![Build Status](https://travis-ci.com/quidome/dotfiles.svg?branch=main)](https://travis-ci.com/quidome/dotfiles)
 
 # dotfiles
 
-My dotfiles
+This repository holds my dotfiles. I used to manage them with RCM but now I'm switching to GNU stow.
 
-I'm using https://github.com/thoughtbot/rcm to manage my dotfiles.
-I clone this repo to ${HOME}/.dotfiles
+## Install
 
-Since all my linux hosts are running nixos + home assistent, this repo is now just about macos dotfiles.
+```sh
+  brew install stow
+```
