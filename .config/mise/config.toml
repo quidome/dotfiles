@@ -1,0 +1,8 @@
+[env]
+MISE_POETRY_AUTO_INSTALL=1
+
+[tools]
+go = "latest"
+poetry = "latest"
+python = "3.12"
+

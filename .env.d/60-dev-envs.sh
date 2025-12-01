@@ -1,14 +1,5 @@
-# Node js envs
-eval "$(fnm env --use-on-cd)";
-
-# Pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-# jenv setup
-PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# Set up mise
+eval "$(mise activate zsh)"
 
 # Other language paths
 PATH=$PATH:$HOME/go/bin
