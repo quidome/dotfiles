@@ -1,8 +1,12 @@
 # These shell tools want to be last in zshrc
-eval "$(zoxide init zsh )"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh )"
+fi
 
 if [[ $TERM != "dumb" ]]; then
   eval "$(starship init zsh)"
 fi
 
-eval "$(direnv hook zsh)"
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
