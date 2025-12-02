@@ -3,6 +3,7 @@ MISE_POETRY_AUTO_INSTALL=1
 
 [tools]
 go = "latest"
+java = "zulu-21"
 poetry = "latest"
 python = "3.12"
 
