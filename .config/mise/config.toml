@@ -6,4 +6,6 @@ go = "latest"
 java = "zulu-21"
 poetry = "latest"
 python = "3.12"
+usage = "latest"
+uv = "latest"
 
