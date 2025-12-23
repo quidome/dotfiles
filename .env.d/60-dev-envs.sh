@@ -10,11 +10,17 @@ if command -v pyenv >/dev/null 2>&1; then
 	eval "$(pyenv init - zsh)"
 fi
 
-# jenv setup
-if command -v jenv >/dev/null 2>&1; then
-	PATH="$HOME/.jenv/bin:$PATH"
-	eval "$(jenv init -)"
+# # uv and uvx setup
+if command -v uv >/dev/null 2>&1; then
+    eval "$(uv generate-shell-completion zsh)"
 fi
+if command -v uvx >/dev/null 2>&1; then
+    eval "$(uvx --generate-shell-completion zsh)"
+fi
+
+# sdkman for java
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Mise-en-place setup
 if command -v mise >/dev/null 2>&1; then
